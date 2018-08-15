@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Arrow functions</title>
+</head>
+
+<body>
+	<script>
+		const names = ['Chidera', 'dex', 'dera'];
+		//normal function
+		const fullNames = names.map(function (name) {
+			return `${name} Paul`
+		})
+
+		//es6 
+		const fullNames1 = names.map(name => {
+			return `${name} Paul`
+		})
+		//es6 one liner with implicit return
+		const fullNames2 = names.map(name => `${name} Paul`)
+		console.log(fullNames)
+		console.log(fullNames1)
+		console.log(fullNames2)
+		//  variable arrow fcn
+		const sayMyName = (name) => alert(`Hello ${name}`)
+		// sayMyName('Chidera  ')
+
+
+//racers
+		const race = '100m dash';
+		const winners = ['Hunter Gath', 'SInga Song', 'Imda Boss'];
+		const win = winners.map((winner, i) => ({
+			name: winner,
+			race: race,
+			place: i + 1
+		}))
+
+		console.table (win)
+//ages
+		const ages= [2,45,67,23,43,12,21,34,46,76,23,25,31,36];
+		const old = ages.filter(age => age >= 40)
+		console.log(old)
+	</script>
+</body>
+
+</html>
