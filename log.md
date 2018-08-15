@@ -21,4 +21,4 @@ var variables are function scoped, but if there is no function, the var is scope
 Discovered the object.freeze() that allows you to make an object const immutable.
 
 Dived into arrow functions. Arrow functions are anonymous functions.But you can put them in a variable.
-**Link to work**: No project at the momentgit 
+ 
