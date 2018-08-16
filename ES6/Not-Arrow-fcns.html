@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>When not to use arrow functions</title>
+</head>
+
+<body>
+<style>
+	button{ font-size: 100px}
+	.on { background: #ffc600 }
+</style>
+	<button id="pushy">push me</button>
+	<script>
+		//when you really need this key word
+		const button = document.querySelector('#pushy');
+		button.addEventListener('click', function(){
+			console.log(this);
+			this.classList.toggle('on');
+		} );
+
+	//when you need a method to bind to an object 	
+	const person = {
+		points:23,
+		// score:score=()=>{
+		// 	this.points++
+		// },
+		//or
+		score1:function(){
+			this.points++
+		}
+	}
+	console.log(person.score());
+	console.log(person.score1())
+	</script>
+
+</body>
+
+</html>

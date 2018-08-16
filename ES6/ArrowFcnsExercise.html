@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Arrow function exercises</title>
+</head>
+
+<body>
+	<ul>
+		<li data-time="4:34">flex video1</li>
+		<li data-time="4:32">video2</li>
+		<li data-time="4:35">video3</li>
+		<li data-time="5:34">flex video4</li>
+		<li data-time="3:34">video5</li>
+		<li data-time="2:34">video6</li>
+		<li data-time="6:36">flex video7</li>
+		<li data-time="4:48">video8</li>
+		<li data-time="9:34">video9</li>
+		<li data-time="5:24">video10</li>
+		<li data-time="4:41">video11</li>
+	</ul>
+<script>
+	//select all list items on the page and convert to an array
+	const items = Array.from(document.querySelectorAll('[data-time]'));
+	//filter for only the elements that contain the word 'flex'
+	const filtered = items
+		.filter(item => item.textContent.includes('flex'))
+//map down to a list of time strings
+		.map(item => item.dataset.time)// data-time 
+//map to an array of seconds
+	.map(timecode => {
+		const parts = timecode.split(':')
+		.map(part => parseFloat(part));
+		return (parts[0]*60) + parts[1]
+	})
+// reduce to get total 
+	.reduce((runningTotal, seconds) => runningTotal + seconds,0  )
+console.log(filtered)		
+</script>
+</body>
+
+</html>
