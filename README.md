@@ -1,7 +1,6 @@
 ##100daysofcode
 
 ###Day0 August 13, Monday
-**100DaysOfCode**
 
 **Today's work**: Working on setting up repo and initializing my workspaces.
 
@@ -34,5 +33,10 @@ When you shouldn't use arrow functions:
 3)when you need arguments object;
 4)When using event listeners
 
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day3 August 16, Thursday
+**Today's work**: Still on es6. Solved arrow function exercises to wrap it up.
+ Dived into **template literals**. OMG!!! template literals are cute.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 

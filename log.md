@@ -35,3 +35,8 @@ When you shouldn't use arrow functions:
 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
+###Day3 August 16, 
+**Today's work**: Still on es6. Solved arrow function exercises to wrap it up.
+ Dived into **template literals**. OMG!!! template literals are cute.
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
