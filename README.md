@@ -40,3 +40,13 @@ When you shouldn't use arrow functions:
  Dived into **template literals**. OMG!!! template literals are cute.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
+###Day4 August 17, Friday
+**Today's work**: Still on es6. Spent the early hours manipulating template literals, nesting and a=mbedding template literals.s
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+
+
+###Day5 August 19, Sunday
+**Today's work**: Still on es6. Did alot of cool stuff with template-literals such as tagging template literals; There were  two basic manipulations. 
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
