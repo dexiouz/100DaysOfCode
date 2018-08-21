@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tagged Templates</title>
+  
+</head>
+<body>
+  <script>
+   const person = {
+     first: 'Chidera',
+     last: 'Ugwuanyi',
+     country: 'Nigeria'
+   }
+
+   //old method of pulling data
+// const first = person.first;
+// const last = person.last;
+// const country = person.country;
+
+//destructuring is
+const { first,last, country } = person
+
+
+//better appreciated in handling nested data
+const chidera = {
+  first: 'chidera',
+  last: 'Ugwuanyi',
+  links: {
+    social: {
+      twitter: 'https://twitter.com/talk2dera',
+      github: 'https://github.com/Dexiouz'
+    },
+    web: {
+      blog: 'https://chidera.com'
+    }
+  }
+}
+
+//destructure with renaming
+const { twitter:tweet, github } = chidera.links.social;
+
+console.log( first, last, country,tweet,github)
+
+//default values with destructuring
+
+const settings = {width:300, color: 'black'} //height, fontsize
+const {width=100, height= 100, color='blue', fontsize= 25} = settings;
+console.log(width, height)
+
+//destructure, rename and default a value
+
+const { w: widdth = 400, h: heiight = 500 } = { w: 800 }
+
+console.log(widdth, heiight)
+;  </script>
+</body>
+</html>

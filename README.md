@@ -50,3 +50,9 @@ When you shouldn't use arrow functions:
 **Today's work**: Still on es6. Did alot of cool stuff with template-literals such as tagging template literals; There were  two basic manipulations. 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
+###Day6 August 21 Tuesday
+**Today's work**:Worked with the  New string methods of ES6. They are **.startsWith(), .endsWith(), .includes(), .repeat()**
+Dived into **Destructuring objects and arrays and functions**;
+In destructuring, curly brackets are used whenn you destructure from an object but normal braces are used when you destructure from an array.
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+

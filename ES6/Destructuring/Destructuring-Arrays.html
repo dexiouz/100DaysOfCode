@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tagged Templates</title>
+  
+</head>
+<body>
+  <script>
+    const details = ['Chidera', 123, 'chidera.com']
+    //old method of pulling values
+    // const name = details[0]
+    // const id = details[1]
+    // const web = details[2]
+
+    //destructure method 
+    //for indexed based stuff, do this
+    const [name, id, website] = details;
+    console.log(name,id,details)
+
+    //for coma separated lists too
+
+    const data = 'basketball, sports, 90210, 23'
+
+    const [itemName, category, sku, inventory] = data.split(',');
+
+    console.log(itemName, category, sku, inventory)
+
+    // for cases where you need a few values and then ALSO display the rest
+
+    const team = ['chidera', 'paul','Godswill', 'peter', 'andrew']
+
+    const [captain, assistant, ...players] = team
+
+    console.log(captain, assistant, ...players)
+   </script>
+</body>
+</html>
