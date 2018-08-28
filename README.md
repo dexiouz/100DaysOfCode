@@ -68,3 +68,16 @@ You cannot iterate over an object but you can use for-in loop to do some things.
 **the array.from()** takes something that is array(ish) and turns it into a full array. Array(ish) means it has some of the methods of an array such as length etc but not all array props.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
+###Day8 and Day 9 August 23 and 24 Thursday and Friday
+**Today's work**Read array methods on the **javascript Ninja TextBook.** 
+ES6 array methods. The array.from() and aray.of(). Found out, array.from() takes a second argument which is a map function which allows us to modify the data as we are creating the array. 
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+
+###Day12 
+**Today's work**: New ES6 Array method .find() is a callback function that returns true or false until you actually find it, works better with loops. To find multiple try the array.filter which returns an array of objects.
+The .findIndex() gets the index of the element, for instance if you want ot delete it.
+
+Array.some() and Array.every() are not actually part of ES6 but they are not widely used.
+They check through an array to see i sme of the data or all of the data meet what you're looking for.They both return true or false
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
