@@ -81,3 +81,9 @@ The .findIndex() gets the index of the element, for instance if you want ot dele
 Array.some() and Array.every() are not actually part of ES6 but they are not widely used.
 They check through an array to see i sme of the data or all of the data meet what you're looking for.They both return true or false
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day13 
+**Focus:** spread-operator
+**Today's work**:The spread operator takes every single item from an iterable eg arrays, dom, objects, string and apply it to the containing element.
+You can also copy an array without overriding the contents of the main array when you edit the copied array.
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
