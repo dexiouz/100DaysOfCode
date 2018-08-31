@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Morre spread examples</title>
+</head>
+<body>
+  <div class="people">
+    <p>Chidera</p>
+    <p>Paul</p>
+    <p>Ugwuanyi</p>
+  </div>
+  <script>
+    //instead of using array.from() on the nodeList to convert it to an array, we can actually use spread, like so:
+    const people = [...document.querySelectorAll('.people p')]
+    //we can now perform .map() operation on it
+    const names = people.map((person)=> person.textContent)
+    console.log(names)// array(3) chidera,paul, ugwuanyi
+
+    //when you want to create a new array off of a property on an object
+    const deepDish = {
+      pizzaName: 'Deep Dish',
+      size: 'Medium',
+      ingredients: ['Marina', 'italian sausage']
+    };
+    const shoppingList = ['milk','flour',...deepDIsh.ingredients];
+    console.log(shoppingList)//'milk','flour','Marina', 'italian sausage'
+
+//To remove a given object from an array of objects
+
+const comments = [
+  {id: 12234, text: 'I love you'},
+  {id:4566, text: 'cuute'},
+  {id:78645, text: 'you are dumb'},
+  {id:4567, text: 'Nice work you are doing'}
+]
+
+//the id of the object to be removed is given
+const id = 78645
+const commentIndex = comments.findIndex(comment => comment.id === id)
+
+const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+console.log(newComments);
+
+//if you're doing react you could do this.setState ({comments: newComments})
+
+  </script>
+</body>
+</html>
