@@ -94,7 +94,7 @@ You can also copy an array without overriding the contents of the main array whe
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day15
-**Focus:** The rest-param
+**Focus:** The rest-param and object literals
 **Today's work**:The rest-param is the opposite of the spreaad operator; where the spread operator takes an array andunpacks it into multiple array, the rest param takes multiple items and packs them into a single array. Two cases where rest params are used are in arrays and in destructuring situations.
 
 Another focus was on object literals and used in several cases
