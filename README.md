@@ -92,3 +92,10 @@ You can also copy an array without overriding the contents of the main array whe
 **Focus:** spread-operator
 **Today's work**:Used spread operators to spread into a function. And as an alternative to array.from(). To remove an object from an array of objects.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day14
+**Focus:** The rest-param
+**Today's work**:The rest-param is the opposite of the spreaad operator; where the spread operator takes an array andunpacks it into multiple array, the rest param takes multiple items and packs them into a single array. Two cases where rest params are used are in arrays and in destructuring situations.
+
+Another focus was on object literals and used in several cases
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
