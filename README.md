@@ -99,3 +99,9 @@ You can also copy an array without overriding the contents of the main array whe
 
 Another focus was on object literals and used in several cases
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day16
+**Focus:** revision of previous days works. Took a peep on promises.
+
+Another focus was on object literals and used in several cases
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
