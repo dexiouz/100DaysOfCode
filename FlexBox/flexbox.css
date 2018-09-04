@@ -1,0 +1,23 @@
+.box{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  padding: 10px
+}
+
+.box1 {background: #1abc9c}
+.box2 {background: #3498db}
+.box3 {background: purple}
+.box4 {background: #34495a}
+.box5 {background: #f1c401}
+.box6 {background: #da6a09}
+.box7 {background: #c74c3e}
+.box8 {background: #0dce3c}
+.box9 {background: red}
+.box10 {background:blue}
+
+.container {
+  display: flex;
+  border: 10px solid goldenrod
+}

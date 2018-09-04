@@ -105,3 +105,8 @@ Another focus was on object literals and used in several cases
 
 Another focus was on object literals and used in several cases
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day17
+**Focus:** Flexbox.
+
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
