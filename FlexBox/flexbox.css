@@ -18,6 +18,17 @@
 .box10 {background:blue}
 
 .container {
+  /* display: flex; or inline-flex */
   display: flex;
-  border: 10px solid goldenrod
+  border: 10px solid goldenrod;
+  min-height: 100vh;
+
+  /* flex-direction: row or colum or row-reverse or column-reverse */
+  flex-direction: row ;
+  flex-wrap: wrap
+}
+
+.box {
+  width: 33.333333%;
+  border: 10px solid mistyrose
 }
