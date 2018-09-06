@@ -113,20 +113,23 @@ Set up flexbox environment , created html with few divs, linked css stylesheet, 
 
 ###Day18
 **Focus:** Flexbox.
-Flex-Direction: The 'flex-direction: row' the deffault of any flex container spans the content vertically to hit the height of the container. It stacks them side by side.
+Flex-Direction: The 'flex-direction: row' the default of any flex container spans the content vertically to hit the height of the container. It stacks them side by side.
 The 'flex-direction:column' instead stacks the contents vertically on top of each other. 
-There are two access when using the 'flex-direction', we have the main access such as 'justify-content' and 'align-items'. 
-SO the main access if it is 'row', the main access is from left to right. The other is the cross access going from top to bottom.
- If you change the justify content to column, the main accss becomes from top to bottom.
- The other is the cross access which are the 'reverse'
- The 'justify-content: row-reverse' where the main access runs from right to left.
+ 
 
- The 'justify-content: column-reverse' where the main access runs from bottom to top.
- Clearly, main access runs from left to right while cross access runs from right to left.
+When defining the flex-direction as row or column, we have two accesses which are the main accesses like justify-content and align-items. 
+The main access when it is row, is from left to right. If it is column, it goes from top to bottom.
+
+There is also flex-direction: row-reverse or column reverse which are the cross accesses, the access starts in reverse. They are the cross accesses
+ 
 
 Flex-wrap:
 Suppose the flex elements have total widths bigger than your screen size, the 'flex-wrap: wrap'property comes in to evenly stretch  the elements in the screen. 
-Indeed, the flex elements share the whole screen evenly. 
+Suppose I give each box a width of 300px which is a total of 300px*10, that is 300px. The problem is, my screen is not 300px wide.
+Here flex tries to share the flex elements evenly on the screen.
+Thats where we apply the flex-wrap on the flex container.
+
+
 However, there is also the wrap-reverse for cross access.
 Sometimes there appears additional spaces on the screen unused by the flex items ; in this case you can fill the space by setting  the width: 33.33333%. It works, lol.
 
@@ -135,4 +138,13 @@ But if you switch the flex-direction to column, things kind of change, this is e
 Lets revert back to flex direction row and gives the elements a margin of 10px, it breaks. 
 To solve it, use width: calc(33.33333%-20px).
 Using padding or border properties gives you something interesting too.
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day19
+**Focus:** Flexbox.
+Flex box ordering is a way to move the order of DOM elements without moving them in the DOM.
+The flex:1 property distributes the elements equally on the screen. 
+Order takes a number and pushes the target element further down the screen to the right . The default order value is 0. Order is good especially for responsiveness.
+Order also takes negative values but instead pushes the target element to the left.
+
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
