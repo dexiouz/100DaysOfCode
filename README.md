@@ -133,7 +133,7 @@ Thats where we apply the flex-wrap on the flex container.
 However, there is also the wrap-reverse for cross access.
 Sometimes there appears additional spaces on the screen unused by the flex items ; in this case you can fill the space by setting  the width: 33.33333%. It works, lol.
 
-But if you switch the flex-direction to column, things kind of change, this is essentially because of the 100vh height we provided, it hits the height and starts a new vertical wrap. But using 'min-height: 100vh' causes the flex elements to overflow with wrap so you can scroll from top to bottom.
+But if you switch the flex-direction to column, things kind of change, this is essentially because of the 100vh height we provided, it hits the height and starts a new vertical wrap. But using 'min-height: 100vh' causes the flex elements to overflow with wrap so you can scroll from to)p to bottom.
 
 Lets revert back to flex direction row and gives the elements a margin of 10px, it breaks. 
 To solve it, use width: calc(33.33333%-20px).
@@ -148,3 +148,38 @@ Order takes a number and pushes the target element further down the screen to th
 Order also takes negative values but instead pushes the target element to the left.
 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+###Day20
+**Focus:** Flexbox.
+Taking an overview of flexbox from Netninja.
+Building a good website requires painstaking care in positioning elements. Such properties like position: relative or absolute which takes values are used for positioning to get elemnts where we want them to be. 
+ To create grids, one needed the float property, even for layouts or navigation systems, the float property was the ideal thing.
+ The fixed height property was needed for giving columns same height.
+ These methods are tiring, this is where the css flexbox comes in.
+
+What the flexbox? 
+ Flexbox is a CSS display type designed for crafting CSS layouts much easier.
+
+With CSS flexbox you can easily control the position, size and spacing of elements relative to each other and to their parent element.
+
+And the better part? It works great responsively.               
+
+Basically flexbox works like so: Take an element such as a div, give it a classname or id, then give a display property of flex and that is all, every of its direct children becomes flex elements and essentially becomes more flexible and we can basically control how they shrink and how they grow as well give the spacing between them.
+
+Some benefits of using flexbox:
+Helps to create navigation bars and menus very easily without having to use floats or worried about collapsing elements.
+
+We can also create Grid elements really easily and Bar charts too. Again creating equal height columns becomes easier with flexbox.
+
+For browsers which do not fully support flexbox such as IE8, we use modernizr. A modernizr is a javascript library that basically dictates which browser a user is using to view your site. And when it dictates that the browser does not support flexbox, it creates classes which we can use to style the elements specific to that web browser.
+
+**Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
+
+
+###Day21
+**Focus:** Flexbox.
+Basically when you give a display:flex property to an element, every direct child of that element becomes a flex item and we can then control their behaviour or the behaviour of the parent element.Using flexbox properties we can determine how these flex items grow or shrink relative to each other or whether they should stacked side by side or in colum or row form.
+
+Looked at flex over float.
+Next was flex-grow.
+**Link to work**: [medium](https://medium.com/@dexiouz/day21-of-100daysofcode-6149b88e9ec2')
