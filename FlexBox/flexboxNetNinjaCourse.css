@@ -13,7 +13,8 @@ body {
     margin: 0 auto
 }
 
-.flex-container {
+/* FLEX-GROW  */
+/* .flex-container {
     display: flex;
     background: #ffffff
 }
@@ -37,4 +38,62 @@ body {
 .three {
     background: green;
     flex-grow: 2
+} */
+
+
+
+/* FLEX-SHRINK */
+
+ /*.flex-container {
+    display: flex;
+    background: #ffffff
+}
+
+
+.box {
+    height: 100px;
+    width: 320px
+}
+
+.one {
+    background: red;
+    flex-shrink: 1
+}
+
+.two {
+    background: blue;
+    flex-shrink: 2
+}
+
+.three {
+    background: green;
+    flex-shrink: 3
+} */
+
+
+/* FLEX-WRAP */
+.flex-container {
+    display: flex;
+    background: #ffffff;
+    flex-wrap: wrap;
+}
+.box {
+    height: 100px;
+    min-width: 200px;
+    flex-grow: 1;
+}
+
+.one {
+    background: red;
+    
+} 
+
+.two {
+    background: blue;
+    
+}
+
+.three {
+    background: green;
+    
 }

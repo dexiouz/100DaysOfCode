@@ -183,3 +183,13 @@ Basically when you give a display:flex property to an element, every direct chil
 Looked at flex over float.
 Next was flex-grow.
 **Link to work**: [medium](https://medium.com/@dexiouz/day21-of-100daysofcode-6149b88e9ec2')
+
+###Day22
+**Focus:** Flexbox.
+Flexbox is very responsive. Responsive  means basically that the flex items fit themselves well in every screen size.
+flex-shrink
+Recall that on day 21 we showed how the flex-grow property determines the rate at which the items grows. Well there is also an opposite. The flex-shrink which determines the rate at which the flex items shrink as the browser gets smaller.This flex-shrink also controls the width of the elements as they shrink in relation to each another.   So far, our flex items shrink by default shrink in proportion to one another at the same rate. To overcome that, we give values to the shrink property. Notice that the higher the number the smaller the flex item becomes. 
+flex-wrap
+Recall the default behaviour of ekements when they shrink. Now with a minimum width of 200px, as we continue to shrink the browser, it gets to a point where the last element (green one) begins to disappear and goo off the page and we have to scroll horizontally through the page to see it. Thats weird, but that's where the flex-wrap comes in. What it does is it tells the elements, "ok instead of you to go off the page when you reach your minimum width, I want you to wrap to the next line."
+To do this, set the flex-wrap on the main flex container.
+The flex-wrap: reverse does the opposite, instead of the elemnt wrapping to the next line, it wraps to the line above.
