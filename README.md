@@ -182,7 +182,6 @@ Basically when you give a display:flex property to an element, every direct chil
 
 Looked at flex over float.
 Next was flex-grow.
-**Link to work**: [medium](https://medium.com/@dexiouz/day21-of-100daysofcode-6149b88e9ec2')
 
 ###Day22
 **Focus:** Flexbox.
@@ -193,3 +192,17 @@ flex-wrap
 Recall the default behaviour of ekements when they shrink. Now with a minimum width of 200px, as we continue to shrink the browser, it gets to a point where the last element (green one) begins to disappear and goo off the page and we have to scroll horizontally through the page to see it. Thats weird, but that's where the flex-wrap comes in. What it does is it tells the elements, "ok instead of you to go off the page when you reach your minimum width, I want you to wrap to the next line."
 To do this, set the flex-wrap on the main flex container.
 The flex-wrap: reverse does the opposite, instead of the elemnt wrapping to the next line, it wraps to the line above.
+
+###Day23
+**Focus:** Flexbox.
+Flex-basis: The flex basis which is very similar to min-width property; as the name suggests, the minimum width, written as min-width is the smallest width an element can take. The flex-basis defines a starting width for each of the elements.
+We can define the flex-basis property on on the conatiner holding the flex items and that bacomes a default value for all the items like so:
+
+Or we can give them individual flex-basis to make them have different starting positions. Also applying a flex-grow of 1 to the parent container makes them grow at the same rate.
+
+Between the flex-basis and min-width, it is advisable to use the flex-basis. 
+The flex-grow,flex-shrink and flex basis, can be combined as a one property. The property is called flex, it takes three values, the first is the flex-grow, then the flex-shrink and finally the flex-basis. flex: 1 0 200px;
+
+###Day24
+**Focus:** Flexbox.
+Menu with flex-box:
