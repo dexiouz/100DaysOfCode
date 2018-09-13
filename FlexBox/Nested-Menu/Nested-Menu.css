@@ -33,7 +33,7 @@ nav a:hover {
     background: #555
 }
 
-a.tw {
+/* a.tw {
     background: url('./download.jpg') no-repeat center;
     background-size: 80%
 }
@@ -49,7 +49,7 @@ a.fb {
 .social {
     max-width: 80px;
     margin: 0 auto  
-}
+} */
 
 /* flex styles */
 
@@ -64,12 +64,9 @@ nav ul .social li {
 @media screen and (min-width: 768px) {
 
 
-    .social {
-        margin: 0;
-    }
+    
     nav ul {
         display: flex;
-         /* justify-content: flex-start; */
     }
 
     nav li {
