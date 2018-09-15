@@ -215,3 +215,13 @@ Nested Menu with flex-box:
 ###Day26
 **Focus:** Flex-flow and flex-axis:
 Recall that the default behaviour of flex items is to stack horiz
+
+
+###Day27
+**Focus:** Align-items on cross-Axis:
+Recall that one of the properties that affects the main axis (if the flex-flow is row) is the justify-content property. The same way, the align-items property affects the cross axis(if the flex-flow is column).
+
+Both the align items and justify-content can be used together.
+
+Now lets set flex-flow to column and set the .box width to 100px and lets try justify-content and align-items. 
+pic 4 use align-items and justify-content only.
