@@ -29,7 +29,7 @@ Dived into arrow functions. Arrow functions are anonymous functions.But you can 
 With arrow functions, the keyword 'this' is not bound to that actual function.
 When you shouldn't use arrow functions:
 1) when you need to add a prototype method;
-2)when you need a method to bind to an object ;
+2)when you need a method to bind to an object :
 3)when you need arguments object;
 4)When using event listeners
 
