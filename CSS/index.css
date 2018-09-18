@@ -1,0 +1,19 @@
+/* style the element with an id of header */
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: blue
+}
+
+/* style all h1 of the header element with an id of header */
+#header h1 {
+    font-size: 32px;
+    color: blueviolet
+}
+
+/* style all p elements */
+p {
+    font-size: 12px;
+    color: red
+}

@@ -225,3 +225,27 @@ Both the align items and justify-content can be used together.
 
 Now lets set flex-flow to column and set the .box width to 100px and lets try justify-content and align-items. 
 pic 4 use align-items and justify-content only.
+
+###Day28
+**Focus:** Flex-order:
+The flex-order property is used to set the order of flex items. The default order of flex-items is a value of zero.
+So the way it works is that the lower number comes first and the highest number comes last.
+
+###Day29
+**Focus:** rEVIEW PREVIOUS WORKS ON FLEX-BOX.
+
+###Day30
+**Focus:** CSS 
+CSS is a collection of rules. Each rule targets a specific tag or element on a HTML document.
+The rules come in two components :
+SELECTOR: DECLARATION 
+
+###Day31
+**Focus:** CSS 
+There are three ways to add CSS styling viz: inline styling, embedded style sheets and External stylesheets.
+The best is the external stylesheet.
+ The inline styling is time consuming, messy and tricky to manage. It is only good for specialised rules.
+  For Embedded styling, it is time consuming too , difficult to update and maintain. It is only good for making speecific page styles.
+  The external stylesheet is quicker and easier.
+  It affects all the tags in all the html pages.
+
