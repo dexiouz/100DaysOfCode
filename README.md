@@ -249,3 +249,18 @@ The best is the external stylesheet.
   The external stylesheet is quicker and easier.
   It affects all the tags in all the html pages.
 
+  ###Day32
+**Focus:**Targetting CSS elements
+There are various ways of targetting css elements. One of the simplest is targetting them by their tag name. For instance, a div is targetted with the name div, same for a p tag and so on.
+
+Targetting elements by classes and ids.
+CLasses can be used multiple times while ids can be used once for a single element.
+ID selectors are selected with a hash then followed by the name of the ID.
+Class selectors are selected with a .(dot) then followed by the name of the class.
+
+Calling different rules on a particular css html element results in a sort of conflict. Suppose at the top of your css you have styled the h2 color as red and later 300 lines later, you forgot and styled it blue, now that's a conflict.
+Cascade enables us to understand what this conflict is doing to our css.
+
+The CSS cascade reads from top to bottom. It reads the first instance and applies it, when it comes to the second one, it applies it as the latest style, overriding the first one. The embedded styling if used together  usually overrides the external stylesheet. The inline styling if used together  usually overrides the external stylesheet and embedded stylesheet.
+
+Inheritance in CSS means that any style applied to a parent element subsequently affects it's children element. 

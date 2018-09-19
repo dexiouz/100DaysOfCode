@@ -1,0 +1,71 @@
+ /* TARGETTING ELEMENTS BY THEIR TAG NAME - */
+/* p {
+  font-size: 12px
+}
+
+a {
+  color: rebeccapurple;
+  text-decoration: underline;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+div {
+  width: 100%;
+  background-color: grey
+} */
+
+/* TARGETTING ELEMENTS BY IDS AND CLASSES */
+
+/* for all h2 */
+/* h2 {
+  font-size: 24px;
+} */
+
+/* for element with the content-header id */
+/* #content-header {
+  font-size: 18px;
+  color: red;
+} */
+/* for all spans */
+/* span {
+ display: block;
+ color: blue
+} */
+
+/* for spans with class of deck */
+/* .deck {
+  color: red
+} */
+
+
+/* CONFLICTS AND CASCADE */
+
+/* span {
+  color: red;
+}
+
+span {
+ color: blue
+} */
+
+/* INHERITANCE */
+
+body {
+  color: red
+}
+
+/* this is a form of inheritance */
+div {
+  color: blue;
+}
+
+p {
+  color: green
+}
