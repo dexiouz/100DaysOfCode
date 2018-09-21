@@ -29,7 +29,7 @@ Dived into arrow functions. Arrow functions are anonymous functions.But you can 
 With arrow functions, the keyword 'this' is not bound to that actual function.
 When you shouldn't use arrow functions:
 1) when you need to add a prototype method;
-2)when you need a method to bind to an object ;
+2)when you need a method to bind to an object :
 3)when you need arguments object;
 4)When using event listeners
 
@@ -215,6 +215,7 @@ Nested Menu with flex-box:
 ###Day26
 **Focus:** Flex-flow and flex-axis:
 Recall that the default behaviour of flex items is to stack horiz
+<<<<<<< HEAD
 
 
 ###Day27
@@ -264,3 +265,56 @@ Cascade enables us to understand what this conflict is doing to our css.
 The CSS cascade reads from top to bottom. It reads the first instance and applies it, when it comes to the second one, it applies it as the latest style, overriding the first one. The embedded styling if used together  usually overrides the external stylesheet. The inline styling if used together  usually overrides the external stylesheet and embedded stylesheet.
 
 Inheritance in CSS means that any style applied to a parent element subsequently affects it's children element. 
+=======
+>>>>>>> 33694abb757e3c47a949c9e1f4232c5eea33e486
+###Day33
+**Focus:** Selector specificity.
+Suppose we have a bunch of p tags and we want to style the p tag(s). Take a look at this css,
+#main-content p { color: black }; This rule wins over
+p { color: red}
+Irrespecive of CSS cascade which runs from top to bottom, the first rule is adopted because it is more specific. The second rule affects every other p tag. 
+
+CSS uses a point system to determine which rule is more specific, take a look at the point system. 
+IDS get 100pts,
+CLASSES get 10pts,
+TAGS get 1pt
+
+From our example css above, the first rule gets 100 + 1 pts which is a total of 101pts while the second gets only 1pt for a tag.
+
+But then looking at this html file, we first target the p tags in the main content and give them a color of red.
+#main-content p {
+  color: red;
+}
+p {
+  color: black
+}
+.test {
+  color: green
+}
+
+strong {
+  color: green
+}
+
+Notice that only the main content p tags takes the color red, the other ones remain on the default color. 
+In the nth line we Now target the p tag with a class of test in the main-content expecting it to take the color green but it does not. Why? Because although it targets the test class directly, its point is not upto the #main-content p rule.
+The only to do this kind of thing is to use strong on the item and target it.
+
+
+THE IMPORTANT DECLARATION
+Using the important declaration on a rule tells CSS that the rule must be used irrespective of its point. Recall the CSS above where the rule on the test class could not override the #main-content p target, well, using the important declaration on the test class automatically overrides the #main-content p target.
+The important declaration is represented with  a space and declaration mark followed by the word important after a CSS value.
+
+.test {
+  color: green !important;
+}
+
+TARGETTING MULTIPLE ELEMENTS
+In our html file, suppose we want to apply same kind of CSS style to multiple elements such as p tags, span tags, li tags and a tags. 
+The simplest way to do it is select them using this multiple targeting style.
+
+p, a, span, li {
+  color: red;
+  font-size: 24px;
+  font-family: Arial
+} 
