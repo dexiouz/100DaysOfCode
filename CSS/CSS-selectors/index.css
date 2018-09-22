@@ -1,0 +1,21 @@
+/* DESCENDANT SELECTORS */
+#sub-content p {
+  color: green
+}
+or to be more specific,
+
+#main-content #sub-content p {
+  color: green
+}
+
+
+/* CHILD SELECTORS */
+
+#main-content p {
+  color: yellow
+}
+
+/* ADJACENT SELECTORS: */
+.all-articles h2 + p {
+  color: orange
+}

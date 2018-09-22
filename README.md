@@ -318,3 +318,57 @@ p, a, span, li {
   font-size: 24px;
   font-family: Arial
 } 
+
+###Day33
+**Focus:** CSS selectors
+CSS DESCENDANTS SELECTORS:
+Consider this little html 
+<body>
+  <div id="main-content">
+
+    <P>Hello fellow <strong>programmers</strong></P>
+    <P class="test">Do your best, be a programmer</P>
+
+
+    <div id="sub-content">
+      <p>More Content</p>
+    </div>
+    
+  </div
+</body> 
+We say that an element is an descendant of another element if it is nested directly or indirectly under that element. All the elements inside the main content div are its descendants irrespective of how deep they are nested. 
+Suppose we want to style the p tags which are descendants of the main-content div, how do we go about it.
+#main-content p {
+  color: red
+}
+
+What if we want to style only the p tag inside the sub-content div, here's what we could do
+
+#sub-content p {
+  color: green
+}
+or to be more specific,
+
+#main-content #sub-content p {
+  color: green
+}
+It is not always a great idea to be more specific by making so many chaining, remember the point system thing we talked about on day33 ? it can make overriding the css difficult. 
+
+A delectable apparition stolen from a far away land.
+
+CHILD SELECTORS
+The child or children of an element are elements nested directly under that element. From our html file, the two p tags and the sub-content div are children of the main div. How do we style only the direct children?  Simple, just declare the element followed by an angle bracket(>) and the direct children you want to style.
+
+#main-content p{
+  color: yellow
+}
+
+ADJACENT SELECTORS:
+The adjacent selector is a selector that selects an element which comes directly after another element.
+Check out div class "all-articles" in our html file, suppose we want to style the first p tags directly under the h2 tags under that div, we apply the adjacent selector property by doing this :
+
+.all-articles h2 + p {
+  color: orange
+}
+
+The + targets all p tags directly under h2 in the all-articles class.
