@@ -319,7 +319,7 @@ p, a, span, li {
   font-family: Arial
 } 
 
-###Day33
+###Day34
 **Focus:** CSS selectors
 CSS DESCENDANTS SELECTORS:
 Consider this little html 
@@ -372,3 +372,105 @@ Check out div class "all-articles" in our html file, suppose we want to style th
 }
 
 The + targets all p tags directly under h2 in the all-articles class.
+
+###Day35
+**Focus:** CSS selectors
+ATTRIBUTE SELECTORS
+Attributes gives additional information about a html tag. From our html, 
+let us target all div tags with an attribute of id, we could do something like this
+
+div[id] {
+  color: red
+}
+for all spans with a class, we do this 
+span[class] {
+  color: orange
+}
+We could be more specific
+a[title = "search engine"]
+
+Hold on, look at this html file
+ <span class="deck halls">Am a a span tag</span>
+  <span class="deck">Think of me to think of programes</span>
+  <span class="deck">Span is cool</span>
+
+  If we wanted to target all spans with a class of deck, we could something like this:
+  span[class="deck"] {
+    color: blue
+  }
+  Unfortunately it won't target the first span tag because it's class is like this class="deck halls"; case of multiple classes. How do we go about hthis one? 
+  Well we use a tilde(~) like so,
+
+  span[class ~="deck"] {
+    color: purple
+  }
+  The tilde is saying that we want the value of deck to appear anywhere in a space deliminated list. 
+
+Take a look at this html file,
+  <a href="google.com"> I am an a tag</a>
+  <a href="http://gmail.com"> I am an a tag</a>
+  <a href="forever.net"> I am an a tag</a>
+
+This is how to taget only the a tag with a href of "forever.net"
+ a[href$ = "net"] {
+   color: blue
+ }
+ Notice the $ sign in front of the href. So, asically it says, go to thee a tag and target all the href that ends with "net".
+
+ Again, if we wanted to target the a href that starts with http, we do this,
+
+ a[href^="http"] {
+   color: yellow
+ }
+ The caret symol signifies start.
+
+ PSEUDO-CLASSES:
+ These are special keywords that go after selectors. They are like an extension.
+  They help us target things we wouldn't have been able to target using normal CSS. 
+ --special behavioral changes,
+ --advanced structural elements.
+
+There are two groups:
+The dynamic e.g hover effects,
+and structural pseudo classes e.g parent-child relationships. 
+
+The dynamic pseudo classs allow us to style an element in relation to user actions such hovering over a link,pressing a button, ticking a check box etc.
+
+The structural pseudo class: Suppose we have a ul tag with 10 li tags and we want to target the fifth li tag, notice that these li tags have no individual attributes, here we employ structural pseudo-class.
+
+Here's the general syntax,
+
+tag: pseudo-class {
+  <!-- effect -->
+}
+
+
+###Day36
+**Focus:** Pseudo classes.
+A quick recap from day 34 reminds us that pseudo classes are an extension of normal CSS to help us target more specific things.They are splitted into two groups viz: The behavioural and structural pseudo classes.
+
+The general syntax is 
+selector: keyword { declaration }.
+
+So lets take a look at three of the most popular CSS pseudo classes. We'll look at what happens when a link is hovered by a mouse, when it's clicked in it's active state and when it's visited.
+ HOVER 
+Consider the links 
+ <a href="#"> I am an a tag</a>
+  <a href="#"> I am another link tag</a> 
+The CSS for the hover is declared like so;
+a: hover {
+  color: purple
+}
+ACTIVE
+This is that moment you click down a button on your mouse. That monent before it takes you to new page, that link is active. We are going to change the color for that moment.
+
+a:active: {
+  color: orange
+}
+
+VISITED
+The way this one works is say you have a link on your webpage with the default color blue. When the user clicks on that link, they have now visited that link. When they come back to the page, that link tag should now display differently.
+a:visited {
+  color: green
+}
+**Link to work**: [medium.com]('https://medium.com/@dexiouz/day36-0f-100daysofcode-561531f9bd7c')
