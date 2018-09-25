@@ -1,23 +1,49 @@
 /* DESCENDANT SELECTORS */
-#sub-content p {
+/* #sub-content p {
   color: green
 }
 or to be more specific,
 
 #main-content #sub-content p {
   color: green
-}
+} */
 
 
 /* CHILD SELECTORS */
 
-#main-content p {
+/* #main-content p {
   color: yellow
-}
+} */
 
 /* ADJACENT SELECTORS: */
-.all-articles h2 + p {
+/* .all-articles h2 + p {
+  color: orange
+} */
+
+
+
+/* FIRST AND LAST CHILD PSEUDO CLASSES */
+
+/* article p:first-child {
+  color: blue
+}
+
+
+article p:last-child {
+  color: red
+} */
+
+/* COMBINING SELECTORS */
+/* article.featured-content {
   color: orange
 }
 
-/* ATTRIBUTE SELECTORS */
+div.featured-content {
+  color: purple
+} */
+
+/* UNIVERSAL SELECTORS */
+
+
+
+

@@ -474,3 +474,206 @@ a:visited {
   color: green
 }
 **Link to work**: [medium.com]('https://medium.com/@dexiouz/day36-0f-100daysofcode-561531f9bd7c')
+
+
+###Day37
+**Focus:** Structural pseudo classes.
+Structural pseudo classes help us target complex structural elements that we wouldn't be able to target using ordinary CSS selectors.
+FIRST AND LAST CHILD PSEUDO CLASSES
+The children are direct elements of an html tag, in the html file, lets target the first and last child of the html
+
+article p:first-child {
+  color: blue
+}
+
+
+article p:last-child {
+  color: red
+}
+
+FIRST AND LAST OF-TYPE PSEUDO CLASSES
+Take a look at this html file
+  <article>
+    <h2>Title 1<h2/>
+    <P>first p tag</P>
+    <P>p tag</P>
+    <P>p tag</P>
+    <P>p tag <a href="#">here</a> </P>
+    <hr>
+  </article>
+
+  <article>
+    <h2>Title 1<h2/>
+    <P>first p tag</P>
+    <P>p tag</P>
+    <P>p tag</P>
+    <P>p tag <a href="#">here</a> </P>
+    <hr>
+  </article>
+  If we try to use first and last child pseudo classes to target p, we won't get it because <h2> and <hr>tags are now the first and last children respectively.
+  Here we use the first or last of type because clearly the first p is the first of the p tag in the html
+
+  article p:first-of-type {
+  color: blue
+}
+
+
+article p:last-of-type {
+  color: red
+}
+
+NTH CHILD SELECTORS
+This type of psedo selection takes in a value, it is quite different from the other selectors, here's how it works
+ <ul>
+   <li>ITEM LIST</li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li>HALF TITLE</li>
+   <li></li>
+   <li></li>
+   <li></li>
+ </ul>
+
+ Suppose we want to style the first li item and the 4th list item, we should probably do something like this:
+ li: nth-child(1), li: nth-child(4) {
+   font-family: Arial
+ }
+
+ We culd do more, instead passing numbers,look at this
+
+  li: nth-child(even) {
+   font-family: Arial
+ }
+
+ li: nth-child(odd) {
+   font-family: Arial
+ }
+
+
+ We can also pass mathwmatical formulas like this, where n= 0
+  li: nth-child(2n + 1) {
+   color: green
+ }
+
+
+COMBINING SELECTORS
+<article class="feature-content">
+  <p>dummy text</p>
+</article>
+
+<article>
+  <p>dummy text</p>
+</article>
+
+<div class="feature-content">
+  <img src="#" alt="">
+</div>
+
+<div>
+  <img src="# " alt="">
+</div>
+The first article and first div have a class of featured-content, but we want to style them differently, clearly we can't use a particular rule rather we do this:
+ article.featured-content {
+   color: orange
+ }
+
+ div.featured-content {
+   color: purple
+ }
+
+UNIVERSAL SELECTOR
+Consider this html file
+<body>
+  <h1>I am a heading</h1>
+  <article>
+    <p>blah blah blah</p>
+    <p>blah blah blah</p>
+  </article>
+
+  <ul>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+
+  <h2>New Selection <a href="#">link<a/> </h2>
+
+  <p>blah blah blah</p>
+  <p>blah blah blah</p>
+  <p>blah blah blah</p>
+  <p>blah blah blah</p>   
+</body> 
+Indeed, we can target all the tag by doing something like this:
+
+h1,p,ul,li,h2,a {
+  color:red
+}
+That if there were 20 tags, well there appears a better simplified method of targeting all the elements-THE UNIVERSAL SELECTORS.
+See   
+ * {
+   color: red
+ }
+ It is not a case of inheritance aas the * universal selector target all the elements individually.
+Usually it is used as CSS reset where some developers use it to reset the default CSS styling and apply their own default styling, something like this:
+
+* {
+  margin: 0;
+  padding: 0;
+  color: black
+}
+Tip: be careful while using it. 
+
+
+###Day37
+**Focus:** 
+So far we've been discussing about CSS selectors. Let's shift our focus to declarations associated with selectors.
+FONT-SIZE
+We can give font size in two ways viz absolute font size, measured in pixels(px) or relatve fontsize measured in Em's(em) or percentage(%). 
+In this CSS 
+article {
+  font-size: 16px
+}
+
+article h2 {
+  font-size: 4em
+}
+
+article p {
+  font-size: 300%
+}
+
+The article tag takes an absolute font size of 16px. By default, its children like h2 and p tag inherits that 16px. However, by setting h2 to font-size of 4em we are saying multiply the font-size of the parent element by 4 and apply it to the h2 tag. The same goes for the p tag, we say, multiply the fontsize of the parent element by 300% and apply to the p tag.
+The relative fint sizes measurement em and % are good for responsiveness.
+
+
+FONT-FAMILY
+The font family is the font style you give to an element and that includes Arial, sans etc. The way we specify it like this 
+
+article h2, article p {
+  font-family: arial, verdana, sans-serif
+} 
+
+With font-family we can specify different font styles in the other we prefer them if the first style is not installed on the user's pc.
+So, from our style, if the user does not have the arial font-family, then the CSS should use verdana font-family etc.
+
+TEXT-DECORATION
+The default a tag has an underline property on its text. That underline comes from text-decoration, setting text-decoration to none, removes the underline. There are other values, viz: overline, inherit, line through etc.
+a { 
+  text-decoration: none
+}
+
+FONT WEIGHT
+This property determines how chunkier or bolder a text can be:
+Setting the font weight to normal causes the text to lose its chunkiness or boldness. There are other values: bold, bolder, lighter, normal, numbers e.g 400,300 etc
+
+article h2 {
+  font-family: normal
+}
+
+TEXT-TRANSFORM
+Transform in CSS basically means changing the case format of a text such as lower or upper case or capitalize.
+Capitalize takes every first letter of a word and capitalizes it.
+uppercase and lowercase does on the text exactly as their name says.
+ body p {
+   text-transform: capitalize
+ }
