@@ -215,7 +215,7 @@ Nested Menu with flex-box:
 ###Day26
 **Focus:** Flex-flow and flex-axis:
 Recall that the default behaviour of flex items is to stack horiz
-<<<<<<< HEAD
+
 
 
 ###Day27
@@ -265,8 +265,7 @@ Cascade enables us to understand what this conflict is doing to our css.
 The CSS cascade reads from top to bottom. It reads the first instance and applies it, when it comes to the second one, it applies it as the latest style, overriding the first one. The embedded styling if used together  usually overrides the external stylesheet. The inline styling if used together  usually overrides the external stylesheet and embedded stylesheet.
 
 Inheritance in CSS means that any style applied to a parent element subsequently affects it's children element. 
-=======
->>>>>>> 33694abb757e3c47a949c9e1f4232c5eea33e486
+
 ###Day33
 **Focus:** Selector specificity.
 Suppose we have a bunch of p tags and we want to style the p tag(s). Take a look at this css,
