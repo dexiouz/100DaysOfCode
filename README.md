@@ -153,12 +153,12 @@ Order also takes negative values but instead pushes the target element to the le
 **Focus:** Flexbox.
 Taking an overview of flexbox from Netninja.
 Building a good website requires painstaking care in positioning elements. Such properties like position: relative or absolute which takes values are used for positioning to get elemnts where we want them to be. 
- To create grids, one needed the float property, even for layouts or navigation systems, the float property was the ideal thing.
- The fixed height property was needed for giving columns same height.
- These methods are tiring, this is where the css flexbox comes in.
+To create grids, one needed the float property, even for layouts or navigation systems, the float property was the ideal thing.
+The fixed height property was needed for giving columns same height.
+These methods are tiring, this is where the css flexbox comes in.
 
 What the flexbox? 
- Flexbox is a CSS display type designed for crafting CSS layouts much easier.
+Flexbox is a CSS display type designed for crafting CSS layouts much easier.
 
 With CSS flexbox you can easily control the position, size and spacing of elements relative to each other and to their parent element.
 
@@ -245,12 +245,12 @@ SELECTOR: DECLARATION
 **Focus:** CSS 
 There are three ways to add CSS styling viz: inline styling, embedded style sheets and External stylesheets.
 The best is the external stylesheet.
- The inline styling is time consuming, messy and tricky to manage. It is only good for specialised rules.
-  For Embedded styling, it is time consuming too , difficult to update and maintain. It is only good for making speecific page styles.
-  The external stylesheet is quicker and easier.
-  It affects all the tags in all the html pages.
+The inline styling is time consuming, messy and tricky to manage. It is only good for specialised rules.
+For Embedded styling, it is time consuming too , difficult to update and maintain. It is only good for making speecific page styles.
+The external stylesheet is quicker and easier.
+It affects all the tags in all the html pages.
 
-  ###Day32
+###Day32
 **Focus:**Targetting CSS elements
 There are various ways of targetting css elements. One of the simplest is targetting them by their tag name. For instance, a div is targetted with the name div, same for a p tag and so on.
 
@@ -269,8 +269,8 @@ Inheritance in CSS means that any style applied to a parent element subsequently
 ###Day33
 **Focus:** Selector specificity.
 Suppose we have a bunch of p tags and we want to style the p tag(s). Take a look at this css,
-#main-content p { color: black }; This rule wins over
-p { color: red}
+`#main-content p { color: black };` This rule wins over
+`p { color: red }`
 Irrespecive of CSS cascade which runs from top to bottom, the first rule is adopted because it is more specific. The second rule affects every other p tag. 
 
 CSS uses a point system to determine which rule is more specific, take a look at the point system. 
@@ -281,6 +281,8 @@ TAGS get 1pt
 From our example css above, the first rule gets 100 + 1 pts which is a total of 101pts while the second gets only 1pt for a tag.
 
 But then looking at this html file, we first target the p tags in the main content and give them a color of red.
+
+```css
 #main-content p {
   color: red;
 }
@@ -294,6 +296,7 @@ p {
 strong {
   color: green
 }
+```
 
 Notice that only the main content p tags takes the color red, the other ones remain on the default color. 
 In the nth line we Now target the p tag with a class of test in the main-content expecting it to take the color green but it does not. Why? Because although it targets the test class directly, its point is not upto the #main-content p rule.
@@ -304,24 +307,30 @@ THE IMPORTANT DECLARATION
 Using the important declaration on a rule tells CSS that the rule must be used irrespective of its point. Recall the CSS above where the rule on the test class could not override the #main-content p target, well, using the important declaration on the test class automatically overrides the #main-content p target.
 The important declaration is represented with  a space and declaration mark followed by the word important after a CSS value.
 
+```css
 .test {
   color: green !important;
 }
+```
 
 TARGETTING MULTIPLE ELEMENTS
 In our html file, suppose we want to apply same kind of CSS style to multiple elements such as p tags, span tags, li tags and a tags. 
 The simplest way to do it is select them using this multiple targeting style.
 
+```css
 p, a, span, li {
   color: red;
   font-size: 24px;
   font-family: Arial
 } 
+```
 
 ###Day34
 **Focus:** CSS selectors
 CSS DESCENDANTS SELECTORS:
 Consider this little html 
+
+```html
 <body>
   <div id="main-content">
 
@@ -335,22 +344,32 @@ Consider this little html
     
   </div
 </body> 
+```
+
 We say that an element is an descendant of another element if it is nested directly or indirectly under that element. All the elements inside the main content div are its descendants irrespective of how deep they are nested. 
 Suppose we want to style the p tags which are descendants of the main-content div, how do we go about it.
+```css
 #main-content p {
   color: red
 }
+```
 
 What if we want to style only the p tag inside the sub-content div, here's what we could do
 
+```css
 #sub-content p {
   color: green
 }
+```
+
 or to be more specific,
 
+```css
 #main-content #sub-content p {
   color: green
 }
+```
+
 It is not always a great idea to be more specific by making so many chaining, remember the point system thing we talked about on day33 ? it can make overriding the css difficult. 
 
 A delectable apparition stolen from a far away land.
@@ -358,17 +377,21 @@ A delectable apparition stolen from a far away land.
 CHILD SELECTORS
 The child or children of an element are elements nested directly under that element. From our html file, the two p tags and the sub-content div are children of the main div. How do we style only the direct children?  Simple, just declare the element followed by an angle bracket(>) and the direct children you want to style.
 
+```css
 #main-content p{
   color: yellow
 }
+```
 
 ADJACENT SELECTORS:
 The adjacent selector is a selector that selects an element which comes directly after another element.
 Check out div class "all-articles" in our html file, suppose we want to style the first p tags directly under the h2 tags under that div, we apply the adjacent selector property by doing this :
 
+```css
 .all-articles h2 + p {
   color: orange
 }
+```
 
 The + targets all p tags directly under h2 in the all-articles class.
 
@@ -378,50 +401,60 @@ ATTRIBUTE SELECTORS
 Attributes gives additional information about a html tag. From our html, 
 let us target all div tags with an attribute of id, we could do something like this
 
+```css
 div[id] {
   color: red
 }
-for all spans with a class, we do this 
+/* for all spans with a class, we do this  */
 span[class] {
   color: orange
 }
-We could be more specific
+/* We could be more specific */
 a[title = "search engine"]
+```
 
 Hold on, look at this html file
+
+```html
  <span class="deck halls">Am a a span tag</span>
   <span class="deck">Think of me to think of programes</span>
   <span class="deck">Span is cool</span>
-
+```
   If we wanted to target all spans with a class of deck, we could something like this:
-  span[class="deck"] {
+ ` span[class="deck"] {
     color: blue
-  }
+  }`
   Unfortunately it won't target the first span tag because it's class is like this class="deck halls"; case of multiple classes. How do we go about hthis one? 
   Well we use a tilde(~) like so,
 
-  span[class ~="deck"] {
+  `span[class ~="deck"] {
     color: purple
-  }
+  }`
   The tilde is saying that we want the value of deck to appear anywhere in a space deliminated list. 
 
 Take a look at this html file,
+```html
   <a href="google.com"> I am an a tag</a>
   <a href="http://gmail.com"> I am an a tag</a>
   <a href="forever.net"> I am an a tag</a>
+```
 
 This is how to taget only the a tag with a href of "forever.net"
- a[href$ = "net"] {
+
+` a[href$ = "net"] {
    color: blue
  }
+ `
  Notice the $ sign in front of the href. So, asically it says, go to thee a tag and target all the href that ends with "net".
 
  Again, if we wanted to target the a href that starts with http, we do this,
-
+`
  a[href^="http"] {
    color: yellow
- }
+ }`
+
  The caret symol signifies start.
+
 
  PSEUDO-CLASSES:
  These are special keywords that go after selectors. They are like an extension.
@@ -438,11 +471,11 @@ The dynamic pseudo classs allow us to style an element in relation to user actio
 The structural pseudo class: Suppose we have a ul tag with 10 li tags and we want to target the fifth li tag, notice that these li tags have no individual attributes, here we employ structural pseudo-class.
 
 Here's the general syntax,
-
+```css
 tag: pseudo-class {
   <!-- effect -->
 }
-
+```
 
 ###Day36
 **Focus:** Pseudo classes.
@@ -454,8 +487,10 @@ selector: keyword { declaration }.
 So lets take a look at three of the most popular CSS pseudo classes. We'll look at what happens when a link is hovered by a mouse, when it's clicked in it's active state and when it's visited.
  HOVER 
 Consider the links 
+```html
  <a href="#"> I am an a tag</a>
   <a href="#"> I am another link tag</a> 
+  ```
 The CSS for the hover is declared like so;
 a: hover {
   color: purple
@@ -492,6 +527,7 @@ article p:last-child {
 
 FIRST AND LAST OF-TYPE PSEUDO CLASSES
 Take a look at this html file
+```html
   <article>
     <h2>Title 1<h2/>
     <P>first p tag</P>
@@ -509,6 +545,7 @@ Take a look at this html file
     <P>p tag <a href="#">here</a> </P>
     <hr>
   </article>
+  ```
   If we try to use first and last child pseudo classes to target p, we won't get it because <h2> and <hr>tags are now the first and last children respectively.
   Here we use the first or last of type because clearly the first p is the first of the p tag in the html
 
@@ -523,6 +560,8 @@ article p:last-of-type {
 
 NTH CHILD SELECTORS
 This type of psedo selection takes in a value, it is quite different from the other selectors, here's how it works
+
+```html
  <ul>
    <li>ITEM LIST</li>
    <li></li>
@@ -533,8 +572,10 @@ This type of psedo selection takes in a value, it is quite different from the ot
    <li></li>
    <li></li>
  </ul>
+```
 
  Suppose we want to style the first li item and the 4th list item, we should probably do something like this:
+ ```css
  li: nth-child(1), li: nth-child(4) {
    font-family: Arial
  }
@@ -554,9 +595,11 @@ This type of psedo selection takes in a value, it is quite different from the ot
   li: nth-child(2n + 1) {
    color: green
  }
-
+```
 
 COMBINING SELECTORS
+
+```html
 <article class="feature-content">
   <p>dummy text</p>
 </article>
@@ -572,7 +615,10 @@ COMBINING SELECTORS
 <div>
   <img src="# " alt="">
 </div>
+```
+
 The first article and first div have a class of featured-content, but we want to style them differently, clearly we can't use a particular rule rather we do this:
+```css
  article.featured-content {
    color: orange
  }
@@ -580,9 +626,11 @@ The first article and first div have a class of featured-content, but we want to
  div.featured-content {
    color: purple
  }
+```
 
 UNIVERSAL SELECTOR
 Consider this html file
+```html
 <body>
   <h1>I am a heading</h1>
   <article>
@@ -602,24 +650,27 @@ Consider this html file
   <p>blah blah blah</p>
   <p>blah blah blah</p>   
 </body> 
+```
 Indeed, we can target all the tag by doing something like this:
-
+`
 h1,p,ul,li,h2,a {
   color:red
-}
+}`
 That if there were 20 tags, well there appears a better simplified method of targeting all the elements-THE UNIVERSAL SELECTORS.
-See   
- * {
+See 
+
+ `* {
    color: red
- }
+ }`
  It is not a case of inheritance aas the * universal selector target all the elements individually.
 Usually it is used as CSS reset where some developers use it to reset the default CSS styling and apply their own default styling, something like this:
-
+```css
 * {
   margin: 0;
   padding: 0;
   color: black
 }
+```
 Tip: be careful while using it. 
 
 
@@ -629,7 +680,8 @@ Tip: be careful while using it.
 So far we've been discussing about CSS selectors. Let's shift our focus to declarations associated with selectors.
 FONT-SIZE
 We can give font size in two ways viz absolute font size, measured in pixels(px) or relatve fontsize measured in Em's(em) or percentage(%). 
-In this CSS 
+In this CSS
+```css 
 article {
   font-size: 16px
 }
@@ -641,6 +693,7 @@ article h2 {
 article p {
   font-size: 300%
 }
+```
 
 The article tag takes an absolute font size of 16px. By default, its children like h2 and p tag inherits that 16px. However, by setting h2 to font-size of 4em we are saying multiply the font-size of the parent element by 4 and apply it to the h2 tag. The same goes for the p tag, we say, multiply the fontsize of the parent element by 300% and apply to the p tag.
 The relative fint sizes measurement em and % are good for responsiveness.
@@ -649,35 +702,42 @@ The relative fint sizes measurement em and % are good for responsiveness.
 FONT-FAMILY
 The font family is the font style you give to an element and that includes Arial, sans etc. The way we specify it like this 
 
+```css
 article h2, article p {
   font-family: arial, verdana, sans-serif
 } 
+```
 
 With font-family we can specify different font styles in the other we prefer them if the first style is not installed on the user's pc.
 So, from our style, if the user does not have the arial font-family, then the CSS should use verdana font-family etc.
 
 TEXT-DECORATION
 The default a tag has an underline property on its text. That underline comes from text-decoration, setting text-decoration to none, removes the underline. There are other values, viz: overline, inherit, line through etc.
+```css
 a { 
   text-decoration: none
 }
+```
 
 FONT WEIGHT
 This property determines how chunkier or bolder a text can be:
 Setting the font weight to normal causes the text to lose its chunkiness or boldness. There are other values: bold, bolder, lighter, normal, numbers e.g 400,300 etc
 
+```css
 article h2 {
   font-family: normal
 }
+```
 
 TEXT-TRANSFORM
 Transform in CSS basically means changing the case format of a text such as lower or upper case or capitalize.
 Capitalize takes every first letter of a word and capitalizes it.
 uppercase and lowercase does on the text exactly as their name says.
+```css
  body p {
    text-transform: capitalize
  }
-
+```
 
  ###Day39
 **Focus:** 
@@ -686,7 +746,7 @@ There are two types of color application in CSS viz:
 Text Color/foreground and
 backgroundColor.
 The text color/foreground basically colors the text while the backgroundcolor affects the entire background of the container, it doesn't affect the  text.
-
+```css
 #header h1 {
   color: chocolate
 }
@@ -698,24 +758,28 @@ The text color/foreground basically colors the text while the backgroundcolor af
 #header {
   background: blueviolet
 }
-
+```
 STYLING LINKS
 The default style of a browser link is blue with an underline, hnence to tweak it to our taste, we do this,
 
+```css
 a {
   color: crimson;
   text-decoration: none;
   font-weight: bold
 }
- We can add a hover effect like so
+
+ /* We can add a hover effect like so */
  a:hover {
    color: cyan
  }
+ ```
 
 LETTER SPACING AND LINE HEIGHT
 Consider the word "CODE", letter spacing is just the distance between the letters of a word, for instance, adding a letter spacing to "CODE" can give us something like this "C O D E", depending on the space value.
 Word spacing does the exact same thing on words. 
 
+```css
 p {
   letter-spacing: 2px;
   word-spacing: 2em
@@ -728,7 +792,7 @@ h1 {
  // other value includes inherit, normal,em,% etc
 
 }
-
+```
 
 The line height is the vertical height or vertical space between two lines of text in a paragraph.
 
