@@ -624,7 +624,8 @@ Usually it is used as CSS reset where some developers use it to reset the defaul
 Tip: be careful while using it. 
 
 
-###Day37
+
+###Day38
 **Focus:** 
 So far we've been discussing about CSS selectors. Let's shift our focus to declarations associated with selectors.
 FONT-SIZE
@@ -677,3 +678,60 @@ uppercase and lowercase does on the text exactly as their name says.
  body p {
    text-transform: capitalize
  }
+
+
+ ###Day39
+**Focus:** 
+CSS COLOR
+There are two types of color application in CSS viz:
+Text Color/foreground and
+backgroundColor.
+The text color/foreground basically colors the text while the backgroundcolor affects the entire background of the container, it doesn't affect the  text.
+
+#header h1 {
+  color: chocolate
+}
+
+#header {
+  background-color: blueviolet
+}
+
+#header {
+  background: blueviolet
+}
+
+STYLING LINKS
+The default style of a browser link is blue with an underline, hnence to tweak it to our taste, we do this,
+
+a {
+  color: crimson;
+  text-decoration: none;
+  font-weight: bold
+}
+ We can add a hover effect like so
+ a:hover {
+   color: cyan
+ }
+
+LETTER SPACING AND LINE HEIGHT
+Consider the word "CODE", letter spacing is just the distance between the letters of a word, for instance, adding a letter spacing to "CODE" can give us something like this "C O D E", depending on the space value.
+Word spacing does the exact same thing on words. 
+
+p {
+  letter-spacing: 2px;
+  word-spacing: 2em
+ // other value includes inherit, normal,em,% etc
+
+}
+
+h1 {
+  line-height: 2px
+ // other value includes inherit, normal,em,% etc
+
+}
+
+
+The line height is the vertical height or vertical space between two lines of text in a paragraph.
+
+PARAGRAPH SPACING
+This controls the height between paragrapghs. 
