@@ -783,13 +783,13 @@ Word spacing does the exact same thing on words.
 p {
   letter-spacing: 2px;
   word-spacing: 2em
- // other value includes inherit, normal,em,% etc
+ /*  other value includes inherit, normal,em,% etc */
 
 }
 
 h1 {
   line-height: 2px
- // other value includes inherit, normal,em,% etc
+ /*  other value includes inherit, normal,em,% etc */
 
 }
 ```
@@ -798,5 +798,219 @@ The line height is the vertical height or vertical space between two lines of te
 
 PARAGRAPH SPACING
 
-This controls the height between paragrapghs.
+This controls the height between paragrapghs. Controlling this we use the margin like so 
+```css
+p {
+  letter-spacing: 2px;
+  word-spacing: 2em;
+  margin-bottom: 23px
+ }
+  ```
+ 
+ With the margin-bottom We are saying, at the end of the p tag we want a 23px gap before the next tag
 
+THE BOX MODEL 
+Box model is the way elements represent themselves in a page in terms of space. Say we have a block element such as a p tag in apage,the width and height property controls how much space it takes up on the page, then there is the padding which is an internal spacing and the margin property too. 
+
+```css
+.box {
+  padding: 30px;
+  margin: 20px;
+  border: 1px solid #00000;
+}
+```
+We should be careful when applying width property to the box model. For instance, if we added a width of 200px to the .box class, in reality, the width is not actually 200px, it is more.
+This is what happens, THe CSS adds the 200px + 30px + 30px (from the padding left and right) + 20px + 20px (from margin left and right) + 1px + 1px (border on the left and right). This gives us a total of 302px. Shocker right! So becareful when using it.
+
+MARGINS
+For block elements, the marginis the external space that separaates it from the next element.
+Specifying a single value to the margin property mmeans give that value to the top, bottom, left and right. 
+
+```css
+/* this value of 30px is same for top, bottom,left and right */
+.box {
+  margin: 30px
+}
+/* To specify different values, we do this, */
+.box {
+  margin: 30px 20px 40px 10px
+  /* frm the margin, the formula is TRBL, top(30px), right(20px),bottom(40px),left(10px) respectively */
+}
+```
+There are other shorter ways. If we want the top and bottom only to have same margi values or left and right margin to have same values, we do this 
+```css
+.box {
+  margin: 30px 20px
+  /* top and bottom = 30px, while left and right = 20px */
+}
+```
+
+Another short hand is this
+```css
+.box{
+  margin: 20px 15px 30px
+}
+/* This is essentially top = 20px, right = 15px, bottom = 30px and finally it'll automatically assign 15px to the left because of the right margin */
+```
+
+VERTICAL MARGIN COLLAPSE
+Essentially when you have two element stacked on top of each other and they both have a margin associated with them, one at the top, one at the bottom then those two margins collapse when they meet each other. If the margins are identical, they collapse and take any of the margins else, they'll collapse and take the higher of the margins.
+
+MARGIN AUTO
+Supposing we have a div with a width of 300px and we want to center it arund the width of the parent element regardless of how the screen shrinks, we use the margin auto like so
+
+```css
+.box {
+  margin: 30px auto
+  /* a margin top and bottom of 30px and an automatic left and right margin to center the div. */
+}
+```
+
+PADDING
+Unlike the margin, the padding property is an internal spacing. It is applied the same way like the margin, with all the margin shorthands too viz:
+
+```css
+.box {
+  padding: 30px 30px 30px 10px;
+  padding: 20px 30px;
+  padding: 30px;
+  padding 30px auto ;
+}
+```
+
+Although we don't have padding collapse
+
+
+
+ ###Day40
+**Focus:** 
+MARGIN AND PADDING LONG-HAND METHOD
+Here are long hand methods for defining padding and margins. They have the advantage of being used to override  previous set margin and padding values. 
+
+ ```css
+ .box {
+   margin-top: 30px;
+   margin-left: 30px;
+   margin-right: 30px;
+   margin-bottom: 30px;
+
+
+   /* for padding */
+   padding-left: 30px;
+   padding-right: 30px;
+   padding-top: 30px;
+   padding-bottom: 30px
+ }
+ ```
+ BORDERS
+ This is part of the box model, its like the perimeter of the element just outside of the padding but before the model.
+ It takes three values, width(how thick the border is), the style determines how dotty or dashed and the color specifies the color. 
+ Here's the long hand method of declaring the border:
+
+ ```css
+ .box {
+   /* for styling only the top of the border. You can change the top to bottom, right, left */
+   border-top-width: 2px;
+   border-top-style: solid;
+   border-top-color: blue
+ }
+ ```
+
+ For the short hand, you do this
+ ```css
+ .box {
+   border-top: 1px solid green;
+   /* 1px = width, solid = style, blue = color */
+
+   /* HERE'S TO TARGET THE WHOLE BORDER top, right, left, bottom */
+   border: 1px solid green
+ }
+ ```
+
+ BLOCK-LEVEL ELEMENTS
+ Block level elements take up the whole width of their parent element and stack on each other. They includes div, p,section tags etc
+
+ Inline elements do not occupy a full row, they stack next to each other in line. They cannot be controlled using the box model property vertically. To make them appear as block level elements, we give them a display of block. They include a, span tags etc.
+ To make them obey certain box model rules we give them another display property callled inline-block. Here, it borrows the positive attribute of the inline display and the positive attributes of the block display.
+
+```css
+ .box inline {
+   display: inline-block   
+   <!-- or -->
+   display: block
+ }
+ ```
+ WIDTH AND HEIGHT PROPERTY 
+ The width is the width as you know it, the size of an element from right to left. There are various ways of specifying a width, lets take a look:
+
+ If we want a static width and height say no matter the screen size, the size of the element width and height should always be 300px.
+```css
+ .static-width {
+   width: 150px;
+   width: 150px
+ }
+```
+ percentage-width says give the element 70% of the width of its parent element.
+ ```css
+  .percentage-width {
+   width: 70%;
+   width: 150%
+ }
+ ```
+ROUNDED CORNERS
+The property for giving rounded or near rounded corners to elements such as a square div is the border-radius property. It has for sides it can control the four sides of the element and goes around in the clockwise fashion viz: top-right, bottom-right, bottom-left and top-left. Giving a single value for a border-radius gives the whole corner the value 
+
+```css
+ .box {
+   width: 150px;
+   width: 150px;
+   border-radius: 20px;
+   /* to control each corner separately we do this for  top-right, bottom-right, bottom-left and top-left */
+
+   border-radius: 10px 30px 40px 20px;
+
+   /* And like margin we can do this for top-left and bottom right, bottom left and top-right. */
+
+   border-radius: 10px 20px
+
+   /* TO get a complete circle increase the border-radius upto 100%  */
+ }
+ ```
+
+ BACKGROUND SHORTHAND PROPERTY
+ Recall these background properties which can be set like so:
+
+ ```css
+  .box {
+    background-color: red ;
+    background-image: url('./image');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 200px;   
+  }
+  ```
+  Well there's a shorthand version to combine some of these properties, see
+
+  ```css
+  .box {
+    background: url('./image') no-repeat center;  
+    /* if you have images, put nbackground-color under the image
+     */
+     backgound-color: blue;
+     background-size: 200px
+  }
+  ```
+MULTIPLE BACKGROUND
+ MULTIPLE IMAGE 
+
+ ```css
+  .box {
+    background-image: url('./image1'), url('./image1');
+     background-repeat:no-repeat;
+     background-size: 300px, 100%
+  }
+ ```
+Some hints when using multiple images:
+1) The comma is very necessary for the end of every image except the last image.
+2) The image order is very crucial, the first one will come at the top of the stack, the last one will come at the bottom of the stack.
+3) The background-repeat and position property must be set in the order of the elements, if they are same you can use one value such as in the background-repeat in the CSS above.
