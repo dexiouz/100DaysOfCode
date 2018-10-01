@@ -1014,3 +1014,223 @@ Some hints when using multiple images:
 1) The comma is very necessary for the end of every image except the last image.
 2) The image order is very crucial, the first one will come at the top of the stack, the last one will come at the bottom of the stack.
 3) The background-repeat and position property must be set in the order of the elements, if they are same you can use one value such as in the background-repeat in the CSS above.
+
+
+###Day41
+**Focus:** 
+COLOR
+The background color property is represented in several ways.
+Hex code:
+The hex code is a series of six numbers or letters or a combination of both that make up a color. It is made from three channels: the first two numbers control the red colors, the second two control the green colors, the final two control the blue colors. It is started with a hash symbol followed by the six characters 0 to 9 and a to f, f being the lightest and zero being the darkest.
+
+```css
+.box {
+  background-color: #ffffff
+}
+```
+
+Rgb format
+It takes three values for red, green and blue which range from 0 to 255.
+```css
+.box {
+  background-color: rgb(0,0,0)
+}
+```
+
+OPACITY
+Consider this html and its CSS
+```html
+    <div id="circle"></div>
+    <div id="circle-2"></div>
+    <div id="circle-3"></div>
+```
+```css
+#circle {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(200,200,100);
+  border-radius: 200px;
+  top: 50px;
+  left: 50px
+}
+
+#circle-2 {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(200,100,200);
+  border-radius: 200px;
+  top: 250px;
+  left: 150px
+}
+
+#circle-3  {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(100,200,200);
+  border-radius: 200px;
+  top: 50px;
+  left: 250px
+}
+```
+which gives us this: 
+IMG OPACITY
+
+We add opacity by using its name and takes values 0 if you want the element to be completely transparent or 1 if for completely opaque. Now lets add opacity to the elements and see the effect.
+```css
+#circle {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(200,200,100);
+  border-radius: 200px;
+  top: 50px;
+  left: 50px;
+  opacity: 1
+}
+
+#circle-2 {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(200,100,200);
+  border-radius: 200px;
+  top: 250px;
+  left: 150px;
+  opacity: 0.7
+}
+
+#circle-3  {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: rgb(100,200,200);
+  border-radius: 200px;
+  top: 50px;
+  left: 250px;
+  opacity: 0.3
+}
+```
+And now we have this
+
+IMG OPACITY1
+Although, the opacity has a little glitch, it not only affects the background but also its content. If we added a hello in the divs we get something like this.
+
+IMG OPACITYFAINT
+Notice that the hello is faint too, the opacity is affecting them too. To tackle this we add an alpha channel in the rgb color where the alpha represented a controls the opacity, like so
+```css
+.element{
+  background: rgba(100,200,200,0.7)
+}
+```
+IMG OPACITYTEXT
+
+GRADIENTS
+A gradient is a transition from one color shade to another.
+First we declare the background property followedmby linear-gradient. Linear which means it can go from top to bottom, left to right. Followed by a parenthesis,first value in the parenthesis is the direction say top, followed by the color to start with followed by the percentage you want it to start at followed by the second color to fade into at a percentage at the bottom.
+```css
+.button {
+  display: block;
+  width: 100px;
+  padding: 12px;
+  border: 1px solid #77feaa;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffff;
+  text-align: center;
+  border-radius: 4px;
+  background: brown;
+  background: linear-gradient(top, #aadddd 0%, #77aaaa 100%);
+}
+```
+but it won't work since gradient is relatively new and most browsers don't support it. To make sure browsers support it, we add some prefix where -moz, -webkit are for firefox, safari or google chrome respectively, so this works
+```css
+.button {
+    background: brown;
+  background: -moz-linear-gradient(top, #aadddd 0%, #77aaaa 100%);
+  background: -webkit-linear-gradient(top, #aadddd 0%, #77aaaa 100%);
+  background: linear-gradient(top, #aadddd 0%, #77aaaa 100%);
+}
+```
+
+BOX SHADOW
+The box shadow kind of gives the element a shadow, kind of gives it depth. It takes few values, the first two are the horizontal and vertical position values how from the element you want the box shadow to appear. The third value is the blur radius, hpw blurry. High value is very blurry. The next is the spread which is of what distance do you want that to be blurred out. The last value is the color of the box shadow.
+
+```css
+  .button {
+    ...
+    box-shadow: 3px 3px 6px 3px rgba(40, 40, 40,0.6)
+  }
+```
+
+###Day42
+**Focus:** ALGORITHMS
+SO, to jumpstart javascript I decided to write this algorithm for reversing a string. Here's what it should do.
+The letter 'element' sholud be returned as 'tnemele', the letter 'knowledge' should be returned as 'egdelwonk'.
+Using array methods 'array.push()' and 'array.unshift()' I was able too achieve this.
+
+Using array.push()
+Basically array.push() takes in a value and adds it to the end of an array. Say we have this array
+arrays = [1,2,3,4,5,6,] then calling
+arrays.push(7) 
+console.log(arrays) // [1,2,3,4,5,6,7]
+
+Here's how it should work.
+-In a function,
+-Pass in the string you want to reverse
+-Use the split method on the string to convert the string to a array
+-save the splitted string in a variable
+-create an empty array
+-use a for loop to loop through the splitted string beginning from the first item in the array. 
+- for each item in the string, it should push it to the end of the empty array you created.
+-use the .join() method on the empty array then
+-console.log(the-empty-array)
+-That's all
+
+<!-- USING PUSH METHOD -->
+```JS
+let reversedWord = function reverse(word){
+  let splitWord = word.split('')
+  let reversed = [];
+  for (let i = splitWord.length-1; i>=0; i--){
+      reversed.push(splitWord[i]);
+  }
+  console.log(reversed.join(''))
+}
+reversedWord('element')  //"tnemele"
+```
+
+Using array.unshift()
+Unlike the push() method, the unshift() method takes in a value and adds it to the beginning of an array. Say we have this array
+arrays = [2,3,4,5,6,] then calling
+arrays.unshift(1) 
+console.log(arrays) // [1,2,3,4,5,6]
+
+
+<!-- THE UNSHIFT METHOD -->
+Here's how it should work.
+-In a function,
+-Pass in the string you want to reverse
+-Use the split method on the string to convert the string to a array
+-save the splitted string in a variable
+-create an empty array
+-use a for loop to loop through the splitted string beginning from the last item in the array. 
+- for each item in the string, it should take it to the beginning of the empty array you created.
+-use the .join() method on the empty array then
+-console.log(the-empty-array)
+-That's all
+
+<!-- THdWordE UNSHIFT METHOD -->
+```JS
+let reversedWord = function reverse(word){
+  let splitWord = word.split('')
+  let reversed = [];
+  for (let i = 0; i<=splitWord.length; i++){
+      reversed.unshift(splitWord[i]);
+  }
+  console.log(reversed.join(''))
+}
+reversedWord('knowledge')  //"egdelwonk"
+```
