@@ -1234,3 +1234,66 @@ let reversedWord = function reverse(word){
 }
 reversedWord('knowledge')  //"egdelwonk"
 ```
+###Day43
+**Focus:** Introductiion to Javascript
+Javascript is a lightweight, cross- platform, object-oriented computer programming language.
+By lightweight it means that the language doesn't use much memory of the computer and that it has a relatively simple syntax and features. 
+Cross platform means that the language can be used in multiple platforms and systems. 
+And finally object oriented means that it is a language based on objects.
+
+Together with html and CSS, javascript is one of the three core technologies for web development.
+This means that javascript is mostly used for web pages, javascript also runs in other machines that are not web based.
+
+On the web, javascript was traditionally used on the browser environment making it only a client-side language.
+However, thanks to new technologies such as nodejs that enables us to use javascript on the server side of the web making it interact with databases and files on the server.
+In conclusion, javascript is what made modern web development possible:
+It allows us to add dynamics and interactivity to our web pages.
+As of today there are a ton of javascript libraries such as jquerry and frameworks such as react that enable developers build powerful web apps. But in other to use them one must first understand pure javascript otherwise called vanilla javascript.
+
+The role of javascript in web development
+So where does javascript fit in in web development together with html and css.
+Of course you understand that html is responsible for holding the content of a web page and CSS is responsible for styling this content and handling layout. Javascript is the programming language that allows us to add dynamics to the picture like dynamic effects, manipulation of the content and CSS. 
+Lets look at the role of these three html,CSS and javascript like this.
+So the html is the "noun" by saying that the html "p element" is a paragraph. 
+The CSS is the adjective because it describes the noun by saying that the p paragraph has a red color. And finally the javascript is the verb by saying to hide the p paragraph p.hide() element. 
+There are two ways to add javascript in our html tag. One is directly inside the html body and secondly is through a javascript file.
+
+Adding javascript directly through html body, called in-line script is someting like this;
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript</title>
+</head>
+<body>
+   <h1> Javascript language basics </h1>
+</body>
+<script>
+  console.log('Hello world')
+</script>
+</html>   
+```
+Load the html in a browser and check the developer console of your browser.
+Pressing F12 or ctrl+shift+C or right clicking in your browser and selecting inspect opens the developer console. 
+As soon as a menu comes up, select at the top "console" and you'll see Hello world.     
+
+The best practice is to use a separate file for your javascript and import it to your html file, something like this:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript</title>
+</head>
+<body>
+   <h1> Javascript language basics </h1>
+</body>
+<script src="./index.js"></script>
+</html>   
+```
+
+
+
