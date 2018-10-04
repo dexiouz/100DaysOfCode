@@ -1295,5 +1295,42 @@ The best practice is to use a separate file for your javascript and import it to
 </html>   
 ```
 
+###Day44
+**Focus:** Data types and variables
+Vaariables are a fundamental aspect of every programming language. They are better seen as containers which we use to store values in order to use them over and over again in our code.
+
+Here's how to declare a variable in javascript
+
+let name = 'John'; 
+console.log(name) // John 
+
+Here's another one
+
+let otherName = 'Paul'
+console.log(otherName) // Paul
+
+and another one ,
+
+let age = 16,
+console.log(age) //16
+
+
+Notice that the values assigned to the name and otherName has a quotation mark but not in the value for age. True that's a case for data types. There are different types of data types.
+
+There are five primitive data types. Primitives maeans that they are not objects, not having a key-value pair. here they are
+- Number: floating point numbers, for decimals and integers
+-String: sequence of characters used for text, usually wrapped in a quotation mark.
+-Boolean: Logical data type that can only be true or false
+-undefined: Data ttype of a variable which do not have a value yet
+null: Also means, non-existent.
+
+
+Dynamic typing in javascript means that you do not have to manually define the data type of a variable, javascript figures out the data type of a variable on its own.
+
+Another example
+
+let fullAge = true
+console.log(fullAge)
+
 
 
