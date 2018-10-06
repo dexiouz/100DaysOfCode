@@ -16,4 +16,4 @@ function reverse(sentence){
 }
 reverse('Eve damned Eden, mad Eve')
 // reverse('Lon nol') //false 'Eve damned Eden, mad Eve is not a palindrome'
-// reverse('Sore was I ere I saw Eros')  
+// reverse('Sore was I ere I saw Eros')
