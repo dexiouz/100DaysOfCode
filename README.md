@@ -1333,4 +1333,61 @@ let fullAge = true
 console.log(fullAge)
 
 
+###Day46
+###Variable mutation and type coercion
+N.B:  All javascript codes are executed using node.   
+There are two ways to add comments on javascript,
+the first is single line code like this 
+//hello
+the second is multiline like this
+/* put your code here*/
 
+Dynamic typing in javascript means that you do not have to manually define the data type of a variable, javascript figures out the data type of a variable on its own.
+
+With this in mind, consider this code
+```js
+let name = 'chidera'
+let age ='13'
+
+console.log(name + age) // chidera13
+
+//we can also declare variables and not aasign them a value yet
+let  isMarried,gender
+```
+Notice that the two data types have been merged to one data, string data type. Its called type coersion and thaat means that javascsript converts some data types to another when it needs it.
+
+Here's how wwe can define different variables and not assign them any value,
+
+Since we did not assign it any value, by default its value is the data type undefined.
+
+See where type coercion is also at work, recall the variables we declared, lets use them here
+```js
+gender = 'male', isMarried = false
+console.log ( name + ' is a ' + age + ' years old. ' + gender + ' .is he married?' + isMarried) //chidera is a 13 years old. male .is he married? false
+```
+
+Here's how we can use javascript es6 literal strings  to write the same thing.
+```js
+console.log(${name}  is a  ${age} years old.  ${gender}.  is he married? ${isMarried})
+```
+We'll be using the literal string as much as possible.
+
+Changing the value of a variable is called variable mutation.
+lets change the value for name, here we won't use the let or const because they are used for declaring a variable.
+```js
+let name = 'chidera'
+let age ='13'
+console.log( name, age ) //  chidera, 13
+
+name = 'Paul';
+age = 12
+console.log( name, age ) // Paul,12
+```
+javascript codes are run in sequence from line to line.
+Alert() is used for displaying something aside the console. It displays on the screen.
+
+###Operators
+Operator precedence in javascript defines which operators are executed first and which one are execued later. The BODMAS in mathemetics lets us catch a glimpse but obviously we have so a=many operators in javascript we may not know which one so here's at codingheroes.io/resources, scroll to the bottom and selet operator precedence table. There I found out that the higher the precedence value, the higher the priority.
+Here are some operators: =,+, -,/,(), ++, -+, etc
+The parenthesis has a high priority. 
+When two operators are used, their usage depends on whether they are executed from right to left or left to right.
