@@ -1,9 +1,9 @@
+// SENTENCE PALINDROME
 function reverse(sentence){
   let splitSentence = sentence.split(' ')
   let reversed = [];
   for (let i = splitSentence.length-1; i>=0; i--){
-      reversed.push(splitSentence[i])
-      // console.log(splitSentence[i]);
+      reversed.unshift(splitSentence[i])
   }
  
   if ( reversed.join(' ') === sentence ) {
@@ -11,8 +11,7 @@ function reverse(sentence){
   }else{
       console.log(false, `"${ sentence }" is not a palindrome`)
   }
-  console.log(sentence) // Eve damned Eden, mad Eve
-  console.log(reversed.join(' '));// Eve mad Eden, damned Eve
+  console.log(reversed.join(' '));// Eve damned Eden, mad Eve
 }
 reverse('Eve damned Eden, mad Eve')
 // reverse('Lon nol') //false 'Eve damned Eden, mad Eve is not a palindrome'

@@ -1280,7 +1280,7 @@ Pressing F12 or ctrl+shift+C or right clicking in your browser and selecting ins
 As soon as a menu comes up, select at the top "console" and you'll see Hello world.     
 
 The best practice is to use a separate file for your javascript and import it to your html file, something like this:
-```html
+```html 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1391,3 +1391,130 @@ Operator precedence in javascript defines which operators are executed first and
 Here are some operators: =,+, -,/,(), ++, -+, etc
 The parenthesis has a high priority. 
 When two operators are used, their usage depends on whether they are executed from right to left or left to right.
+
+
+###Day50
+Finally got the algorithm for sentence palindrome. The previous error was that  I was using array.push instead of array.unshift.
+```js
+  // SENTENCE PALINDROME
+function reverse(sentence){
+  let splitSentence = sentence.split(' ')
+  let reversed = [];
+  for (let i = splitSentence.length-1; i>=0; i--){
+      reversed.unshift(splitSentence[i])
+  }
+ 
+  if ( reversed.join(' ') === sentence ) {
+      console.log(true, `"${ sentence }" is a palindrome`)
+  }else{
+      console.log(false, `"${ sentence }" is not a palindrome`)
+  }
+  console.log(reversed.join(' '));// Eve damned Eden, mad Eve
+}
+reverse('Eve damned Eden, mad Eve')
+// reverse('Lon nol') //false 'Eve damned Eden, mad Eve is not a palindrome'
+// reverse('Sore was I ere I saw Eros')
+```
+
+###Day51 
+Conditional Operators
+A good example of a conditional operator is the "if else" statement. It receives a condition, evaluates it and returns a true or false value; The first part of the if statements has to meet the condition, if it doesn't then the next part "else if" has to meet the condition, if it doesn't, there can be many "else if" statements, before the final "else" statement
+for example
+
+```js
+  let myAge = 13;
+    if( myAge == 13){ //first check
+      alert("correct ") 
+    }else if ( myAge == 11){ //second check
+      alert('no you are wrong')
+    }else if ( myAge == 10){ //third check
+      alert( 'I said you are wrong' )
+    }else{                    //last check
+      alert( 'Am done with you' )
+    }
+```
+
+Ternary Operator
+I think the ternary operator is a simplified if else statement. As the name implies, it takes at least three operators. It too accepts a condition, evaluates it and returns a true or false value;
+
+```js
+let myAge = prompt( 'how old are you' )
+let result = myAge == 13 ? alert( "correct " ) 
+            :  myAge == 11 ?  alert( 'I said you are wrong' ) 
+            : myAge == 10 ? alert( 'I said you are wrong' ) 
+            : alert( 'Am done with you' )
+```
+We have basicaly done the same thing.
+
+Logical operators
+The logical operators are boolean fundamentally although they can be applied to non- boolean values. There are three logical operators in javascript.
+The ||OR. && AND and ! NOT operator
+ A basic example is 
+
+ ```js
+
+ let result = myAge || myAddress 
+
+ let anotherResult = myAge && myAddress
+
+ let finalResult = !myAge
+
+//  In summary here's how the operators return values
+
+//  OR || seeks for truthy values, that is it returns true if and only if any of the value is true
+
+ alert( true || true ) // true
+ alert ( true || false ) //true
+ alert ( false || true ) //true
+ alert ( false || false ) //false
+
+//  AND && seeks for falsy values, that is it returns false if and only if any of the values is false
+
+  alert ( false|| false ) //false
+  alert ( false|| true ) //false
+  alert ( true || false ) //false
+  alert ( true || true ) //true
+
+  // !NOT operator negates the values. It on its own does two things:
+  // 1) Converts the operand to boolean type: true/false.
+  // 2) Returns an inverse value --javascript.info
+  alert( !true ) //false
+  alert( !0 ) //true
+
+
+  // Here's a live example
+
+  let myAge = 13
+  if( myAge == 13 ){
+    console.log( 'Correct' )
+  }else if( myAge >= 13 && myAge < 30 ){ //checks for the boolean value of individual conditions and performs AND operation on it.
+    console.log( 'You are a young man' )
+  }else if( myAge < 13 || myAge > 45 ){ //checks for the boolean value of individual conditions and performs OR operation on it.
+    console.log( 'You are not among us' )
+  }else {
+    console.log( 'Just check some other time' )
+  }
+ ```
+
+ THE SWITCH STATEMENT
+ Sometimes writing plenty if else statements can make our work very cumbersome so there is where the switch statement comes in, it is something like this. Recall our first if statement? lets write it with a switch statement;
+ ```js
+ let myAge = prompt( 'how old are you' )
+
+switch( myAge ){
+  case 13:
+    console.log("correct ");
+    break;
+  case 11:
+    console.log('no you are wrong');
+    break;
+  case 10:
+    console.log( 'I said you are wrong' );
+    break;
+  default:
+     console.log( 'Am done with you' );
+}
+  ```
+  Thats it for today guys
+
+  **Link to work**: [medium]('https://medium.com/@dexiouz/day51-0f-100daysofcode-fd52e7b10ca6')
