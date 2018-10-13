@@ -2077,7 +2077,7 @@ Names.forEach( function( eachName ) {
 // Chidera is worthy
 
 // forEach using es6
-Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
+Names.forEach(( eachName ) => console.log( `${eachName} is worthy` ) )
 // Paul is worthy
 // Chidera is worthy
 // John is worthy
@@ -2085,4 +2085,83 @@ Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
 // Gideon is worthy
 // Chidera is worthy
 ```
-One thing to note is that forEach() doers not return a value. This happens to be the major difference between forEach and map.
+One thing to note is that forEach() does not return a value. This happens to be the major difference between forEach and map.
+
+#Array.every()
+This array method takes a condition and returns true if all the elements of the array meets the condition. 
+```js
+let evenNumbers = [2,4,6,8]
+let isEven = evenNumbers.every(function( numbers ){
+  numbers % 2 == 0
+})
+
+console.log( isEven )  //true  ---- ---because all of the elements is even
+
+// Lets do something else
+
+let notEvenNumbers = [2,4,6,8,9]
+let isNotEven = notEvenNumbers.every(( numbers ) => numbers % 2 == 0 )
+console.log( isNotEven ) //false   ---because one of the elements is not even
+```
+
+#Array.some()
+This method returns true if at least one of the elements meets the condition
+```js
+let notEvenNumbers = [3,5,7,8,9]
+let isNotEven = notEvenNumbers.some(( numbers ) => numbers % 2 == 0 )
+console.log( isNotEven ) //true  ---because one of the elements is  even
+```
+
+
+#Array.map()
+This array method takes a function and executes it on every element of the array. It returns a new array with the new elements.
+```js
+let numbers = [1,2,3,4,5,6]
+let doubleNumbers = numbers.map(( eachNumber ) => eachNumber * 4)
+console.log( doubleNumbers ) //[ 4, 8, 12, 16, 20, 24 ]
+console.log( numbers ) //[ 1, 2, 3, 4, 5, 6 ]   
+```
+
+#Array.filter()
+This method returns a new array of the elements that meets the specified condition of the callback function.
+```js
+let numbers = [1,2,3,4,5,6]
+let numbersGreaterThanThree = numbers.filter(( eachNumber ) => eachNumber > 3 )
+console.log( numbersGreaterThanThree ) //[ 4, 5, 6 ]
+console.log( numbers ) //[ 1, 2, 3, 4, 5, 6 ] 
+```  
+
+#Array.reduce()
+As the name implies, this method takes the elements of an array and tries to reduce them into a single value.
+```js
+array.reduce(( latestValue, newValue) => {
+  return latestValue + newValue
+}, startingValue);
+```
+
+So lets add up some numbers
+```js
+let numbers = [1,2,3,4,5,6]
+
+let sumNumbers = numbers.reduce(( latestValue, newValue) => {
+  return latestValue + newValue
+},0)
+console.log( sumNumbers ) // 21
+
+// P.S: latestValue and newValue are variable names and so can be changed. Could have been a,b etc
+```
+We got a sum of 21. Note that our starting value is set to 0. What happens when we set it to 4 or 5.
+Lets see what we get. We'll also change the parameter names.
+
+```js
+let numbers = [1,2,3,4,5,6]
+
+let sumNumbers = numbers.reduce(( a,b ) => {
+  return a + b
+},4)
+console.log( sumNumbers ) // 25
+```
+Here we started at 4 and summed up everything. 
+
+AND THATS IT FOR ARRAY METHODS.
+GIVE A CLAP GUYS!

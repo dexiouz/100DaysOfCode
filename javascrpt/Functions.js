@@ -156,7 +156,47 @@ let p = oddNumbers.forEach(function(item){
 
 // forEach using es5
 Names.forEach( function( eachName ) {
-  console.log( eachName + " is worthy" )
+  // console.log( eachName + " is worthy" )
 })
 
-Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
+// Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
+
+// array.every()
+// let evenNumbers = [2,4,6,8]
+// let isEven = evenNumbers.every(function( numbers ){
+//   numbers % 2 == 0
+// })
+
+// console.log( isEven )  //true  ---- ---because all of the elements is even
+
+// Lets do something else
+
+// let notEvenNumbers = [2,4,6,8,9]
+// let isNotEven = notEvenNumbers.every(( numbers ) => numbers % 2 == 0 )
+// console.log( isNotEven ) //false   ---because one of the elements is not even
+
+// Array.some()
+let notEvenNumbers = [3,5,7,8,9]
+let isNotEven = notEvenNumbers.some(( numbers ) => numbers % 2 == 0 )
+// console.log( isNotEven ) //fatrue  ---because one of the elements is  even
+
+let oddNumber = [3,5,7,11,9]
+let isOdd = oddNumber.some(( numbers ) => numbers % 2 == 0 )
+// console.log( isOdd) //fatrue  ---because one of the elements is  even
+
+// Array.map()
+let doubleNumbers = numbers.map(( eachNumber ) => eachNumber * 4)
+// console.log( doubleNumbers ) //[ 4, 8, 12, 16, 20, 24 ]
+// console.log( numbers ) //[ 1, 2, 3, 4, 5, 6 ]
+
+//array.filter()
+let numbersGreaterThanThree = numbers.filter(( eachNumber ) => eachNumber > 3 )
+// console.log( numbersGreaterThanThree ) //[ 4, 5, 6 ]
+// console.log( numbers ) //[ 1, 2, 3, 4, 5, 6 ] 
+
+// Array.reduce()
+
+let sumNumbers = numbers.reduce(( latestValue, newValue) => {
+  return latestValue + newValue
+},4)
+console.log( sumNumbers )
