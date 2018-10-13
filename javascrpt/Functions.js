@@ -122,14 +122,21 @@ let theirCombination = scienceSubjects.concat( artSubjects, 'programming', 'prob
 
 let numbers = [1,2,3,4,5,6]
 let sliceNumbers = numbers.slice( 0, 4 );
-console.log( sliceNumbers )
-console.log( numbers )
+// console.log( sliceNumbers )
+// console.log( numbers )
 
 
 // Array.join()
 let evenNumbers = [2,4,6,8]
 let joinNubers = evenNumbers.join()
-console.log( joinNubers )    //2,4,6,8
+// console.log( joinNubers )    //2,4,6,8
 
 let joinNumbers2 = evenNumbers.join(' ') 
-console.log( joinNumbers2 ) //2 4 6 8
+// console.log( joinNumbers2 ) //2 4 6 8
+
+// Array.indexOf()
+let newNames = ['Paul', 'John', 'Chidera', 'Peter', 'Gideon']
+let index = newNames.indexOf('Chidera');
+// console.log(index)
+
+console.log([ 3, 4, 17,3,3, 1, 4 ].lastIndexOf(3))

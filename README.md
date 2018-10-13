@@ -2041,3 +2041,13 @@ let joinNumbers2 = evenNumbers.join(' ')
 console.log( joinNumbers2 )  //2 4 6 8             ------Notice that what separates the numbers is now spaces
 ```
 Anything can be used as a separator.
+
+#Array.indexOf()
+If you want to know the index of an element in array, this method id just the big shot.
+lets find the index of chidera in this array
+```js
+let newNames = ['Paul', 'John', 'Chidera', 'Peter', 'Gideon']
+let index = newNames.indexOf('Chidera');
+console.log(index)  //2     
+```
+Indeed, Chidera is at index 2.
