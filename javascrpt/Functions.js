@@ -136,7 +136,9 @@ let joinNumbers2 = evenNumbers.join(' ')
 
 // Array.indexOf()
 let newNames = ['Paul', 'John', 'Chidera', 'Peter', 'Gideon']
-let index = newNames.indexOf('Chidera');
+// let index = newNames.indexOf('Chidera');
 // console.log(index)
 
-console.log([ 3, 4, 17,3,3, 1, 4 ].lastIndexOf(3))
+let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera']
+let index = Names.lastIndexOf('Chidera');
+console.log(index)

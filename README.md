@@ -2042,8 +2042,8 @@ console.log( joinNumbers2 )  //2 4 6 8             ------Notice that what separa
 ```
 Anything can be used as a separator.
 
-#Array.indexOf()
-If you want to know the index of an element in array, this method id just the big shot.
+#Array.indexOf( arrayElement, startFromIndex )
+If you want to know the index of an element in array, this method is just the big shot. If startIndex is specified, it starts from there else it searches the whole array.
 lets find the index of chidera in this array
 ```js
 let newNames = ['Paul', 'John', 'Chidera', 'Peter', 'Gideon']
@@ -2051,3 +2051,12 @@ let index = newNames.indexOf('Chidera');
 console.log(index)  //2     
 ```
 Indeed, Chidera is at index 2.
+
+
+#Array.lastIndexOf( arrayElement, startFromIndex )
+This method finds the index of the last occurence of an element. It searches backwards.  If startIndex is specified, it starts from there else it searches the whole array. 
+```js
+let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera','Shalom']
+let index = Names.lastIndexOf('Chidera');
+console.log(index) //5 Clearly the last index where chidera can be found is at index 5  
+```
