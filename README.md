@@ -1794,14 +1794,17 @@ console.log( 1 in names ) // true
 console.log( 8 in names ) //false
 ```
 
+Day53
 #Array Methods
 Remember when we talked about functions here.
 Now there are certain functions which are specific to arrays. We call them array methods.
 Lets take a look at them.
+We will group these array methods into two categories, the ones that  mutate the array, that is change the array that they were called upon  and the ones that do not mutate the array, these group usually return a new array.
 ```js
 
 ```
-Array Methods that add and remove elements
+###Array Methods that add and remove elements
+##Mutating Array Methods
 #Array.push()
 This methods is used to add an element at the end of an array. It increases the length of the array.
 You can add as many elements as you want by separating them by a comma
@@ -1820,7 +1823,7 @@ arrays.unshift('a', 'b' )
 console.log(arrays) // ['a', 'b', 1,2,3,4,5,6]
 ```
 
-#Array.pop
+#Array.pop()
 Unlike the other two methods,the array.pop() removes the element at the end of the array and it does not take in a value.
 It reduces the length of the array and can also return the removed array if the pop was stored in a variable.
 ```js
@@ -1833,7 +1836,7 @@ console.log(arrays) // [ 1,2,3,4,5,]
 console.log( removedElement ) // 6
 ```
 
-#Array.shift
+#Array.shift()
 Like the array.pop() it does not take in a value. What it does is that it removes the element at the beginning of the array. It reduces the length of the array and can also return the removed array if the pop was stored in a variable.
 
 ```js
@@ -1845,3 +1848,130 @@ console.log(arrays) // [ ,2,3,4,5,6]
 
 console.log( removedElement ) // 1
 ```
+
+#Array.splice()
+This array method does two things, first it can delete an element(s) from an array and it can insert new element(s) in the array. Here's the syntax. 
+```js
+array.splice( startFromThisIndex, removeThisNumberOfElements, addThisElement, addThisElement,...)
+```
+#startFromThisIndex: 
+When the splice is called, you specify an index where it should start removing items
+#removeThisNumberOfElements:
+After specifying where it should start, you specify HOW MANY NUMBER OF ELEMENTS SHOULD BE REMOVED. For instance starting from index 0, remove 4 items from the array.
+#addThisElement:
+In place of the removed elements, add this element(s).
+ Lets give an instance and say we want to remove Paul and John from the names array and replace them with Michael and Gideon.
+ ```js
+ let names = ['Chidera', 'Paul', 'John', 'Emmanuel']
+ ```
+To remove Paul and John, we have to start from index 1 because Paul the first name is at index 1.
+Next we say, from that index, remove 2 items.These two items includes Paul and John.
+After removing two items which are Paul and John, add Michael and Gideon.
+
+Recall the syntax
+```js
+array.splice( startFromThisIndex, removeThisNumberOfElements, addThisElement, addThisElement,...)
+// which is a way of saying
+ array.splice( startFromIndexOfPaul, removeTwoElementsWhichIsPaulAndJohn, addMichael, addGideon,...)
+```
+we apply it in our names array
+
+```js
+names.splice( 1, 2, 'Michael', 'Gideon')
+console.log( names ) // [ 'Chidera', 'Michael', 'Gideon', 'Emmanuel' ]
+```
+
+However, when you specify only the start position, it removes all the elements from that start position.
+For instance
+```js
+let fruits = ['orange', 'pear', 'mango','pineapple']
+fruits.splice( 1 )
+console.log( fruits ) // [ 'orange' ]
+
+//We started from index 1 which is pear and removed all the other elements
+```
+
+What if we want to add an element but we do not want to delete any element.
+Lets say, from the fruits array, we want to add banana immediately after orange so that our array will be something like this
+```js
+let addFruits = ['orange', 'pear', 'mango','pineapple']
+```
+Here's what we can do
+
+```js 
+let addFruits = ['orange', 'pear', 'mango','pineapple']
+addFruits.splice( 1, 0, 'banana' )
+console.log( addFruits ) //[ 'orange', 'banana', 'pear', 'mango', 'pineapple' ]
+```
+Wow, so what did we do, this is it:
+We started at index 1, removed zero (0) item and added banana. Thats all. 
+
+
+P.S: Notice that this array method mutates or changes the original array. So be careful when using it.
+
+#Array.reverse()
+The reverse method changes the order of the array elements. The first element becomes the last and so on. It also changes the original array.
+```js
+let reverseFruits = ['orange', 'pear', 'mango','pineapple']
+ reverseFruits.reverse() //[ 'pineapple', 'mango', 'pear', 'orange' ]
+```
+
+#Array.sort()
+The sort method sorts the elements of an array in place and returns the array.---MDN
+For simple data types, it sorts the elements alphabetically. An example
+```js
+ let sortFruits = ['orange', 'pear', 'mango','pineapple']
+ sortFruits.sort()
+ console.log( sortFruits ) //[ 'mango', 'orange', 'pear', 'pineapple' ]
+```
+Notice that the fruits are sorted in ascending and alphabetical order and casting the elements as strings.
+
+The sort method takes a function called the compare function which specifies the sort order.
+COnsider the numbers 
+```js
+ let sortNumbers = [9,37,6,50,1]
+ sortNumbers.sort()
+ console.log(  sortNumbers ) //[ 1, 37, 50, 6, 9 ]
+ ```
+ Did you notice anything odd? wwell, I did. By default sorting the numbers in alphabetical order, the method is saying that the numbers 37 and 50 are less than the numbers 6 and 9. Horrible! So horrible! To combaat this, we use callback functions or specifically called compare functions to specify to the sort method how the sorting should be done.
+
+The compare function
+The compare function takes two arguments say a and b. 
+Here are the rules
+
+1) Return 1 if a should come first
+2) Return -1 if b should come first
+3) Return 0 if either a or b should come first.
+
+Now lets sort the numbers again in ascending order
+```js
+let sortNumbersInAscending = [9,37,6,50,1]
+sortNumbersInAscending.sort((a,b) => {
+   if ( a > b){
+     return 1      //that is, a should come first
+   }else if ( b > a ) {
+     return -1     // that is b should come first
+   }else{
+     return 0       // either a or b should come first
+   }
+ })
+ console.log( sortNumbersInAscending )   //[ 1, 6, 9, 37, 50 ]
+```
+Lets sort in descending order
+```js
+   let sortNumbersInDescending = [9,37,6,50,1]
+ sortNumbersInDescending.sort(( a, b ) => {
+   if( a > b ){
+     return -1          // b, the smaller one  should come first
+   }else if( b > a ){
+     return 1            // a, the smaller one should come first
+   }else{
+     return 0            // any one should come first
+   }
+ })
+ console.log( sortNumbersInDescending )  //[ 50, 37, 9, 6, 1 ]
+```
+
+
+
+

@@ -44,10 +44,64 @@ let numbers = [1,2,3,4,5,6]
 
 
 // let numbers = [1,2,3,4,5,6]
-console.log(numbers)
+// console.log(numbers)
 
 
-let k = numbers.shift()
+// let k = numbers.shift()
 
-console.log(numbers)
-console.log(k)
+// console.log(numbers)
+// console.log(k)
+
+// array.splice()
+let names = ['Chidera', 'Paul', 'John', 'Emmanuel']
+names.splice( 1, 2, 'Michael', 'Gideon')
+// console.log(names) //[ 'Chidera', 'Michael', 'Gideon', 'Emmanuel' ]
+
+// declaring only the first parameter
+let fruits = ['orange', 'pear', 'mango','pineapple']
+fruits.splice( 1 )
+// console.log( fruits ) // [ 'orange' ]
+
+// Adding an item but do not want to remove
+let addFruits = ['orange', 'pear', 'mango','pineapple']
+addFruits.splice( 1,0, 'banana' )
+// console.log( addFruits ) //[ 'orange', 'banana', 'pear', 'mango', 'pineapple' ]
+
+// Array.reverse()
+let reverseFruits = ['orange', 'pear', 'mango','pineapple']
+ reverseFruits.reverse()
+//  console.log(reverseFruits) //[ 'pineapple', 'mango', 'pear', 'orange' ]
+
+ //array.sort()
+ let sortFruits = ['orange', 'pear', 'mango','pineapple']
+ sortFruits.sort()
+ console.log( sortFruits ) //[ 'mango', 'orange', 'pear', 'pineapple' ]
+
+//  let sortNumbers = [9,37,6,50,1]
+//  sortNumbers.sort()
+//  console.log(  sortNumbers )
+
+// sort with compare function
+let sortNumbersInAscending = [9,37,6,50,1]
+sortNumbersInAscending.sort((a,b) => {
+   if ( a > b){
+     return 1      //that is, a should come first
+   }else if ( b > a ) {
+     return -1     // that is b should come first
+   }else{
+     return 0       // either a or b should come first
+   }
+ })
+ console.log( sortNumbersInAscending )
+
+ let sortNumbersInDescending = [9,37,6,50,1]
+ sortNumbersInDescending.sort(( a, b ) => {
+   if( a > b ){
+     return -1          // b, the smaller one  should come first
+   }else if( b > a ){
+     return 1            // a, the smaller one should come first
+   }else{
+     return 0            // any one should come first
+   }
+ })
+ console.log( sortNumbersInDescending )  //[ 50, 37, 9, 6, 1 ]
