@@ -2060,3 +2060,29 @@ let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera','Shalom']
 let index = Names.lastIndexOf('Chidera');
 console.log(index) //5 Clearly the last index where chidera can be found is at index 5  
 ```
+#Array.forEach()
+This method loops through all the elements of an array and executes a particular function once on each of the elements.
+```js
+let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera','Shalom']
+
+// forEach using es5
+Names.forEach( function( eachName ) {
+  console.log( eachName + " is worthy" )
+})
+// Paul is worthy
+// Chidera is worthy
+// John is worthy
+// Peter is worthy
+// Gideon is worthy
+// Chidera is worthy
+
+// forEach using es6
+Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
+// Paul is worthy
+// Chidera is worthy
+// John is worthy
+// Peter is worthy
+// Gideon is worthy
+// Chidera is worthy
+```
+One thing to note is that forEach() doers not return a value. This happens to be the major difference between forEach and map.

@@ -139,6 +139,24 @@ let newNames = ['Paul', 'John', 'Chidera', 'Peter', 'Gideon']
 // let index = newNames.indexOf('Chidera');
 // console.log(index)
 
+// Array.lastIndexOf()
 let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera']
 let index = Names.lastIndexOf('Chidera');
-console.log(index)
+// console.log(index)
+
+// Array.forEach()
+let oddNumbers = [1,3,5,7,9];
+let p = oddNumbers.forEach(function(item){
+  // console.log(item*2)
+})
+
+// oddNumbers.forEach((item)=> console.log(item*2))
+
+// let Names = ['Paul','Chidera','John',  'Peter', 'Gideon','Chidera','Shalom']
+
+// forEach using es5
+Names.forEach( function( eachName ) {
+  console.log( eachName + " is worthy" )
+})
+
+Names.forEach(( eachName ) => console.log( eachName + " is worthy" ) )
