@@ -18,18 +18,23 @@ function reverse(sentence){
 // reverse('Lon nol') //false 'Eve damned Eden, mad Eve is not a palindrome'
 // reverse('Sore was I ere I saw Eros')  
 
-let myAge = 13 //prompt( 'how old are you' )
+ let myAge = 13 //prompt( 'how old are you' )
 
-switch( myAge ){
-  case 13:
-    console.log("correct ");
-    break;
-  case 11:
-    console.log('no you are wrong');
-    break;
-  case 10:
-    console.log( 'I said you are wrong' );
-    break;
-  default:
-     console.log( 'Am done with you' );
-}
+// switch( myAge ){
+//   case 13:
+//     console.log("correct ");
+//     break;
+//   case 11:
+//     console.log('no you are wrong');
+//     break;
+//   case 10:
+//     console.log( 'I said you are wrong' );
+//     break;
+//   default:
+//      console.log( 'Am done with you' );
+// }
+
+ myAge ==  13 ? console.log( "correct " ) 
+            :  myAge == 11 ? console.log( 'I said you are wrong' ) 
+            : myAge == 10 ? console.log( 'I said you are wrong' ) 
+            : console.log( 'Am done with you' )

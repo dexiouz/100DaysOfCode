@@ -53,7 +53,7 @@ When you shouldn't use arrow functions:
 ###Day6 August 21 Tuesday
 **Today's work**:Worked with the  New string methods of ES6. They are **.startsWith(), .endsWith(), .includes(), .repeat()**
 Dived into **Destructuring objects and arrays and functions**;
-In destructuring, curly brackets are used whenn you destructure from an object but normal braces are used when you destructure from an array.
+In destructuring, curly brackets are used when you destructure from an object but normal braces are used when you destructure from an array.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day7 August 22 Wedneday
@@ -1300,19 +1300,20 @@ The best practice is to use a separate file for your javascript and import it to
 Vaariables are a fundamental aspect of every programming language. They are better seen as containers which we use to store values in order to use them over and over again in our code.
 
 Here's how to declare a variable in javascript
-
+```js
 let name = 'John'; 
 console.log(name) // John 
 
-Here's another one
+// Here's another one
 
 let otherName = 'Paul'
 console.log(otherName) // Paul
 
-and another one ,
+// and another one ,
 
 let age = 16,
 console.log(age) //16
+```
 
 
 Notice that the values assigned to the name and otherName has a quotation mark but not in the value for age. True that's a case for data types. There are different types of data types.
@@ -1328,10 +1329,10 @@ null: Also means, non-existent.
 Dynamic typing in javascript means that you do not have to manually define the data type of a variable, javascript figures out the data type of a variable on its own.
 
 Another example
-
+```js
 let fullAge = true
 console.log(fullAge)
-
+```
 
 ###Day46
 ###Variable mutation and type coercion
@@ -1423,6 +1424,8 @@ for example
 
 ```js
   let myAge = 13;
+  let profession = "software developer"
+
     if( myAge == 13){ //first check
       alert("correct ") 
     }else if ( myAge == 11){ //second check
@@ -1432,14 +1435,26 @@ for example
     }else{                    //last check
       alert( 'Am done with you' )
     }
+   
+   "my age is " + myAge + "my profession is "+ profession;
+
+   `my age is ${myAge} my profession is ${profession}`
+
+   function sayHi(){
+     alert('hi')
+   }
+
+   sayHi =() => alert('hi')
 ```
 
-Ternary Operator
+####Ternary Operator
 I think the ternary operator is a simplified if else statement. As the name implies, it takes at least three operators. It too accepts a condition, evaluates it and returns a true or false value;
 
 ```js
 let myAge = prompt( 'how old are you' )
-let result = myAge == 13 ? alert( "correct " ) 
+let result =
+
+myAge == 13 ? alert( "correct " ) 
             :  myAge == 11 ?  alert( 'I said you are wrong' ) 
             : myAge == 10 ? alert( 'I said you are wrong' ) 
             : alert( 'Am done with you' )
@@ -1473,7 +1488,7 @@ The ||OR. && AND and ! NOT operator
   alert ( false|| false ) //false
   alert ( false|| true ) //false
   alert ( true || false ) //false
-  alert ( true || true ) //true
+  alert ( true || true ) //truehttps://gist.github.com/dexiouz/b2161558f19ff40e7a71b668fbbf7480
 
   // !NOT operator negates the values. It on its own does two things:
   // 1) Converts the operand to boolean type: true/false.
@@ -1518,3 +1533,315 @@ switch( myAge ){
   Thats it for today guys
 
   **Link to work**: [medium]('https://medium.com/@dexiouz/day51-0f-100daysofcode-fd52e7b10ca6')
+
+  ###Day52
+  Functions
+  Functions are the building blocks of programming languages. They are a group of lines of code that performs a particular thing. They can be called anywhere to do that particular thing. Functions may receive input externally, process the input and generate a result based on that input. In order not to repeat yourself that is, your codes, it is good to use functions.
+
+  Suppose we want to calculate someone's year of birth, we have to do something like this:
+  ```js
+  let name = 'Chidera'
+  let currentYear = 2018;
+  let age = 13
+  let yearOfBirth = current year - age // 2015
+
+  // Lets calculate another person's year of birth
+
+  let name = 'Paul'
+  let currentYear = 2018;  
+  let age = 18
+  let yearOfBirth = current year - age // 2000
+  
+   // Lets calculate a third  person's year of birth
+
+  let name = 'John'
+  let currentYear = 2018;
+  let age = 8
+  let yearOfBirth = current year - age // 2010
+
+  ```
+  Notice that we have been repeating the same four lines of codes for every individual. Now suppose we want to calculate the year of birth for a hundred persons, it means we have to repeat the same four lines of code hundred times. Ouchhhh!!! horrible, this is where functions comes in , see , lets create our function 
+
+  ###Function declaration
+This is used in creating a new function, here's the function syntax
+```js
+  function functionName( arguments ) {
+    //body of the function, that is, what the function should do
+  }
+
+  // When we want to use this function we just call it like this
+
+  functionName( arguments ) // note that the arguments are not aleays compulsry,
+  
+  // we can something like this to show that arguments are not compulsory
+
+  function newFunction() {
+    // body of the function e.g 
+    alert('hi')
+  }
+
+  // lets call the function
+  newFunction() //notice here we didn't use arguments
+```
+
+Now lets create a function that calculates a person's year of birth provided we know the person's name, current year and the person's age, lets do it:
+```js
+function calculateYearOfBirth( name, currentYear, age ) { //here will receive the person's name, current year and age in that order
+  let yearOfBirth = currentYear - age; // here will calculate the year of birth
+  console.log(`${name} your year of birth is ${yearOfBirth}` ); 
+}
+
+
+// Now the sweet part lets calculate the year of birth of  Chidera, Paul and John, to do this, we only need to call the function and pass in the name, current year and age in that order.
+
+calculateYearOfBirth('Chidera', 2018, 13 ); // Chidera your year of birth is 2005
+calculateYearOfBirth('Paul', 2018, 18 ); //Paul your year of birth is 2000
+calculateYearOfBirth('John', 2018, 8 ) // Chidera your year of birth is 2010
+```
+
+SO you see how simple it is to create and use a function, always use functions for codes you repeat.
+
+#Local Variables
+Local variables are variables created inside a function, and they are only visible to that function. Outside of that function, no other thhing can use them , they become invisible, for insatance:
+```js
+ function aNewFunction() {
+  let age = 18;
+  console.log( age ) 
+}
+aNewFunction()  // 18 ; the variable age is visible inside the function
+
+// Now lets call the age outside of the function
+console.log( age )  // ReferenceError: age is not defined
+```
+
+Global variables
+Although the variables declared within a function is not accessible outside the function, however, a function can have access to any variable declared outside of it. This is true provided Such variables are not declared inside another function.
+```js
+let age = 18
+
+function anotherFunction() {
+  console.log( age )
+}
+anotherFunction() // 18
+
+// our function was able to access a variable declared outside of it.
+// But consider this scenario
+
+function aSecondFunction() {
+  let myName = 'Chidera'
+}
+aSecondFunction()
+
+//  lets declare another function
+
+function aThirdFunction() {
+  console.log( myName ) 
+}
+
+aThirdFunction() //ReferenceError: myName is not defined
+
+```
+The myName variable declared inside the second function is not accessible in the third function.
+
+#Arguments
+Also called parameters are arbitrary values passed to functions. They represent incoming data, whatever we do with them in the function is what will be done to the incoming data they represent.
+Recall our calculateYearOfBirth( name, currentYear, age ) function? the parameters are "  name, currentYear, age ".
+
+#Default values
+These are values we expect our arguments to take if no value was passed in. Something like this, in our calculateYearOfBirth( name, currentYear, age ) we can set calculateYearOfBirth( name = " Person ", currentYear, age ). It means, if no name was provided, thn set the name as " Person ".
+
+#Function Expression
+Recall how we were writing our functions, its called function declaration. Now there's another method called function expression.
+```js
+// Function declaration syntax
+function newFunction() {
+  console.log( 'hello' )
+}
+newFunction() // hello
+
+
+// Function EXPRESSION syntax
+let newFunction = function() {
+  console.log( 'hello' )
+}
+
+newFunction() // hello
+
+Here the function is created and assigned to the variable explicitly
+```
+
+#The Return keyword
+Sometimes it is necesssary that our function returns some data back to the code that called it. 
+For instance
+```js
+let greeting = function( a,b ) {
+  return a*b
+}
+
+greeting( 2,3 ) //6
+```
+What happens is that after computation, the value 6 is returnes and stored in the function greeting.
+
+Naming functions
+Whether in using function declaration or function expression. It is very important to give to our functions names which are easy to understand and especially names which reflect what the function does. So if we have a function that calculates age, its name should be something like this;
+```js
+let ageCalculator = function(){
+  // body of the function
+}
+```
+***Day53***
+
+Before we delve into Arrays,
+
+#Difference between statements and function expression
+The major difference is that an expression produces a value/ outcome while a statement/declaration just performs an action.
+An example of an expression is something like this:
+```js
+let x = 3
+```
+See, x produces a value, that is, a value is stored in x.
+
+An example of statements is 
+```js
+if( x==3 ){
+  //do something
+}
+```
+Notice that nothing is stored or returned as result of the action thata was taken.
+
+##ARRAYS 
+Technically an array is a map from indices( natural numbers, starting from zero ) to arbitrary value----speaking javascript by Axel Rauschmayer.
+That's for the big boys.Lol
+Basically an array is a mother container (or variable ) that is used to store multiple children. Here the children are data types such as boolean, numbers, strings etc.
+
+Suppose we have a group of numbers viz; 1,2,3,4,5,6 and we want to store them in a variable, we could do something like this;
+```js
+let number1 = 1
+let number2 = 2
+let number3 = 3
+let number4 = 4 
+...etc
+```
+That's tedious storing all the numbers in various variables.However arrays allows us to store all of them in one variabe like this;
+```js
+let numbers = [1,2,3,4,5,6]
+```
+Hurray! You just declared your first array.
+You may be wondering how do we access each of the numbers, quite simple, we will talk about that in a bit.
+
+##Creating an array
+Using array literal 
+```js
+let arr = [] 
+// Notice that ararys are characterized by square brackets
+``` 
+Array constructor
+```js
+let arr = new Arr(4)
+```
+In the array constructor method we created an empty array of length 4. The length of an array is an array property that tells the number of elements in that array.
+
+##Array elements are stored, retrieved/accessed by index starting from 0.
+So the first element of an array is stored at index 0, the second element is at index 1, the third element is at index 2.
+Infact, mathematically , the nth position of an element of an array is stored at index n-1. Where n is a number.
+
+```js
+n = index(n-1);
+// that is
+element(n) = index( n-1 );
+```
+
+Consider this array;
+```js
+let names = ['John','Chidera','Mathew','Paul']
+```
+
+Each of the elements can be accessed via their index
+so calling
+```js
+names[ index ] // where index is a number
+``` 
+gives us the element at the specified index;
+
+
+
+
+Lets access the first element we do 
+```js
+elementAtPosition( 1 ) = index( 1 - 1);
+elementAtPosition( 1 ) = index( 0 );
+
+names[0] // "John"
+```
+// Lets acces the second element which is Chidera
+```js
+elementAtPosition( 2) = index( 2 - 1);
+elementAtPosition( 2 ) = index( 1 );
+
+// In summary
+names[1] // "chidera"
+names[2] //"mathew"
+names[3] //"Paul"
+``` 
+and so on
+
+#The "in" property
+The "in" returns a boolean if an "element  index" is present in array. 
+```js
+let names = ['John','Chidera','Mathew','Paul']
+
+console.log( 1 in names ) // true
+console.log( 8 in names ) //false
+```
+
+#Array Methods
+Remember when we talked about functions here.
+Now there are certain functions which are specific to arrays. We call them array methods.
+Lets take a look at them.
+```js
+
+```
+Array Methods that add and remove elements
+#Array.push()
+This methods is used to add an element at the end of an array. It increases the length of the array.
+You can add as many elements as you want by separating them by a comma
+```js
+let arrays = [1,2,3,4,5,6]
+arrays.push('a', 'b' )
+console.log(arrays) // [1,2,3,4,5,6, 'a', 'b' ]
+
+// Notice that the string has been added to the end of the array and returns a length of 7
+```
+#Array.unshift()
+This adds an element to the beginning of an array.It increases the array length
+```js
+let arrays = [1,2,3,4,5,6]
+arrays.unshift('a', 'b' )
+console.log(arrays) // ['a', 'b', 1,2,3,4,5,6]
+```
+
+#Array.pop
+Unlike the other two methods,the array.pop() removes the element at the end of the array and it does not take in a value.
+It reduces the length of the array and can also return the removed array if the pop was stored in a variable.
+```js
+let arrays = [1,2,3,4,5,6]
+
+let removedElement = arrays.pop()
+
+console.log(arrays) // [ 1,2,3,4,5,]
+
+console.log( removedElement ) // 6
+```
+
+#Array.shift
+Like the array.pop() it does not take in a value. What it does is that it removes the element at the beginning of the array. It reduces the length of the array and can also return the removed array if the pop was stored in a variable.
+
+```js
+let arrays = [1,2,3,4,5,6]
+
+let removedElement = arrays.shift()
+
+console.log(arrays) // [ ,2,3,4,5,6]
+
+console.log( removedElement ) // 1
+```
