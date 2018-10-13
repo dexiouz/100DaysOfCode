@@ -1794,7 +1794,7 @@ console.log( 1 in names ) // true
 console.log( 8 in names ) //false
 ```
 
-Day53
+###Day53
 #Array Methods
 Remember when we talked about functions here.
 Now there are certain functions which are specific to arrays. We call them array methods.
@@ -1818,7 +1818,7 @@ console.log(arrays) // [1,2,3,4,5,6, 'a', 'b' ]
 This adds an element to the beginning of an array.It increases the array length
 ```js
 let arrays = [1,2,3,4,5,6]
-arrays.unshift('a', 'b' )
+arrays.unshift( 'a', 'b' )
 console.log(arrays) // ['a', 'b', 1,2,3,4,5,6]
 ```
 
@@ -2003,9 +2003,9 @@ console.log( scienceSubjects ) //['Maths','Chemistry','Physics']; )
 We have a new array
 
 #Array.slice()
-Not array.splice() o. This is one is quite different.
+Not array.splice() o. This one is quite different.
 The slice method copies a portion of an array and returns it in a new array. The main array is never changed.The main array remains the same, unlike the splice method that changes/alters the main array.
-So how does it work. Very similar to the splice method, it takes two values, like this
+So how does it work. Very similar to the splice method, it takes two arguements, like this
 ```js
 array.slice( startFromThisIndex, copyThisNumberOfElements )
 ```
@@ -2025,4 +2025,19 @@ console.log( sliceNumbers ); // [,2,3,4]
 
 console.log( numbers ); // [1,2,3,4,5,6]
 ```
-We started from index 0 and copied 4 items. Those four items are numbers [1,2,3,4].
+We started from index 0 and copied 4 items. Those four items are numbers [1,2,3,4] and we saved them in a new variable called sliceNumber.
+
+#Array.join()
+This method applies the toString() property on all the array elements thereby converting them to strings. By default, it adds a comma in between the new string elements. Infact whatever is a given in the separator value is what will be added between the elements. The separator value added in the brackets that define the join methodd.
+```js
+let evenNumbers = [2,4,6,8]
+// without any separaator
+let joinNumbers1 = evenNumbers.join() 
+
+console.log( joinNumbers )  //2,4,6,8        -----the elements have been converted to strings. Notice the comma in between the elements.the numbers
+
+// with space as a separator 
+let joinNumbers2 = evenNumbers.join(' ') 
+console.log( joinNumbers2 )  //2 4 6 8             ------Notice that what separates the numbers is now spaces
+```
+Anything can be used as a separator.

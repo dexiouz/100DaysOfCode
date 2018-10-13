@@ -124,3 +124,12 @@ let numbers = [1,2,3,4,5,6]
 let sliceNumbers = numbers.slice( 0, 4 );
 console.log( sliceNumbers )
 console.log( numbers )
+
+
+// Array.join()
+let evenNumbers = [2,4,6,8]
+let joinNubers = evenNumbers.join()
+console.log( joinNubers )    //2,4,6,8
+
+let joinNumbers2 = evenNumbers.join(' ') 
+console.log( joinNumbers2 ) //2 4 6 8
