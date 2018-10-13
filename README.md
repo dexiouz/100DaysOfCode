@@ -2159,7 +2159,7 @@ let numbers = [1,2,3,4,5,6]
 let sumNumbers = numbers.reduce(( a,b ) => {
   return a + b
 },4)
-console.log( sumNumbers ) // 25
+console.log( sumNumbers ) // 25 is the new total
 ```
 Here we started at 4 and summed up everything. 
 
