@@ -29,7 +29,7 @@ function aThirdFunction() {
 
 // aThirdFunction() //ReferenceError: myName is not defined
 
-let numbers = [1,2,3,4,5,6]
+// let numbers = [1,2,3,4,5,6]
 
 // console.log( 1 in numbers ) 
 // console.log( 8 in numbers )
@@ -116,4 +116,11 @@ let skills = ['reading', 'coding']
 // lets concat
 
 let theirCombination = scienceSubjects.concat( artSubjects, 'programming', 'problem solving', skills )
-console.log( theirCombination  ) //[ 'Maths','Chemistry','Physics','commerce','fine art','account','programming','problem solving','reading','coding' ]
+// console.log( theirCombination  ) //[ 'Maths','Chemistry','Physics','commerce','fine art','account','programming','problem solving','reading','coding' ]
+
+// Array.slice()
+
+let numbers = [1,2,3,4,5,6]
+let sliceNumbers = numbers.slice( 0, 4 );
+console.log( sliceNumbers )
+console.log( numbers )

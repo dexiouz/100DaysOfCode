@@ -2002,4 +2002,27 @@ console.log( scienceSubjects ) //['Maths','Chemistry','Physics']; )
 ```
 We have a new array
 
+#Array.slice()
+Not array.splice() o. This is one is quite different.
+The slice method copies a portion of an array and returns it in a new array. The main array is never changed.The main array remains the same, unlike the splice method that changes/alters the main array.
+So how does it work. Very similar to the splice method, it takes two values, like this
+```js
+array.slice( startFromThisIndex, copyThisNumberOfElements )
+```
+Whats happening? 
 
+#startFromThisIndex:
+Starting from this index...
+#copyThisNumberOfElements:
+Copy this number of elements. Usually a value.
+
+```js
+let numbers = [1,2,3,4,5,6];
+
+let sliceNumbers = numbers.slice( 0, 4 );
+
+console.log( sliceNumbers ); // [,2,3,4]
+
+console.log( numbers ); // [1,2,3,4,5,6]
+```
+We started from index 0 and copied 4 items. Those four items are numbers [1,2,3,4].
