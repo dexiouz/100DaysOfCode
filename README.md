@@ -1800,11 +1800,10 @@ Remember when we talked about functions here.
 Now there are certain functions which are specific to arrays. We call them array methods.
 Lets take a look at them.
 We will group these array methods into two categories, the ones that  mutate the array, that is change the array that they were called upon  and the ones that do not mutate the array, these group usually return a new array.
-```js
 
-```
-###Array Methods that add and remove elements
 ##Mutating Array Methods
+
+###Array Methods that add and remove elements
 #Array.push()
 This methods is used to add an element at the end of an array. It increases the length of the array.
 You can add as many elements as you want by separating them by a comma
@@ -1918,30 +1917,37 @@ let reverseFruits = ['orange', 'pear', 'mango','pineapple']
 
 #Array.sort()
 The sort method sorts the elements of an array in place and returns the array.---MDN
+The method sort elements in ascending and alphabetical order and casting the elements as strings.
+
 For simple data types, it sorts the elements alphabetically. An example
 ```js
  let sortFruits = ['orange', 'pear', 'mango','pineapple']
  sortFruits.sort()
  console.log( sortFruits ) //[ 'mango', 'orange', 'pear', 'pineapple' ]
 ```
-Notice that the fruits are sorted in ascending and alphabetical order and casting the elements as strings.
-
-The sort method takes a function called the compare function which specifies the sort order.
-COnsider the numbers 
+Notice that the fruits are sorted in alphabetical order.
+But Consider the numbers to sort
 ```js
  let sortNumbers = [9,37,6,50,1]
  sortNumbers.sort()
  console.log(  sortNumbers ) //[ 1, 37, 50, 6, 9 ]
  ```
- Did you notice anything odd? wwell, I did. By default sorting the numbers in alphabetical order, the method is saying that the numbers 37 and 50 are less than the numbers 6 and 9. Horrible! So horrible! To combaat this, we use callback functions or specifically called compare functions to specify to the sort method how the sorting should be done.
+ Did you notice anything odd? wwell, I did. By default  the sort method sorts the numbers in alphabetical order. The method is saying that the numbers 37 and 50 are less than the numbers 6 and 9. Horrible! So horrible!
+  To combat this, we use callback functions or specifically called compare functions to specify to the sort method how the sorting should be done.
+
+
+The sort method takes a function called the compare function which specifies the sort order.
+
 
 The compare function
 The compare function takes two arguments say a and b. 
 Here are the rules
 
-1) Return 1 if a should come first
-2) Return -1 if b should come first
-3) Return 0 if either a or b should come first.
+In sorting two elemements a and b,
+
+1) If a should come first,  Return 1
+2) If b should come first,  Return -1
+3)If either a or b should come first,  Return 0 .
 
 Now lets sort the numbers again in ascending order
 ```js
@@ -1957,6 +1963,7 @@ sortNumbersInAscending.sort((a,b) => {
  })
  console.log( sortNumbersInAscending )   //[ 1, 6, 9, 37, 50 ]
 ```
+
 Lets sort in descending order
 ```js
    let sortNumbersInDescending = [9,37,6,50,1]
@@ -1971,7 +1978,28 @@ Lets sort in descending order
  })
  console.log( sortNumbersInDescending )  //[ 50, 37, 9, 6, 1 ]
 ```
+And thats all for the sort method.
 
+##Non-mutating Array Methods
+These are array methods that do not change the original array. Instead they return a new array.
 
+#Array.concat()
+Ever tried to combine two arrays? or add some elements to an array. Lok no further.
+The concat method takes an array and joins other arrays or elements to it.It returns a new array altogeether. The array where the concat was called is not changed. 
+
+```js
+let scienceSubjects = ['Maths','Chemistry','Physics'];
+let artSubjects = ['commerce', 'fine art', 'account'];
+let skills = ['reading', 'coding']
+
+lets concat
+
+let theirCombination = scienceSubjects.concat( artSubjects, 'programming', 'problem solving', skills );
+
+console.log( theirCombination  ) //[ 'Maths','Chemistry','Physics','commerce','fine art','account','programming','problem solving','reading','coding' ]
+
+console.log( scienceSubjects ) //['Maths','Chemistry','Physics']; )
+```
+We have a new array
 
 

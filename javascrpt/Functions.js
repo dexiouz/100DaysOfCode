@@ -75,7 +75,7 @@ let reverseFruits = ['orange', 'pear', 'mango','pineapple']
  //array.sort()
  let sortFruits = ['orange', 'pear', 'mango','pineapple']
  sortFruits.sort()
- console.log( sortFruits ) //[ 'mango', 'orange', 'pear', 'pineapple' ]
+//  console.log( sortFruits ) //[ 'mango', 'orange', 'pear', 'pineapple' ]
 
 //  let sortNumbers = [9,37,6,50,1]
 //  sortNumbers.sort()
@@ -92,7 +92,7 @@ sortNumbersInAscending.sort((a,b) => {
      return 0       // either a or b should come first
    }
  })
- console.log( sortNumbersInAscending )
+//  console.log( sortNumbersInAscending )
 
  let sortNumbersInDescending = [9,37,6,50,1]
  sortNumbersInDescending.sort(( a, b ) => {
@@ -104,4 +104,16 @@ sortNumbersInAscending.sort((a,b) => {
      return 0            // any one should come first
    }
  })
- console.log( sortNumbersInDescending )  //[ 50, 37, 9, 6, 1 ]
+//  console.log( sortNumbersInDescending )  //[ 50, 37, 9, 6, 1 ]
+
+
+//  Mutating array methods
+// Array.concat()
+let scienceSubjects = ['Maths','Chemistry','Physics'];
+let artSubjects = ['commerce', 'fine art', 'account'];
+let skills = ['reading', 'coding']
+
+// lets concat
+
+let theirCombination = scienceSubjects.concat( artSubjects, 'programming', 'problem solving', skills )
+console.log( theirCombination  ) //[ 'Maths','Chemistry','Physics','commerce','fine art','account','programming','problem solving','reading','coding' ]
