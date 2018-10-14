@@ -546,7 +546,7 @@ Take a look at this html file
     <hr>
   </article>
   ```
-  If we try to use first and last child pseudo classes to target p, we won't get it because <h2> and <hr>tags are now the first and last children respectively.
+  If we try to use first and last child pseudo classes to target p, we won't get it because ```html<h2> and <hr>```tags are now the first and last children respectively.
   Here we use the first or last of type because clearly the first p is the first of the p tag in the html
 
   article p:first-of-type {
