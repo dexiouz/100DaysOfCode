@@ -1794,7 +1794,7 @@ console.log( 1 in names ) // true
 console.log( 8 in names ) //false
 ```
 
-###Day53
+###Day54
 #Array Methods
 Remember when we talked about functions here.
 Now there are certain functions which are specific to arrays. We call them array methods.
@@ -2021,7 +2021,7 @@ let numbers = [1,2,3,4,5,6];
 
 let sliceNumbers = numbers.slice( 0, 4 );
 
-console.log( sliceNumbers ); // [,2,3,4]
+console.log( sliceNumbers ); // [1,2,3,4]
 
 console.log( numbers ); // [1,2,3,4,5,6]
 ```
@@ -2165,3 +2165,113 @@ Here we started at 4 and summed up everything.
 
 AND THATS IT FOR ARRAY METHODS.
 GIVE A CLAP GUYS!
+
+#Day55
+Objects
+I have a laptop. The model is lenovo Thinkpad Edge, it has a black color, a RAM size of 4gb, HDD of 500gb, and 2.40ghz processsor. My friend has a laptop too, the model is hp something something, ith a white color, RAM size of 3gb, 320HDD, and 2.14ghz processor.
+We are describing a laptop. The color, model, RAM size etc and their values are called properties of the laptop. In javascript, the laptop itself is called object. An object is characterized by properties. The properties are made up of two things. What we call a key such as "color" and then what we call a value which is "white".
+The syntax of an object is something like this:
+```js
+let newObject = {
+  //properties
+  key: value,
+  key: value,
+  ...etc
+}
+```
+Now for our laptop object we have like so
+```js
+let chideraLaptop = {
+  //properties of this laptop
+  model:  " lenovo Thinkpad Edge ",
+  color: "black",
+  ram: 4,
+  HDD: 500,
+  processor: 2.40,
+}
+```
+ 
+ and for my friend's laptop
+ ```js
+let friendLaptop = {
+  //properties of this laptop
+  model:  " hp something something ",
+  color: "white",
+  ram: 3,
+  HDD: 320,
+  processor: 2.14,
+}
+```
+#Creating objects
+Indeed, to create a new object we would take one of two approaches ,
+```js
+let newObject = new Object(); // "object constructor" syntax
+
+// OR
+
+let newObject = {};  // "object literal" syntax
+```
+Thats all. Now its left for you to add the properties that you want inside the laptop.
+
+#Adding properties to objects
+You now know how to create an object. Next lets describe or add properties to our object.
+As in arrays, There are two ways to add and also access object properties:
+ One is through the dot notation, the second is 
+ through the  square beracket notation. This requires that the "key" be wrapped in quotation marks. Can be used to use multiple words as "key".
+
+```js
+  let laptop = {}
+
+// lets add the model,processor and ram using dot notation
+laptop.model = "lenovo thinkpad";
+laptop.ram = 4;
+laptop.processor = 2.40
+
+// lets add the color and HDD using bracket notation
+
+laptop["color"] = "white";
+laptop["HDD"] = 500;
+
+// lets view our new laptp object
+
+console.log( laptop );
+
+// { model: 'lenovo thinkpad',
+//   ram: 4,
+//   processor: 2.4,
+//   color: 'white',
+//   HDD: 500 }
+```
+
+#Accessing object properties
+We still use the dot and square bracket notation to acces object properties;
+
+lets access a few properties from our laptop object:
+```js
+// lets get the ram, model and processor using the dot notation
+console.log( laptop.ram ) // 4;
+console.log( laptop.model ) //lenovo thinkpad;
+console.log( laptop.processor ) //2.40;
+
+// lets acces the color and HDD using the bracket notation
+console.log( laptop["color"] )  // black;
+console.log( laptop["HDD"] )    //500
+```
+#Object methods
+Javascript has functions(put link) which are group of codes that can be called to do a particular thing.
+Now objects has functions too in them. These functions are called methods. They can be used a lot of things in the object. For instance instead of accessing all the properties of the object one after the other, we can create a method and call it summary. When we call the summary method it should, like a function give us all the infi=ormation about the laptop. 
+Lets achieve this:
+```js
+  let chideraLaptop = {
+    //properties of this laptop
+    model:  " lenovo Thinkpad Edge ",
+    color: "black",
+    ram: 4,
+    HDD: 500,
+    processor: 2.40,
+    describe: function(){
+      console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${2.40}`)
+    }
+  }
+// lets call the describe function
+chideralaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4

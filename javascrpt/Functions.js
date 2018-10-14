@@ -199,4 +199,88 @@ let numbersGreaterThanThree = numbers.filter(( eachNumber ) => eachNumber > 3 )
 let sumNumbers = numbers.reduce(( latestValue, newValue) => {
   return latestValue + newValue
 },4)
-console.log( sumNumbers )
+// console.log( sumNumbers )
+
+
+// objects
+let thisFunction = function(){
+  let name = 'chidera';
+  console.log(this.name);
+  console.log( name )
+}
+thisFunction()
+
+let jane = {
+  name: 'chidera',
+  describe: function(){
+    console.log(`${this.name} is here`)
+  }
+}
+
+jane.describe()
+
+// let journal = [
+//   {events: ["work", "touched tree", "pizza",
+//   "running", "television"],
+//   squirrel: false},
+//   {events: ["work", "ice cream", "cauliflower",
+//   "lasagna", "touched tree", "brushed teeth"],
+//   squirrel: false},
+//   {events: ["weekend", "cycling", "break", "peanuts",
+//   "beer"],
+//   squirrel: true},
+//   /* and so on... */
+//   ];
+
+//   console.log(journal[1].squirrel)
+
+let chideraLaptop = {
+  //properties of this laptop
+  model:  " lenovo Thinkpad Edge ",
+  color: "black",
+  ram: 4,
+  HDD: 500,
+  processor: 2.40,
+  describe: function(){
+    console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${2.40}`)
+  }
+}
+  chideraLaptop["valid"] = true;
+  // console.log( chideraLaptop["color"])
+
+  // console.log( chideraLaptop )
+  // console.log(chideraLaptop[processor])
+  // console.log( chideraLaptop.processor)
+
+
+  // ADDING PROPERTIES
+  let laptop = {}
+// lets add the model,processor and ram using dot notation
+laptop.model = "lenovo thinkpad";
+laptop.ram = 4;
+laptop.processor = 2.40
+
+// lets add the color and HDD using bracket notation
+
+laptop["color"] = "white";
+laptop["HDD"] = 500;
+
+// lets view our new laptp object
+
+// console.log( laptop )
+
+// ACCESING PROPERTIES
+// console.log( laptop.ram ) // 4;
+// console.log( laptop.model ) //lenovo thinkpad;
+// console.log( laptop.processor ) //2.40;
+
+// // lets acces the color and HDD using the bracket notation
+// console.log( laptop["color"] )  // black;
+// console.log( laptop["HDD"] )    //500
+
+
+chideraLaptop.describe()
+
+
+
+// delete, 
