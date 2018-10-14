@@ -2212,6 +2212,9 @@ let newObject = new Object(); // "object constructor" syntax
 let newObject = {};  // "object literal" syntax
 ```
 Thats all. Now its left for you to add the properties that you want inside the laptop.
+The "object literal" syntax is mostly used.
+
+An object is characterized by first its name, then an equal to sign, and then curly braces to hold the properties.
 
 #Adding properties to objects
 You now know how to create an object. Next lets describe or add properties to our object.
@@ -2241,6 +2244,14 @@ console.log( laptop );
 //   processor: 2.4,
 //   color: 'white',
 //   HDD: 500 }
+```
+
+In conclusion, most people add their properties immediately after declaring their object.
+```js 
+let laptop = {
+  color: 'red',
+  model: 'samsung'
+}
 ```
 
 #Accessing object properties
@@ -2307,3 +2318,25 @@ Recall in our describe() method, we kept repeating "chideraLaptop.something" etc
 
 chideraLaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4
 ```
+
+#Deleting properties
+To delete the property of an object we simply use the delete keyword.
+Lets delete the model property from our chideraLaptop object.
+```js
+let chideraLaptop = {
+    //properties of this laptop
+    model:  " lenovo Thinkpad Edge ",
+    color: "black",
+    ram: 4,
+    HDD: 500,
+    processor: 2.40,
+    describe: function(){
+      console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
+    }
+  }
+// lets first comfirm that the model property is still there
+console.log( chideraLaptop.model ) //  lenovo Thinkpad Edge
+  delete chideraLaptop.model;
+    console.log( chideraLaptop.model ) // undefined
+```
+We have succeeded in deleting the model property.

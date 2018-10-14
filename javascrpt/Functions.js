@@ -203,12 +203,7 @@ let sumNumbers = numbers.reduce(( latestValue, newValue) => {
 
 
 // objects
-let thisFunction = function(){
-  let name = 'chidera';
-  console.log(this.name);
-  console.log( name )
-}
-thisFunction()
+
 
 let jane = {
   name: 'chidera',
@@ -217,7 +212,7 @@ let jane = {
   }
 }
 
-jane.describe()
+// jane.describe()
 
 // let journal = [
 //   {events: ["work", "touched tree", "pizza",
@@ -280,6 +275,11 @@ laptop["HDD"] = 500;
 
 
 chideraLaptop.describe()
+console.log( chideraLaptop )
+
+// DELETING OBJECT PROPERTY
+delete chideraLaptop.model;
+console.log( chideraLaptop.model )
 
 
 
