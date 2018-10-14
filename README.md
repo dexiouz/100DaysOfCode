@@ -2368,3 +2368,11 @@ Now lets loop through the values too.
 
   // lenovo Thinkpad Edge , black, 4, 500, 2.4, function(){    console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6SYNTAX HERE  },
 ```
+
+A few points to note about objects
+The "in" keyword is used to determine if a property name or key is in an object. It returns a boolean value of true or false.
+Lets check if the property name "model" is in chideraLaptop.
+```js
+console.log( "model" in chideraLaptop ) //true
+console.log( "country" in chideraLaptop ) //false
+```

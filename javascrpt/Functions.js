@@ -292,6 +292,6 @@ for ( let key in chideraLaptop ){
   // console.log( `${chideraLaptop[key]},`)
 }
 
-
+console.log("model" in chideraLaptop)
 
 // delete, 
