@@ -2270,8 +2270,40 @@ Lets achieve this:
     HDD: 500,
     processor: 2.40,
     describe: function(){
-      console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${2.40}`)
+      console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
     }
   }
 // lets call the describe function
-chideralaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4
+chideralaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4;
+```
+Wow, awesome! awesome!!
+A few things to note from what we just did.
+In the describe method, to access any of the properties, we first have to call the name of the object which at this time is chideraLaptop, followed by the property key we wish to access, for instance the model. So we have "chideraLaptop.model".
+Secondly recall when we were accessing object properties, we did something like this
+```js
+chideraLaptop.model // lenovo thinkpad
+```
+to access methods, we do the same thing but we add brackets like so;
+```js
+chideralaptop.describe()  //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4;
+```
+
+#The "this" keyword
+Simply put, the "this" keyword is used to refer to the object where it is used. Thats all for now about the this keyword.
+Here's what I mean.
+Recall in our describe() method, we kept repeating "chideraLaptop.something" etc. Thats bad practice. Yeah. Instead of using the object name, we use the "this" keyword. So our describe should be smething like this.
+```js
+  let chideraLaptop = {
+    //properties of this laptop
+    model:  " lenovo Thinkpad Edge ",
+    color: "black",
+    ram: 4,
+    HDD: 500,
+    processor: 2.40,
+    describe: function(){
+      console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
+    }
+  }
+
+chideraLaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4
+```

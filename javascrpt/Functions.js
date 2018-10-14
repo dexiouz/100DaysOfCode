@@ -242,7 +242,7 @@ let chideraLaptop = {
   HDD: 500,
   processor: 2.40,
   describe: function(){
-    console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${2.40}`)
+    console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
   }
 }
   chideraLaptop["valid"] = true;
