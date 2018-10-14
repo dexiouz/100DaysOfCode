@@ -292,6 +292,36 @@ for ( let key in chideraLaptop ){
   // console.log( `${chideraLaptop[key]},`)
 }
 
-console.log("model" in chideraLaptop)
+// THE IN KEYWORD
+// console.log("model" in chideraLaptop)
 
-// delete, 
+// STORING OBJECTS
+let myName = 'Chidera';
+let myNomenclature = myName;
+
+// console.log( myName ); // 'Chidera'
+// console.log( myNomenclature ); //'Chidera'
+myNomenclature = 'Paul'
+// console.log( myNomenclature ); 
+
+// console.log( myName );
+
+
+let Laptop = {
+  name: "lenovo"
+}
+
+let pc = Laptop
+
+console.log( pc.name ) // lenovo
+console.log( Laptop.name ) //lenovo
+
+// Now lets change the value of "name" in pc
+
+pc.name = "samsung";
+
+console.log( pc.name ) //samsung
+console.log( Laptop.name ) //samsung
+
+// IF TWO OBJECTS ARE THE SAME
+console.log(pc === Laptop) //true

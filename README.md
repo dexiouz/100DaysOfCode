@@ -2168,12 +2168,12 @@ GIVE A CLAP GUYS!
 
 #Day55
 Objects
-I have a laptop. The model is lenovo Thinkpad Edge, it has a black color, a RAM size of 4gb, HDD of 500gb, and 2.40ghz processsor. My friend has a laptop too, the model is hp something something, ith a white color, RAM size of 3gb, 320HDD, and 2.14ghz processor.
-We are describing a laptop. The color, model, RAM size etc and their values are called properties of the laptop. In javascript, the laptop itself is called object. An object is characterized by properties. The properties are made up of two things. What we call a key such as "color" and then what we call a value which is "white".
+I have a laptop. The model is lenovo Thinkpad Edge, it has a black color, a RAM size of 4gb, HDD of 500gb, and 2.40ghz processsor. My friend has a laptop too, the model is hp something something, with a white color, RAM size of 3gb, 320HDD, and 2.14ghz processor.
+We are describing a laptop. The color, model, RAM size etc and their values are called properties of the laptop. In javascript, the laptop itself will be called an object. An object is characterized by properties. The properties are made up of two things. What we call a key or property name such as "color" as in our laptop; and then what we call property value or a value which is "white" in our laptop case.
 The syntax of an object is something like this:
 ```js
 let newObject = {
-  //properties
+  //declare properties
   key: value,
   key: value,
   ...etc
@@ -2211,21 +2211,21 @@ let newObject = new Object(); // "object constructor" syntax
 
 let newObject = {};  // "object literal" syntax
 ```
-Thats all. Now its left for you to add the properties that you want inside the laptop.
+Thats all. Now it's left for you to add the properties that you want inside the laptop.
 The "object literal" syntax is mostly used.
 
-An object is characterized by first its name, then an equal to sign, and then curly braces to hold the properties.
+An object is characterized by first its name, then an equality sign, and then curly braces to hold the properties.
 
 #Adding properties to objects
 You now know how to create an object. Next lets describe or add properties to our object.
 As in arrays, There are two ways to add and also access object properties:
- One is through the dot notation, the second is 
- through the  square beracket notation. This requires that the "key" be wrapped in quotation marks. Can be used to use multiple words as "key".
+ --One is through the dot notation, the second is 
+ ---through the  square beracket notation. This requires that the "key" or "property name" to be wrapped in quotation marks. Can be used for  multiple words as "key".
 
 ```js
   let laptop = {}
 
-// lets add the model,processor and ram using dot notation
+// lets add the model,processor and ram property using dot notation
 laptop.model = "lenovo thinkpad";
 laptop.ram = 4;
 laptop.processor = 2.40
@@ -2268,9 +2268,12 @@ console.log( laptop.processor ) //2.40;
 console.log( laptop["color"] )  // black;
 console.log( laptop["HDD"] )    //500
 ```
+
+In general, the dot notation is widely used.
+
 #Object methods
 Javascript has functions(put link) which are group of codes that can be called to do a particular thing.
-Now objects has functions too in them. These functions are called methods. They can be used a lot of things in the object. For instance instead of accessing all the properties of the object one after the other, we can create a method and call it summary. When we call the summary method it should, like a function give us all the infi=ormation about the laptop. 
+Now objects has functions too in them. These functions are called "methods". They can be used to do a lot of things in the object. For instance instead of accessing or listing all the properties of the object one after the other, we can create a method and call it "describe". When we call the "describe" method it should, like a function give us all the information about the laptop. 
 Lets achieve this:
 ```js
   let chideraLaptop = {
@@ -2280,6 +2283,7 @@ Lets achieve this:
     ram: 4,
     HDD: 500,
     processor: 2.40,
+    //adding the describe method
     describe: function(){
       console.log(`${chideraLaptop.model} is a ${chideraLaptop.color} ${chideraLaptop.ram}gb ram laptop, it has a ${chideraLaptop.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
     }
@@ -2288,6 +2292,7 @@ Lets achieve this:
 chideralaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4;
 ```
 Wow, awesome! awesome!!
+
 A few things to note from what we just did.
 In the describe method, to access any of the properties, we first have to call the name of the object which at this time is chideraLaptop, followed by the property key we wish to access, for instance the model. So we have "chideraLaptop.model".
 Secondly recall when we were accessing object properties, we did something like this
@@ -2302,7 +2307,7 @@ chideralaptop.describe()  //  lenovo Thinkpad Edge  is a black 4gb ram laptop, i
 #The "this" keyword
 Simply put, the "this" keyword is used to refer to the object where it is used. Thats all for now about the this keyword.
 Here's what I mean.
-Recall in our describe() method, we kept repeating "chideraLaptop.something" etc. Thats bad practice. Yeah. Instead of using the object name, we use the "this" keyword. So our describe should be smething like this.
+Recall in our "describe() method", we kept repeating "chideraLaptop.something" etc. Thats bad practice. Yeah. Instead of using the object name, we use the "this" keyword. So our "describe method" should be smething like this.
 ```js
   let chideraLaptop = {
     //properties of this laptop
@@ -2312,45 +2317,39 @@ Recall in our describe() method, we kept repeating "chideraLaptop.something" etc
     HDD: 500,
     processor: 2.40,
     describe: function(){
+      // using "this" instead of chideraLaptop
       console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
     }
   }
 
 chideraLaptop.describe() //  lenovo Thinkpad Edge  is a black 4gb ram laptop, it has a 500 HDD and a processor of 2.4
 ```
+Wonderful! Wonderful!!
 
 #Deleting properties
-To delete the property of an object we simply use the delete keyword.
+To delete the property of an object we simply use the "delete" keyword.
 Lets delete the model property from our chideraLaptop object.
 ```js
-let chideraLaptop = {
-    //properties of this laptop
-    model:  " lenovo Thinkpad Edge ",
-    color: "black",
-    ram: 4,
-    HDD: 500,
-    processor: 2.40,
-    describe: function(){
-      console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6 SYNTAX HERE
-    }
-  }
-// lets first comfirm that the model property is still there
+// lets first comfirm that the "model" property is still there
 console.log( chideraLaptop.model ) //  lenovo Thinkpad Edge
+
+// lets delete the "model" property
+
   delete chideraLaptop.model;
     console.log( chideraLaptop.model ) // undefined
 ```
 We have succeeded in deleting the "model" property.
 
 #Iterating through object properties
-When we treated looping here, we discussed about the for loop.
-Now there is another type of for loop called the for in loop. It can be used to loop through the keys of an array. With a little tweaking you can as well use it to loop through the key values too.
+When we treated looping  we discussed about the for loop.
+Now there is another special type of for loop called the "for in" loop. It can be used to loop through the keys or property name of an array. With a little tweaking you can as well use it to loop through the key values too.
 Here's the syntax
 ```js
 for( let key in object) {
   // do something with the key
 }
 ```
-Now lets loop through the keys in chideraLaptop
+Now lets loop through the keys r property name in chideraLaptop
 ```js
   for ( let key in chideraLaptop ){
     console.log( `${key},`)
@@ -2363,16 +2362,69 @@ Notice that it gave us access to only the keys.
 Now lets loop through the values too.
 ```js
   for ( let key in chideraLaptop ){
-    console.log( `${chideraLaptop.key},`)
+    console.log( `${chideraLaptop[key]},`)
   }
 
   // lenovo Thinkpad Edge , black, 4, 500, 2.4, function(){    console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6SYNTAX HERE  },
 ```
 
-A few points to note about objects
-The "in" keyword is used to determine if a property name or key is in an object. It returns a boolean value of true or false.
-Lets check if the property name "model" is in chideraLaptop.
+#The "in" keyword
+The "in" keyword is used to determine if a property name or key is present in an object. It returns a boolean value of true or false.
+Lets check if the property name "color" is in chideraLaptop.
 ```js
-console.log( "model" in chideraLaptop ) //true
+console.log( "color" in chideraLaptop ) //true
+// what about country property?
 console.log( "country" in chideraLaptop ) //false
 ```
+
+#Storing/copying objects
+Objects are stored and copied by their reference whereas primitive data types such as numbers, strings, etc are copied by their whole value.
+Consider this primitive data type 
+```js
+let myName = 'Chidera';
+let myNomenclature = myName;
+
+console.log( myName ); // 'Chidera'
+console.log( myNomenclature ); //'Chidera'
+```
+
+Whats happening here? Simple, we have two independent variables "myName" and "myNomenclature" storing the string "Chidera". 
+
+Now lets reassign a different value to "myNomenclature" and see if that change will be effected in the "myName".
+```js
+myNomenclature = 'Paul'
+
+console.log( myName ); // 'Chidera'
+console.log( myNomenclature ); //Paul
+```
+See? we changed "myNomenclature" but it didn't change the value of "myName".
+
+For objects its not the same. Lets do something
+
+```js
+let laptop = {
+  name: "lenovo"
+}
+
+let pc = laptop
+
+console.log( pc.name ) // lenovo
+console.log( laptop.name ) //lenovo
+```
+Now lets change the value of "name" in pc
+```js
+pc.name = "samsung";
+
+console.log( pc.name ) //samsung
+console.log( laptop.name ) //samsung
+```
+
+See, we changed only "pc.name" and "laptop.name" was also changed.
+Whats happening is that when we store objects, we don't store or copy the main object itself, instead we copy a reference to the object. The object "laptop" is a reference to object, again, the object "pc" is also a reference to the SAME object. They are like two routes to the same thing. Any alteration you do to one affects the other.
+
+Two objects are the same if and only if they are the same object
+```js
+console.log(pc === laptop) //true
+```
+
+Hope this was helpful
