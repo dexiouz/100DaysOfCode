@@ -2427,4 +2427,5 @@ Two objects are the same if and only if they are the same object
 console.log(pc === laptop) //true
 ```
 
-Hope this was helpful
+What we have described in this lecture is what I call the vanilla object. There are other built in object types in javascript. "They include the error object, date object, math object" etc.
+Hope this was helpful!
