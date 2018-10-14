@@ -274,12 +274,23 @@ laptop["HDD"] = 500;
 // console.log( laptop["HDD"] )    //500
 
 
-chideraLaptop.describe()
-console.log( chideraLaptop )
+// chideraLaptop.describe()
+// console.log( chideraLaptop )
 
 // DELETING OBJECT PROPERTY
-delete chideraLaptop.model;
-console.log( chideraLaptop.model )
+// delete chideraLaptop.model;
+// console.log( chideraLaptop.model )
+
+// LOOPING THROUGH OBJECTS
+
+// looping through keys
+for ( let key in chideraLaptop ){
+  // console.log( `${key},` )
+}
+// looping through values
+for ( let key in chideraLaptop ){
+  // console.log( `${chideraLaptop[key]},`)
+}
 
 
 

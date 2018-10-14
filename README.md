@@ -2339,4 +2339,32 @@ console.log( chideraLaptop.model ) //  lenovo Thinkpad Edge
   delete chideraLaptop.model;
     console.log( chideraLaptop.model ) // undefined
 ```
-We have succeeded in deleting the model property.
+We have succeeded in deleting the "model" property.
+
+#Iterating through object properties
+When we treated looping here, we discussed about the for loop.
+Now there is another type of for loop called the for in loop. It can be used to loop through the keys of an array. With a little tweaking you can as well use it to loop through the key values too.
+Here's the syntax
+```js
+for( let key in object) {
+  // do something with the key
+}
+```
+Now lets loop through the keys in chideraLaptop
+```js
+  for ( let key in chideraLaptop ){
+    console.log( `${key},`)
+  }
+
+  // model, color, ram, HDD, processor, describe,
+```
+Notice that it gave us access to only the keys. 
+
+Now lets loop through the values too.
+```js
+  for ( let key in chideraLaptop ){
+    console.log( `${chideraLaptop.key},`)
+  }
+
+  // lenovo Thinkpad Edge , black, 4, 500, 2.4, function(){    console.log(`${this.model} is a ${this.color} ${this.ram}gb ram laptop, it has a ${this.HDD} HDD and a processor of ${this.processor}`)  // WE ARE USING ES6SYNTAX HERE  },
+```
