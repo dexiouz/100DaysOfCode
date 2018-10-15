@@ -2627,14 +2627,18 @@ while( index <= arrayNames.length-1 ){
 Just like the while loop but this one checks the condition after the body of the loop runs.
 Here's the syntax
 ```js
+let objectOfCondition = someDataType;
 do{
   //body of the loop
 }
-while( theCondition )
+while( theConditionToBeMet )
 ```
 lets employ this in our names array.
 ```js
+let index = 0;
 do{
   console.log( arrayNames[index] )
 }
 while(  index <= arrayNames.length-1 )
+
+```

@@ -353,6 +353,18 @@ for (let index = 0; index <= 3; index++){
 
 let i = 0;
 while( i <= arrayNames.length-1){
-  console.log( arrayNames[i] );
+  // console.log( arrayNames[i] );
   i++
 }
+
+// let indx = 0;
+// do{
+//   console.log( arrayNames[indx] )
+// }
+// while(  indx <= arrayNames.length-1 )
+
+let iv = 0;
+do {
+  console.log( iv );
+  i++;
+} while (iv < 3);
