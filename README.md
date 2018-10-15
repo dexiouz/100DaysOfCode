@@ -2537,3 +2537,80 @@ for ( let index = 0; index <= arrayNames.length-1; index++){
 // Shalom     (when the loop runs the seventh time, index 6)
 ```
 Powerful!
+
+#For..of loop
+I call this loop "the sauced for loop".
+In the previous for loop, I made mention that it accesses indexes. And so to access the elements, we applied some logic
+```js
+ console.log( arrayNames[index] )
+ ```
+ The for ... of loop gives us the flexibility of accessing the elements directly without going through the indexes. Sweet.
+ Here's the syntax
+ ```js
+//  if elements is defined
+ for( let individualElement of elements ){
+  //body of the loop
+ }
+ ```
+ Lets use it on our names array
+
+```js
+for( let name of arrayNames ){
+  console.log( name )
+}
+// Paul     
+// Chidera  
+// John     
+// Peter    
+// Gideon   
+// Eazi     
+// Shalom
+```
+Thats all! sleek.
+
+#for...in loop
+I call it the shorthand of the main for loop. In that it returns the index of the array elements but with simple code.
+Here's the syntax
+```js
+for ( let individualElementIndex in elements ){
+  // body of the loop
+}
+
+// Now lets use it on our names array
+for( let name in arrayNames ){
+  console.log( name )
+}
+//0,1,2,3,4,5,6,
+
+// To access the elements and not their index we tweak it like so
+for( let name in arrayNames ){
+  console.log( arrayNames[name] )
+}
+// Paul     
+// Chidera  
+// John     
+// Peter    
+// Gideon   
+// Eazi     
+// Shalom
+```
+Simple!
+Now the choice is yours on which to use in your project.
+
+#While loop
+What should be noted here is that the while loop, checks a condition before the body of the loop is executed. After execution, the object or subject of the condition is increased or decreased by a value.
+Here's the syntax
+```js
+while( theConditionToBeMet ){
+  // loop body;
+  condition++ OR condition--
+}
+```
+Lets deploy this in our names array
+```js
+while( index <= arrayNames.length-1){
+  console.log( arrayNames[index] );
+  index++
+}
+
+```
