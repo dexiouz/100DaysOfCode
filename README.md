@@ -2434,11 +2434,14 @@ Hope this was helpful!
 ####Day56
 #Loops and Iterations
 Lets talk about loops and iterations.
+
+Iteration is whenever a loop runs.
+
 Recall an array which is like so 
 ```js
 const arrayNames = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
 ```
-Suppose we want to scan through all the elements of the names array and do something to them individually, we use loops or iterations to go through them one by one. 
+Suppose we want to scan through all the elements of the names array and display to them individually, we use loops or iterations to go through them one by one. 
 Lets manually display each of the names,
 ```js
 console.log( arrayNames[ 0 ]) //Paul
@@ -2633,12 +2636,15 @@ do{
 }
 while( theConditionToBeMet )
 ```
-lets employ this in our names array.
+lets see ho this works
 ```js
 let index = 0;
 do{
-  console.log( arrayNames[index] )
+  console.log( index )
 }
-while(  index <= arrayNames.length-1 )
+while(  index <= 4 )
+//0,0,0,0,0,0,0,0....
 
+// Be  careful this loop may hang your pc as it can result to an indefinite loop
 ```
+Thats it for loops and iteraations

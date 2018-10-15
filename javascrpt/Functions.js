@@ -363,8 +363,8 @@ while( i <= arrayNames.length-1){
 // }
 // while(  indx <= arrayNames.length-1 )
 
-let iv = 0;
+let iv = 1;
 do {
   console.log( iv );
   i++;
-} while (iv < 3);
+} while (iv < 6);
