@@ -2601,6 +2601,7 @@ Now the choice is yours on which to use in your project.
 What should be noted here is that the while loop, checks a condition before the body of the loop is executed. After execution, the object or subject of the condition is increased or decreased by a value.
 Here's the syntax
 ```js
+let objectOfCondition = someDataType;
 while( theConditionToBeMet ){
   // loop body;
   condition++ OR condition--
@@ -2608,9 +2609,32 @@ while( theConditionToBeMet ){
 ```
 Lets deploy this in our names array
 ```js
-while( index <= arrayNames.length-1){
+let index = 0  
+while( index <= arrayNames.length-1 ){
   console.log( arrayNames[index] );
   index++
 }
-
+// Paul     
+// Chidera  
+// John     
+// Peter    
+// Gideon   
+// Eazi     
+// Shalom
 ```
+
+#do while loop
+Just like the while loop but this one checks the condition after the body of the loop runs.
+Here's the syntax
+```js
+do{
+  //body of the loop
+}
+while( theCondition )
+```
+lets employ this in our names array.
+```js
+do{
+  console.log( arrayNames[index] )
+}
+while(  index <= arrayNames.length-1 )

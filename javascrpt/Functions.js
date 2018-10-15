@@ -327,19 +327,32 @@ pc.name = "samsung";
 // console.log(pc === Laptop) //true
 const arrayNames = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
 
-for (let name in arrayNames){
+for (let name of arrayNames){
   // console.log( `${name} is worthy` )
 }
 
+
+for (let name in arrayNames){
+  // console.log( name )
+}
+
+// using the for in to access elements/
 for (let name in arrayNames){
   // console.log( `${arrayNames[name]} is worthy` )
 }
 // The difference betwee for of and for in loop is that for of accesses te elements while for in accesses the index
 
+//FOR LOOP
 for ( let index = 0; index <= arrayNames.length-1; index++){
-  console.log( arrayNames[index] )
+  // console.log( arrayNames[index] )
 }
 
 for (let index = 0; index <= 3; index++){
   // console.log( index)  // loop body
+}
+
+let i = 0;
+while( i <= arrayNames.length-1){
+  console.log( arrayNames[i] );
+  i++
 }
