@@ -2436,19 +2436,104 @@ Hope this was helpful!
 Lets talk about loops and iterations.
 Recall an array which is like so 
 ```js
-const names = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
+const arrayNames = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
 ```
 Suppose we want to scan through all the elements of the names array and do something to them individually, we use loops or iterations to go through them one by one. 
 Lets manually display each of the names,
 ```js
-console.log( names[ 0 ]) //Paul
-console.log( names[ 1 ]) //Chidera
-console.log( names[ 2 ]) //John
-console.log( names[ 3 ]) //Peter
-console.log( names[ 4 ]) //Gideon
-console.log( names[ 5 ]) //Eazi
-console.log( names[ 6 ]) //Shalom
+console.log( arrayNames[ 0 ]) //Paul
+console.log( arrayNames[ 1 ]) //Chidera
+console.log( arrayNames[ 2 ]) //John
+console.log( arrayNames[ 3 ]) //Peter
+console.log( arrayNames[ 4 ]) //Gideon
+console.log( arrayNames[ 5 ]) //Eazi
+console.log( arrayNames[ 6 ]) //Shalom
 ```
-What we had like 100 names? we will console.log 100 times.
+What we had like 100 names? we will console.log 100 times. No. We use loops.
 
 ###For loop
+The syntax of a for loop is
+```js
+for( start; checkThisCondition; increaseOrDecreseTheStart){
+  //body of the loop
+}
+```
+To fully grasp the power of the for loop lets use it to loop through our names array
+```js
+for (let index = 0; index <= 3; index++){
+  console.log( index)  // loop body
+}
+// 0,1,2,3,4,5,6
+```
+What we get is the index of the elements. Thats a step closer, lets analyze what is happening here
+ #start // index = 0: 
+  This is where the loop begins. We are sying that when the loop runs the first time, the value of index should be 0. The vaalue of index can always be changed. aeven index is a variable. Most people use "i".
+ #checkThisCondition // index <= 3:
+  This is the heart of it all, we call it the condition. We are saying that the body of the loop should only run if and only if "this condition" is met. In our case, the loop should run only if the value of index is less than or equal to five(5). Recall that the value of index is 0, so how does it increase to 5.
+ #increaseOrDecreseTheStart // index++ : 
+ The last stage. Here we increase the value of index by 1.This only happens after the condition is met and the loop body runs. 
+ At the first run the console we see is 0.
+ The increase happens and the value of index increases by 1 
+ ```js
+for (let index = 1;index <= 3; index++){
+  console.log( index)  
+}
+```
+ and the condition is checked again "if index = 1 is less than or equal to 3". Since 1 is less than or equal to 3, the loop body runs.The console is 1. Then index is increased again by 1. "index becomes 2".
+ ```js
+for (let index = 2; index <= 3; index++){
+  console.log( index)  
+}
+```
+and the condition is checked again "if index = 2 is less than or equal to 3". Since 2 is less than or equal to 3, the loop body runs.The console is 2. Then index is increased again by 1. index becomes 3.
+ ```js
+for (let index = 3; index <= 3; index++){
+  console.log( index)  
+}
+```
+and the condition is checked again "if index = 3 is less than or equal to 3". Since 3 is less than or equal to 3, the loop body runs.The console is 3. Then index is increased again by 1. index becomes 4.
+ ```js
+for (let index = 4; index <= 3; index++){
+  console.log( index)  
+}
+```
+and the condition is checked again "if index = 4 is less than or equal to 3". Since 4 is not less than or equal to 3, the loop body does not run and the process terminates.
+
+In the end we get something likee this:
+```js
+0
+1
+2
+3
+```
+Now lets go through our names array and print all of them individually.
+Recall that if we have an array like so 
+```js
+const arrays =['milk', 'chocolate']
+```
+To know the length of this aray we do
+```js
+console.log(arrays.length) //2
+```
+
+ To access any of the elements, we use their index.
+ ```js
+console.log( arrays[0]) // milk
+console.log( arrays[1]) // chocolate
+```
+Bear this in mind, we will use these logic to acces the names array using their index and settting the condition using the length of the arrayminus 1.
+```js
+const arrayNames = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
+for ( let index = 0; index <= arrayNames.length-1; index++){
+  console.log( arrayNames[index] )
+}
+
+// Paul     (when the loop runs the first time, index 0)
+// Chidera  (when the loop runs the second time, index 1)
+// John     (when the loop runs the third time, index 2)
+// Peter     (when the loop runs the fourth time, index 3)
+// Gideon    (when the loop runs the fifth time, index 4)
+// Eazi      (when the loop runs the sixth time, index 5)
+// Shalom     (when the loop runs the seventh time, index 6)
+```
+Powerful!
