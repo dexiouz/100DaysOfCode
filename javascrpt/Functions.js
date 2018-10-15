@@ -313,15 +313,20 @@ let Laptop = {
 
 let pc = Laptop
 
-console.log( pc.name ) // lenovo
-console.log( Laptop.name ) //lenovo
+// console.log( pc.name ) // lenovo
+// console.log( Laptop.name ) //lenovo
 
 // Now lets change the value of "name" in pc
 
 pc.name = "samsung";
 
-console.log( pc.name ) //samsung
-console.log( Laptop.name ) //samsung
+// console.log( pc.name ) //samsung
+// console.log( Laptop.name ) //samsung
 
 // IF TWO OBJECTS ARE THE SAME
-console.log(pc === Laptop) //true
+// console.log(pc === Laptop) //true
+const arrayNames = ['Paul','Chidera','John',  'Peter', 'Gideon','Eazi','Shalom']
+
+for (let name of arrayNames){
+  console.log( `${name} is worthy` )
+}
