@@ -2165,6 +2165,7 @@ Here we started at 4 and summed up everything.
 
 AND THATS IT FOR ARRAY METHODS.
 GIVE A CLAP GUYS!
+**Link to work**:[medium](https://medium.com/@dexiouz/day53-of-100daysofcode-5fc5e529c5d3)
 
 #Day55
 Objects
@@ -2429,7 +2430,7 @@ console.log(pc === laptop) //true
 
 What we have described in this lecture is what I call the vanilla object. There are other built in object types in javascript. "They include the error object, date object, math object" etc.
 Hope this was helpful!
-**Link to work**: [medium]('https://medium.com/@dexiouz/day55-of-100daysofcode-abf78e321a44')
+**Link to work**: [medium](https://medium.com/@dexiouz/day55-of-100daysofcode-abf78e321a44)
 
 ####Day56
 #Loops and Iterations
