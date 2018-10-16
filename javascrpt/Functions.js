@@ -378,6 +378,6 @@ const emptyArray = [];
 // use a loop to fill the empty array with the ages of the persons
 for( let year of years ){
   let age = 2018 - year;
-  emptyArray.push( age )
+  emptyArray.push( age );
 }
 console.log( emptyArray )
