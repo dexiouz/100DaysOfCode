@@ -2655,7 +2655,7 @@ Thats it for loops and iteraations
 **Link to work**: [medium](https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6)
 
 ##Day57
-Coding challenge from Jonas 
+Coding challenge from Jonas Schmedtmann
 The coding challenge will allow us use some of th things learnt so far such as functions, declaring and assigning variables; functions, loops etc.
 Here's the challenge:
 
@@ -2820,4 +2820,4 @@ function printFullAge( arrayOfYears ){
   console.log( full_1 ); //[ true, false, true ]
   console.log( full_2 ); //[ false, false, true, false ]
 ```
-**Link to work**: [medium](https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6)
+**Link to work**: [medium](https://medium.com/@dexiouz/day57-of-100daysofcode-6b9066a12fde)

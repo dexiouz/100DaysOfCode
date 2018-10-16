@@ -429,7 +429,6 @@ function aNewFunction() {
     }
   }
   
-  // 5.  Finally, create a function called printFullAge which receivees the vector of years as an arguement, executes the steps 2, 3 and 4, and returns a vector a vector of true true/false boolean values: true if the pereson is of full age ( >=18 years ) and false if not ( < 18 years ).
 
   console.log( ' FUNCTION STARTS HERE ' )
   function printFullAge( arrayOfYears ){
