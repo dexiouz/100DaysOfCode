@@ -368,3 +368,4 @@ do {
   console.log( iv );
   i++;
 } while (iv < 6);
+i++;
