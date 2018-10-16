@@ -1,4 +1,5 @@
 ##100daysofcode
+A chronicle of my #100daysOfCode
 
 ###Day0 August 13, Monday
 
