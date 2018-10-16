@@ -2650,4 +2650,4 @@ while(  index <= 4 )
 // Be  careful this loop may hang your pc as it can result to an indefinite loop
 ```
 Thats it for loops and iteraations
-**Link to work**: [medium]('https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6')
+**Link to work**: [medium](https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6)
