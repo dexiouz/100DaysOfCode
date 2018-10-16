@@ -2658,4 +2658,11 @@ Coding challenge from Jonas
  1. Create an array with some years where persons were born.
  2. Create an empty array ( just [ ] )
  3. Use a loop to fill the array with the ages of the persons.
- 4. Use a loop to log into the console whether
+ 4. Use a loop to log into the console whether each person is of full age ( 18 0r older ), as well as their age.
+ 5. Finally, create a function called printFullAge which receivees the vector of years as an arguement, executes the steps 2, 3 and 4, and returns a vector a vector of true true/false boolean values: true if the pereson is of full age ( >=18 years ) and false if not ( < 18 years ).
+ 6. Call the function with two different vectors and store the results in two variables: full_1 and full_2.
+ 
+ Example input: [ 1998, 2005, 1994 ]
+ Example output: [ true, false, true]
+
+ Hint: You can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
