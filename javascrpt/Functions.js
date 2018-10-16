@@ -363,9 +363,21 @@ while( i <= arrayNames.length-1){
 // }
 // while(  indx <= arrayNames.length-1 )
 
-let iv = 1;
-do {
-  console.log( iv );
-  i++;
-} while (iv < 6);
-i++;
+// let iv = 1;
+// do {
+//   console.log( iv );
+//   i++;
+// } while (iv < 6);
+// i++;
+
+// Day57 coding challenge
+// First create an array with some years
+const years =  [ 1998, 2005, 1994 ];
+// create an empty array
+const emptyArray = [];
+// use a loop to fill the empty array with the ages of the persons
+for( let year of years ){
+  let age = 2018 - year;
+  emptyArray.push( age )
+}
+console.log( emptyArray )
