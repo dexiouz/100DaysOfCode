@@ -2671,15 +2671,15 @@ Here's the challenge:
  Hint: You can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
 
  NOW LETS WALK THROUGH THE SOLUTION.
-1.Question:  create an array with some years
+1. Question:  create an array with some years
   ```js
   const years =  [ 1998, 2005, 1994 ];
   ```
-2.Question: create an empty array
+2. Question: create an empty array
   ```js
    const emptyArray = [];
   ```
-3.Question: use a loop to fill the empty array with the ages of the persons
+3. Question: use a loop to fill the empty array with the ages of the persons
  lets use a "for...of" loop since it will give access to the elements. 
  ```js
   for( let year of years ){
@@ -2717,26 +2717,26 @@ Here's the challenge:
 
 // This time lets use ages as a variable instead of emptyArray 
  function printFullAge( arrayOfYears ){
-  //  2
+  //  question 2
     const ages = [];
-    const fullAges = [];
-  //  3
+    const isFullAge = [];
+  //  question 3
     for( let year of arrayOfYears ){
       let age = 2018 - year;
       ages.push( age );
     };
-    // 4 plus addition of boolean true or false
+    // question 4 plus addition of boolean true or false
     for (year in arrayOfYears) {
       if (ages[year] >= 18) {
         console.log(`Age ${ages[year]}years old is of full age`);
-        fullAges.push( true )
+        isFullAge.push( true )
       } else {
         console.log(`Age ${ages[year]}years old is NOT of full age`)
-        fullAges.push( false )
+        isFullAge.push( false )
       }
     }
     // save fullAge into the function
-    return fullAges;
+    return isFullAge;
   }
   // create a second years variable
   let years2 = [ 2001, 2007, 1995, 2009 ];
@@ -2786,7 +2786,7 @@ Here's the challenge:
 function printFullAge( arrayOfYears ){
   //  2
     const ages = [];
-    const fullAges = [];
+    const isFullAge = [];
   //  3
     for( let year of arrayOfYears ){
       let age = 2018 - year;
@@ -2796,13 +2796,13 @@ function printFullAge( arrayOfYears ){
     for (year in arrayOfYears) {
       if (ages[year] >= 18) {
         console.log(`Age ${ages[year]}years old is of full age`);
-        fullAges.push( true )
+        isFullAge.push( true )
       } else {
         console.log(`Age ${ages[year]}years old is NOT of full age`)
-        fullAges.push( false )
+        isFullAge.push( false )
       }
     }
-    return fullAges;
+    return isFullAge;
   }
   let years2 = [ 2001, 2007, 1995, 2009 ];
   let full_1 = printFullAge( years );
@@ -2819,3 +2819,4 @@ function printFullAge( arrayOfYears ){
   console.log( full_1 ); //[ true, false, true ]
   console.log( full_2 ); //[ false, false, true, false ]
 ```
+**Link to work**: [medium](https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6)

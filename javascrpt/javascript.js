@@ -434,7 +434,7 @@ function aNewFunction() {
   console.log( ' FUNCTION STARTS HERE ' )
   function printFullAge( arrayOfYears ){
     const ages = [];
-    const fullAges = [];
+    const isFullAge = [];
    
     for( let year of arrayOfYears ){
       let age = 2018 - year;
@@ -443,13 +443,13 @@ function aNewFunction() {
     for (year in arrayOfYears) {
       if (ages[year] >= 18) {
         console.log(`Age ${ages[year]}years old is of full age`);
-        fullAges.push( true )
+        isFullAge.push( true )
       } else {
         console.log(`Age ${ages[year]}years old is NOT of full age`)
-        fullAges.push( false )
+        isFullAge.push( false )
       }
     }
-    return fullAges;
+    return isFullAge;
   }
   let years2 = [ 2001, 2007, 1995, 2009 ]
   let full_1 = printFullAge( years );
