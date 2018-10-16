@@ -2652,3 +2652,10 @@ while(  index <= 4 )
 ```
 Thats it for loops and iteraations
 **Link to work**: [medium](https://medium.com/@dexiouz/day56-of-100daysofcode-794d7ac4d9c6)
+
+##Day57
+Coding challenge from Jonas 
+ 1. Create an array with some years where persons were born.
+ 2. Create an empty array ( just [ ] )
+ 3. Use a loop to fill the array with the ages of the persons.
+ 4. Use a loop to log into the console whether
