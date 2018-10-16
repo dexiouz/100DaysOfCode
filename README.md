@@ -2655,6 +2655,9 @@ Thats it for loops and iteraations
 
 ##Day57
 Coding challenge from Jonas 
+The coding challenge will allow us use some of th things learnt so far such as functions, declaring and assigning variables; functions, loops etc.
+Here's the challenge:
+
  1. Create an array with some years where persons were born.
  2. Create an empty array ( just [ ] )
  3. Use a loop to fill the array with the ages of the persons.
@@ -2666,3 +2669,153 @@ Coding challenge from Jonas
  Example output: [ true, false, true]
 
  Hint: You can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
+
+ NOW LETS WALK THROUGH THE SOLUTION.
+1.Question:  create an array with some years
+  ```js
+  const years =  [ 1998, 2005, 1994 ];
+  ```
+2.Question: create an empty array
+  ```js
+   const emptyArray = [];
+  ```
+3.Question: use a loop to fill the empty array with the ages of the persons
+ lets use a "for...of" loop since it will give access to the elements. 
+ ```js
+  for( let year of years ){
+    // create an age variable to hold the age calculation
+    let age = 2018 - year;
+    // push each age gotten from each to the end of the emptyArray.This ensures that both the year and its corresponding age are in the same index
+    emptyArray.push( age );
+  }
+
+  // lets see whats inside emptyArray
+  console.log( emptyArray ) // [ 20,13,24 ]
+```
+4. Question: Use a loop to log into the console whether each person is of full age ( 18 0r older ), as well as their age.
+  lets use a "for...in" loop since it will give acces to the element index too. Here, we will only reassign the value of "year".
+```js
+  for ( year in years ) {
+    // Recall emptyArray contents? check if each of the elements, that is, age is full age or not. 
+    // Note that year in years returns an index position 
+    if (emptyArray[year] >= 18) {
+      console.log(`Age ${emptyArray[year]}years old is of full age`)
+    } else {
+      console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
+    }
+  }
+//  Age 20years old is of full age
+// Age 13years old is NOT of full age
+// Age 24years old is of full age
+```  
+
+ 5. Question: Finally, create a function called printFullAge which receivees the vector of years as an arguement, executes the steps 2, 3 and 4, and returns a vector of  true/false boolean values: true if the pereson is of full age ( >=18 years ) and false if not ( < 18 years ).
+```js
+  console.log( ' FUNCTION STARTS HERE ' )
+
+// lets create the function that recives an arguement, lets call the argument "arrayOfYears".
+
+// This time lets use ages as a variable instead of emptyArray 
+ function printFullAge( arrayOfYears ){
+  //  2
+    const ages = [];
+    const fullAges = [];
+  //  3
+    for( let year of arrayOfYears ){
+      let age = 2018 - year;
+      ages.push( age );
+    };
+    // 4 plus addition of boolean true or false
+    for (year in arrayOfYears) {
+      if (ages[year] >= 18) {
+        console.log(`Age ${ages[year]}years old is of full age`);
+        fullAges.push( true )
+      } else {
+        console.log(`Age ${ages[year]}years old is NOT of full age`)
+        fullAges.push( false )
+      }
+    }
+    // save fullAge into the function
+    return fullAges;
+  }
+  // create a second years variable
+  let years2 = [ 2001, 2007, 1995, 2009 ];
+  // pass in the first years array into the function and call the function as full_1
+  let full_1 = printFullAge( years );
+// Age 20years old is of full age
+// Age 13years old is NOT of full age
+// Age 24years old is of full age
+
+  // do same for full_2
+  let full_2 = printFullAge( years2 )
+//   Age 17years old is NOT of full age
+// Age 11years old is NOT of full age
+// Age 23years old is of full age
+// Age 9years old is NOT of full age
+
+
+  // display the functions
+  console.log( full_1 ); //[ true, false, true ]
+  console.log( full_2 ); //[ false, false, true, false ]
+   ```
+    And thats  it. We've concluded the challenge.
+    Now lets put it all together;
+```js
+  const years =  [ 1998, 2005, 1994 ];
+  const emptyArray = [];
+
+  for( let year of years ){
+    let age = 2018 - year;
+    emptyArray.push( age );
+  }
+  console.log( emptyArray ) // [ 20,13,24 ]
+
+  // 4.
+   for ( year in years ) {
+    if (emptyArray[year] >= 18) {
+      console.log(`Age ${emptyArray[year]}years old is of full age`)
+    } else {
+      console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
+    }
+  }
+//  Age 20years old is of full age
+// Age 13years old is NOT of full age
+// Age 24years old is of full age
+
+// 5.
+function printFullAge( arrayOfYears ){
+  //  2
+    const ages = [];
+    const fullAges = [];
+  //  3
+    for( let year of arrayOfYears ){
+      let age = 2018 - year;
+      ages.push( age );
+    };
+    // 4 plus addition of boolean true or false
+    for (year in arrayOfYears) {
+      if (ages[year] >= 18) {
+        console.log(`Age ${ages[year]}years old is of full age`);
+        fullAges.push( true )
+      } else {
+        console.log(`Age ${ages[year]}years old is NOT of full age`)
+        fullAges.push( false )
+      }
+    }
+    return fullAges;
+  }
+  let years2 = [ 2001, 2007, 1995, 2009 ];
+  let full_1 = printFullAge( years );
+// Age 20years old is of full age
+// Age 13years old is NOT of full age
+// Age 24years old is of full age
+
+  let full_2 = printFullAge( years2 )
+//   Age 17years old is NOT of full age
+// Age 11years old is NOT of full age
+// Age 23years old is of full age
+// Age 9years old is NOT of full age
+
+  console.log( full_1 ); //[ true, false, true ]
+  console.log( full_2 ); //[ false, false, true, false ]
+```

@@ -374,41 +374,45 @@ while( i <= arrayNames.length-1){
 // 1 First create an array with some years
 const years =  [ 1998, 2005, 1994 ];
 //2 create an empty array
-// const emptyArray = [];
+ const emptyArray = [];
 // //3 use a loop to fill the empty array with the ages of the persons
 // // lets use a for of loop
-// for( let year of years ){
-//   let age = 2018 - year;
-//   emptyArray.push( age );
-// }
+for( let year of years ){
+  let age = 2018 - year;
+  emptyArray.push( age );
+}
 //4 Use a loop to log into the console whether each person is of full age ( 18 0r older ), as well as their age.
 // lets use a for in loop
-// for (year in years) {
-//   if (emptyArray[year] >= 18) {
-//     console.log(`Age ${emptyArray[year]}years old is of full age`)
-//   } else {
-//     console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
-//   }
-// }
+for (year in years) {
+  if (emptyArray[year] >= 18) {
+    console.log(`Age ${emptyArray[year]}years old is of full age`)
+  } else {
+    console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
+  }
+}
 
 // 5.  Finally, create a function called printFullAge which receivees the vector of years as an arguement, executes the steps 2, 3 and 4, and returns a vector a vector of true true/false boolean values: true if the pereson is of full age ( >=18 years ) and false if not ( < 18 years ).
-const printFullAge = function( years ){
-  const emptyArray = [];
+function printFullAge( years ){
+  const ages = [];
   const fullAges = [];
  
   for( let year of years ){
     let age = 2018 - year;
-    emptyArray.push( age );
+    ages.push( age );
   };
   for (year in years) {
-    if (emptyArray[year] >= 18) {
-      console.log(`Age ${emptyArray[year]}years old is of full age`);
+    if (ages[year] >= 18) {
+      console.log(`Age ${ages[year]}years old is of full age`);
       fullAges.push( true )
     } else {
-      console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
+      console.log(`Age ${ages[year]}years old is NOT of full age`)
       fullAges.push( false )
     }
   }
   return fullAges;
 }
-printFullAge( years )
+let years2 = [ 2001, 2007, 1995, 2009 ]
+let full_1 = printFullAge( years );
+let full_2 = printFullAge( years2 )
+console.log( full_1 );
+console.log( full_2 );
