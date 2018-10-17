@@ -423,14 +423,14 @@ function aNewFunction() {
   // lets use a for in loop
   for (year in years) {
     if (emptyArray[year] >= 18) {
-      console.log(`Age ${emptyArray[year]}years old is of full age`)
+      // console.log(`Age ${emptyArray[year]}years old is of full age`)
     } else {
-      console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
+      // console.log(`Age ${emptyArray[year]}years old is NOT of full age`)
     }
   }
   
 
-  console.log( ' FUNCTION STARTS HERE ' )
+  // console.log( ' FUNCTION STARTS HERE ' )
   function printFullAge( arrayOfYears ){
     const ages = [];
     const isFullAge = [];
@@ -451,10 +451,10 @@ function aNewFunction() {
     return isFullAge;
   }
   let years2 = [ 2001, 2007, 1995, 2009 ]
-  let full_1 = printFullAge( years );
-  let full_2 = printFullAge( years2 )
-  console.log( full_1 );
-  console.log( full_2 );
+  // let full_1 = printFullAge( years );
+  // let full_2 = printFullAge( years2 )
+  // console.log( full_1 );
+  // console.log( full_2 );
 
   // DESTRUCTURING
 
@@ -462,11 +462,17 @@ const players = [ 'captain', 'player1', 'player2' ];
 
 //  to access members of this array, wwe do this;
 
- let captain = players[0];
- let firstPlayer = players[1];
- let secondPlayer = players[2]
+//  let captain = players[0];
+//  let firstPlayer = players[1];
+//  let secondPlayer = players[2]
 
 //  lets display them on the screen
+// console.log( captain ) //captwin
+// console.log( firstPlayer ) //player1
+// console.log( secondPlayer ) //player2
+
+// lets destructure
+let [ captain , firstPlayer,  secondPlayer ] = players;
 console.log( captain ) //captwin
 console.log( firstPlayer ) //player1
 console.log( secondPlayer ) //player2

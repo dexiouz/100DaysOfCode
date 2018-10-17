@@ -2844,3 +2844,17 @@ console.log( captain ) //captwin
 console.log( firstPlayer ) //player1
 console.log( secondPlayer ) //player2
  ```
+
+ See this long process? we are going to use destructuring to simplify it
+ see
+ ```js
+ const players = [ 'captain', 'player1', 'player2' ];
+
+//  destructuring
+let [ captain , firstPlayer,  secondPlayer ] = players;
+console.log( captain ) //captwin
+console.log( firstPlayer ) //player1
+console.log( secondPlayer ) //player2
+
+// and thats all
+```
