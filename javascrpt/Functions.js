@@ -418,3 +418,16 @@ console.log( full_1 );
 console.log( full_2 );
 
 // DESTRUCTURING
+
+const players = [ 'captain', 'player1', 'player2' ];
+
+//  to access members of this array, wwe do this;
+
+ let captain = players[0];
+ let firstPlayer = players[1];
+ let secondPlayer = players[2]
+
+//  lets display them on the screen
+console.log( captain ) //captwin
+console.log( firstPlayer ) //player1
+console.log( secondPlayer ) //player2

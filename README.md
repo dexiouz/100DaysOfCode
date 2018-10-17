@@ -2836,9 +2836,11 @@ const players = [ 'captain', 'player1', 'player2' ];
  to access members of this array, wwe do this;
  ```js
  let captain = players[0];
- let player1 = players[1];
- let player2 = players[2]
+ let firstPlayer = players[1];
+ let secondPlayer = players[2]
 
 //  lets display them on the screen
 console.log( captain ) //captwin
+console.log( firstPlayer ) //player1
+console.log( secondPlayer ) //player2
  ```
