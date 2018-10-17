@@ -2823,3 +2823,4 @@ function printFullAge( arrayOfYears ){
 **Link to work**: [medium](https://medium.com/@dexiouz/day57-of-100daysofcode-6b9066a12fde)
 
 Day58
+Destructuring

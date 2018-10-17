@@ -416,3 +416,5 @@ let full_1 = printFullAge( years );
 let full_2 = printFullAge( years2 )
 console.log( full_1 );
 console.log( full_2 );
+
+// DESTRUCTURING
