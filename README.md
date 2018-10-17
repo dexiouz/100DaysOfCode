@@ -2869,4 +2869,5 @@ let [ , , captain ] = players;
 console.log( captain )  // captain
 ```
 So we extracted the variables we want and discarded the rest using commas.
- 
+
+<!-- Destructuring objects  -->

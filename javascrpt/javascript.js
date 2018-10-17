@@ -480,3 +480,11 @@ function aNewFunction() {
 let [ , , captain ] = players;
 console.log( captain )  //captain
 
+// consider this object
+let details = {
+  name: 'Chidera',
+  school: 'fupre'
+}
+
+let { name, school } = details
+console.log( name, school )
