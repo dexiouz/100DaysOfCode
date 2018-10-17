@@ -2824,3 +2824,6 @@ function printFullAge( arrayOfYears ){
 
 Day58
 Destructuring
+Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes they are more convenient. Destructuring also works great with complex functions that have a lot of parameters, default values, and soon we’ll see how these are handled too. --- javascript.info
+
+Arrays and java s
