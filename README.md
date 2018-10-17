@@ -2838,4 +2838,7 @@ const players = [ 'captain', 'player1', 'player2' ];
  let captain = players[0];
  let player1 = players[1];
  let player2 = players[2]
+
+//  lets display them on the screen
+console.log( captain ) //captwin
  ```
