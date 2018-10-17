@@ -458,13 +458,13 @@ function aNewFunction() {
 
   // DESTRUCTURING
 
-const players = [ 'captain', 'player1', 'player2' ];
+  let players = [ 'player1', 'player2', 'captain', 'player3', ];
 
 //  to access members of this array, wwe do this;
 
-//  let captain = players[0];
-//  let firstPlayer = players[1];
-//  let secondPlayer = players[2]
+//  let firstPlayer = players[0];
+//  let secondPlayer = players[1];
+//  let captain = players[2];
 
 //  lets display them on the screen
 // console.log( captain ) //captwin
@@ -472,7 +472,11 @@ const players = [ 'captain', 'player1', 'player2' ];
 // console.log( secondPlayer ) //player2
 
 // lets destructure
-let [ captain , firstPlayer,  secondPlayer ] = players;
-console.log( captain ) //captwin
-console.log( firstPlayer ) //player1
-console.log( secondPlayer ) //player2
+// let [  firstPlayer,  secondPlayer, captain, thirdPlayer ] = players;
+// console.log( captain ) //captwin
+// console.log( firstPlayer ) //player1
+// console.log( secondPlayer ) //player2
+
+let [ , , captain ] = players;
+console.log( captain )  //captain
+

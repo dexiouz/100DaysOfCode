@@ -2831,7 +2831,7 @@ Destructuring allows to copy items into variables.
 
 Lets take a look at this array 
 ```js
-const players = [ 'captain', 'player1', 'player2' ];
+let players = [ 'captain', 'player1', 'player2' ];
 ```
  to access members of this array, wwe do this;
  ```js
@@ -2848,7 +2848,7 @@ console.log( secondPlayer ) //player2
  See this long process? we are going to use destructuring to simplify it
  see
  ```js
- const players = [ 'captain', 'player1', 'player2' ];
+ let players = [ 'captain', 'player1', 'player2' ];
 
 //  destructuring
 let [ captain , firstPlayer,  secondPlayer ] = players;
@@ -2858,3 +2858,15 @@ console.log( secondPlayer ) //player2
 
 // and thats all
 ```
+##Skipping items
+lets add few items to the players array
+```js
+let players = [ 'player1', 'player2', 'captain', 'player3', 'player4' ];
+```
+Lets assume we want to only grab the captain item and skip the other items. We use comma to skip the elemnts before our target element and abandon the rest. Here's how we can do this:
+```js
+let [ , , captain ] = players;
+console.log( captain )  // captain
+```
+So we extracted the variables we want and discarded the rest using commas.
+ 
