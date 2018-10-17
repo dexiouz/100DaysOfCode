@@ -2821,3 +2821,5 @@ function printFullAge( arrayOfYears ){
   console.log( full_2 ); //[ false, false, true, false ]
 ```
 **Link to work**: [medium](https://medium.com/@dexiouz/day57-of-100daysofcode-6b9066a12fde)
+
+Day58
