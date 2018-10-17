@@ -485,6 +485,11 @@ let details = {
   name: 'Chidera',
   school: 'fupre'
 }
+// old waY
+let name = details.name;
+let school = details.school;
 
-let { name, school } = details
-console.log( name, school )
+console.log( name );
+console.log( school )
+// let { name, school } = details
+// console.log( name, school )

@@ -2823,12 +2823,14 @@ function printFullAge( arrayOfYears ){
 **Link to work**: [medium](https://medium.com/@dexiouz/day57-of-100daysofcode-6b9066a12fde)
 
 Day58
-Destructuring
+#Destructuring
 Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes they are more convenient. Destructuring also works great with complex functions that have a lot of parameters, default values, and soon we’ll see how these are handled too. --- javascript.info
 
 Arrays and objects constitute some of the most widely used data structures in javascript.
 Destructuring allows to copy items into variables.
 
+#Destructuring arrays
+Array destructuring is characterized by square brackets holding the variables
 Lets take a look at this array 
 ```js
 let players = [ 'captain', 'player1', 'player2' ];
@@ -2870,4 +2872,32 @@ console.log( captain )  // captain
 ```
 So we extracted the variables we want and discarded the rest using commas.
 
-<!-- Destructuring objects  -->
+#Destructuring objects
+Objects destructuring is characterized by curly braces holding the variables 
+Consider this object
+```js
+let details = {
+  name: 'Chidera',
+  school: 'fupre'
+}
+```
+
+lets access the elements in the old way
+
+```js
+let name = details.name;
+let school = details.school;
+
+console.log( name ); //Chidera
+console.log( school ) //fupre
+```
+But with destructuring we get this
+```js
+// destructure
+let { name, school } = details;
+
+console.log( name ); //Chidera
+console.log( school ) //fupre 
+```
+
+Quite simple
