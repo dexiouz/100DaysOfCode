@@ -2930,3 +2930,31 @@ let book = {
 let { title, author, ...rest } = book
 console.log( title, author, rest.pages, rest.hasEbook) //enigma anybody 223 false
 ```
+#Deeper level destructuring
+hat if we want to destructure a deep level element of an object or array. Lets see
+```js
+let options = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: ["Cake", "Donut"],
+  extra: true    // something extra that we will not destruct
+};
+
+// destructuring assignment on multiple lines for clarity
+let {
+  size: { // put size here
+    width,
+    height
+  },
+  items: [item1, item2], // assign items here
+  title = "Menu" // not present in the object (default value is used)
+} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+alert(item1);  // Cake
+alert(item2);  // Donu
+```
