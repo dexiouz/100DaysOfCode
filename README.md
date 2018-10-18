@@ -2907,6 +2907,25 @@ Quite simple
 The rest operator
 The rest operator written as three dots is used to represent the other elements of an array or object which was not assigned variables during destructuring.
 
+Rest operator in arrays
 for instance 
 ```js
- 
+ let subjects = ['english', 'maths', 'economics', 'physics']
+let[ subject1, subject2 , ...others] = subjects
+console.log( subject1, subject2 , others[0],others[1])  //english maths economics physics
+ ```
+ The 'others' or 'rest' represents other elements not assigned a variable during destructuring
+
+The rest operator in objects
+```js
+let book = {
+  title: 'enigma',
+  author: 'anybody',
+  pages: 223,
+  hasEbook: false
+}
+
+// lets destructure
+
+let { bookTitle, author, ...others } = book
+console.log( bookTitle, author, others[0], others[1])

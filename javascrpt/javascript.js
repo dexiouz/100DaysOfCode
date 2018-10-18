@@ -475,7 +475,7 @@ function aNewFunction() {
 // let [  firstPlayer,  secondPlayer, captain, thirdPlayer ] = players;
 // console.log( captain ) //captwin
 // console.log( firstPlayer ) //player1
-// console.log( secondPlayer ) //player2
+// console.log( secondPlayer ) //player2  
 
 let [ , , captain ] = players;
 console.log( captain )  //captain
@@ -493,3 +493,8 @@ console.log( name );
 console.log( school )
 // let { name, school } = details
 // console.log( name, school )
+
+// rest operaror
+let subjects = ['english', 'maths', 'economics', 'physics']
+let[ subject1, subject2 , ...others] = subjects
+console.log( subject1, subject2 , others[0],others[1])
