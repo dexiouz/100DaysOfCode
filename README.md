@@ -2901,3 +2901,4 @@ console.log( school ) //fupre
 ```
 
 Quite simple
+**Link to work**: [medium](https://medium.com/@dexiouz/day58-of-100daysofcode-2f436c980ee)
