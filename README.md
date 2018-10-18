@@ -2905,4 +2905,8 @@ Quite simple
 
 #Day59
 The rest operator
-The rest operator 
+The rest operator written as three dots is used to represent the other elements of an array or object which was not assigned variables during destructuring.
+
+for instance 
+```js
+ 
