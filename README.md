@@ -2927,5 +2927,6 @@ let book = {
 
 // lets destructure
 
-let { bookTitle, author, ...others } = book
-console.log( bookTitle, author, others[0], others[1])
+let { title, author, ...rest } = book
+console.log( title, author, rest.pages, rest.hasEbook) //enigma anybody 223 false
+```

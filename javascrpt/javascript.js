@@ -495,6 +495,20 @@ console.log( school )
 // console.log( name, school )
 
 // rest operaror
+// in arrays
 let subjects = ['english', 'maths', 'economics', 'physics']
 let[ subject1, subject2 , ...others] = subjects
 console.log( subject1, subject2 , others[0],others[1])
+
+// rest operator in arrays
+let book = {
+  title: 'enigma',
+  author: 'anybody',
+  pages: 223,
+  hasEbook: false
+}
+
+// lets destructure
+
+let { title, author, ...rest } = book
+console.log( title, author, rest.pages, rest.hasEbook)
