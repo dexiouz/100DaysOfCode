@@ -2904,7 +2904,7 @@ Quite simple
 **Link to work**: [medium](https://medium.com/@dexiouz/day58-of-100daysofcode-2f436c980ee)
 
 #Day59
-The rest operator
+#The rest operator
 The rest operator written as three dots is used to represent the other elements of an array or object which was not assigned variables during destructuring.
 
 Rest operator in arrays
@@ -2958,3 +2958,5 @@ alert(height); // 200
 alert(item1);  // Cake
 alert(item2);  // Donu
 ```
+
+**Link to work**: [medium](https://medium.com/@dexiouz/day59-of-100dayofcode-6f2d7930581)
