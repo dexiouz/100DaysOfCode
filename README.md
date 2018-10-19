@@ -2985,4 +2985,24 @@ if ( 2 > 1){
 
 console.log( greater ) // greater is not defined
 ```
-So you see, the let key word is block scoped
+So you see, the let key word is block scoped.
+
+In a for loop like so, 
+```js
+for ( item = 0; item < 3; item++){
+  // console.log( item )
+}
+
+console.log( item ) // 3
+```
+
+for let it should not be same
+```js
+for ( item = 0; item < 3; item++){
+  // console.log( item )
+}
+
+console.log( item ) // greater is not defined
+```
+Notice that we were able to access the variable outside of the for loop.
+Always use the let or const.

@@ -516,7 +516,13 @@ let { title, author, ...rest } = book
 // Day60
 // var
 if ( 2 > 1){
-  let greater = 2;
+  var greater = 2;
 }
 
-console.log( greater ) //2
+// console.log( greater ) //2
+
+for ( let things = 0; things< 3;things++){
+  // console.log( item )
+}
+
+console.log( things )
