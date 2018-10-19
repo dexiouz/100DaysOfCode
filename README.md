@@ -3006,3 +3006,4 @@ console.log( item ) // greater is not defined
 ```
 Notice that we were able to access the variable outside of the for loop.
 Always use the let or const.
+**Link to work**[medium](https://medium.com/@dexiouz/day60-of-100daysofcode-f428ce69fa6f)
