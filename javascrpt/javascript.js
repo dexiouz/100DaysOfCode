@@ -498,7 +498,7 @@ console.log( school )
 // in arrays
 let subjects = ['english', 'maths', 'economics', 'physics']
 let[ subject1, subject2 , ...others] = subjects
-console.log( subject1, subject2 , others[0],others[1])
+// console.log( subject1, subject2 , others[0],others[1])
 
 // rest operator in arrays
 let book = {
@@ -511,4 +511,12 @@ let book = {
 // lets destructure
 
 let { title, author, ...rest } = book
-console.log( title, author, rest.pages, rest.hasEbook)
+// console.log( title, author, rest.pages, rest.hasEbook)
+
+// Day60
+// var
+if ( 2 > 1){
+  var greater = 2;
+}
+
+console.log( greater ) //2

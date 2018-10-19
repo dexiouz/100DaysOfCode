@@ -2973,4 +2973,4 @@ if ( 2 > 1){
   var greater = 2;
 }
 
-console.log( greater )
+console.log( greater ) //2
