@@ -2960,3 +2960,17 @@ alert(item2);  // Donu
 ```
 
 **Link to work**: [medium](https://medium.com/@dexiouz/day59-of-100dayofcode-6f2d7930581)
+
+#Day60
+Why you should not use "var"?
+A long time ago, javascript had no lexical environments and those era was ruled by "var".
+Var, much like let and const is used for declaring and assigning variables but here's one reason why you should not use var.
+
+Var is not scoped to the block
+This simply means that they can be used outside of the blocks in which they are declared.
+```js
+if ( 2 > 1){
+  var greater = 2;
+}
+
+console.log( greater )
