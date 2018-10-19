@@ -516,7 +516,7 @@ let { title, author, ...rest } = book
 // Day60
 // var
 if ( 2 > 1){
-  var greater = 2;
+  let greater = 2;
 }
 
 console.log( greater ) //2

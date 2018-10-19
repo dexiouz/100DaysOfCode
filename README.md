@@ -2974,3 +2974,15 @@ if ( 2 > 1){
 }
 
 console.log( greater ) //2
+```
+This is bad, it means that the variable can be used outside of the block, it is not block scoped.
+
+Lets try same thing with "let"
+```js
+if ( 2 > 1){
+  var greater = 2;
+}
+
+console.log( greater ) // greater is not defined
+```
+So you see, the let key word is block scoped
