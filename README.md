@@ -3041,3 +3041,35 @@ DOM stands for Document Object Model. It gives us the ability to manipulate html
   #ChildNodes
   Child nodes otherwise called children are elements in the same level which are direct descendants of a parent element. For instance, the head and body tags are children of the html tag.
     However, descendants encompasses both direct and indirect children of an element. If we include the p tag then the collection is a descendant of the html tag.
+
+#Querrying or searching elements
+Consider this html 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM</title>
+</head>
+<body>
+  <div id="firstDiv">
+     <h1> hello</h1>
+     <div class="innerDiv">
+       <p>Am an inner div</p>
+     </div>
+  </div>
+   
+
+</body>
+</html>
+```
+There are various ways of searching elements. 
+document.getElementById( #id ) : This is used to access elements which have an id. From the example lets access the firstDiv and save it in a variable.
+```js
+<script>
+ let div1 = document.getElementById( #firstDiv )
+</script>
+```
+zzz
