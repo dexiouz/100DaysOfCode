@@ -3013,4 +3013,22 @@ Always use the let or const.
 #Day61
 DOM 
 The technical term whereby javascript interacts with the browser is called DOM manipulation.
-DOM stands for Document Object Model. It gives us the ability to manipulate html and CSS thereby changing the look and feel of our website. Primari;y, the DOM represents html in the structure of a tree.
+DOM stands for Document Object Model. It gives us the ability to manipulate html and CSS thereby changing the look and feel of our website. Primari;y, the DOM represents html in the structure of a tree. The html tags are represented as elements. Some elements or nodes are children or direct children of a parent elementt. Html tag is at the root node.Consider this 
+```html
+<html>
+  <head> 
+  </head>
+
+  <body>
+    <p></P>
+  </body>
+</html>
+```
+  From the structure, 
+  ```html 
+  <html> ```
+  tag is the root node while   ```html 
+  <head> ``` and   ```html 
+  <body> ``` are its direct children. The   ```html 
+  <p> ```  is a direct child of the body tag and a descendant of the   ```html 
+  <html> ```tag.
