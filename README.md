@@ -3086,7 +3086,7 @@ lets target our h1 tag
 #document.getElementsByClassName( 'class'):
 Targets elements with same class name.
 ```js
- let classes = document.getElementByClassName( 'myClass' )
+ let classes = document.getElementByClassName( 'myClass' );
 ```
 #QuerySelector( ):
 This takes a name such as tagName, class, id etc. It can be used to access any one of them
