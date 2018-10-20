@@ -2961,9 +2961,6 @@ alert(item2);  // Donu
 
 **Link to work**: [medium](https://medium.com/@dexiouz/day59-of-100dayofcode-6f2d7930581) 
 
-#Day61
-DOM 
-The technical term whereby javascript interacts with the browser is called DOM manipulation.
 
 #Day60
 Why you should not use "var"?
@@ -3011,3 +3008,9 @@ console.log( item ) // greater is not defined
 Notice that we were able to access the variable outside of the for loop.
 Always use the let or const.
 **Link to work**[medium](https://medium.com/@dexiouz/day60-of-100daysofcode-f428ce69fa6f)
+
+
+#Day61
+DOM 
+The technical term whereby javascript interacts with the browser is called DOM manipulation.
+DOM stands for Document Object Model. It gives us the ability to manipulate html and CSS thereby changing the look and feel of our website. Primari;y, the DOM represents html in the structure of a tree.
