@@ -3032,3 +3032,12 @@ DOM stands for Document Object Model. It gives us the ability to manipulate html
   <body> ``` are its direct children. The   ```html 
   <p> ```  is a direct child of the body tag and a descendant of the   ```html 
   <html> ```tag.
+
+  The way the DOM works is that we have to find a way to target the html tag we want to manipulate and save it in a variable. The html tag which is always the first tag is described as the "document" while the corresponding topmost elements are described as "document properties". They include 
+  ```html 
+  <head>  //document.head
+  <body> //document.body 
+  ```
+  #ChildNodes
+  Child nodes otherwise called children are elements in the same level which are direct descendants of a parent element. For instance, the head and body tags are children of the html tag.
+    However, descendants encompasses both direct and indirect children of an element. If we include the p tag then the collection is a descendant of the html tag.
