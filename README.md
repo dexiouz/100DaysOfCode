@@ -3060,16 +3060,52 @@ Consider this html
        <p>Am an inner div</p>
      </div>
   </div>
-   
+  <div class = 'myClass'>
+    <h2> this is my class </h2>
+  </div>
+  <div class = 'myClass'>
+    <h3> this is my second class </h3>
+  </div>
 
 </body>
 </html>
 ```
 There are various ways of searching elements. 
-document.getElementById( #id ) : This is used to access elements which have an id. From the example lets access the firstDiv and save it in a variable.
+#document.getElementById( 'id' ) :
+ This is used to access elements which have an id. From the example lets access the firstDiv and save it in a variable.
 ```js
-<script>
- let div1 = document.getElementById( #firstDiv )
-</script>
+ let div1 = document.getElementById( 'firstDiv' )
 ```
-zzz
+#document.getElementsByTagName( 'nameOfTag' ) :
+This is used to access elements which have a give tag name such as 'div', 'input', 'h1', 'p' etc.
+lets target our h1 tag
+```js
+ let h1 = document.getElementByTagName( 'h1' )
+ ```
+
+#document.getElementsByClassName( 'class'):
+Targets elements with same class name.
+```js
+ let classes = document.getElementByClassName( 'myClass' )
+```
+#QuerySelector( ):
+This takes a name such as tagName, class, id etc. It can be used to access any one of them
+```js
+// searching an id
+ let div1 = document.querySelector( '#firstDiv' );
+
+ //searching a class
+let classes = document.querySelector( 'myClass' );
+
+//searching by tagname
+ let h1 = document.querySelector( 'h1' );
+```
+Note that this method returns only the first element that fulfils the seach. For instnce, if there are three classes you want to target, it returns or targets only the first class that it meets.
+
+If you want to return all the elments in that category then use
+# #QuerySelectorAll( ):
+If you want to return or target all the elments in that category then use this method
+```js
+ //searching a class
+let classes = document.querySelectorAll( 'myClass' );
+```
