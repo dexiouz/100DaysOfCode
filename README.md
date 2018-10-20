@@ -3041,6 +3041,10 @@ DOM stands for Document Object Model. It gives us the ability to manipulate html
   #ChildNodes
   Child nodes otherwise called children are elements in the same level which are direct descendants of a parent element. For instance, the head and body tags are children of the html tag.
     However, descendants encompasses both direct and indirect children of an element. If we include the p tag then the collection is a descendant of the html tag.
+#firstChild
+This simply is the first direct child of an element. Head is the first child of thr html.
+#lastChild
+THis refers to the last child of an element. The body at this point is the last child of our html tag.
 
 #Querrying or searching elements
 Consider this html 
