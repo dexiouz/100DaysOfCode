@@ -3103,7 +3103,7 @@ let classes = document.querySelector( 'myClass' );
 Note that this method returns only the first element that fulfils the seach. For instnce, if there are three classes you want to target, it returns or targets only the first class that it meets.
 
 If you want to return all the elments in that category then use
-# #QuerySelectorAll( ):
+#QuerySelectorAll( ):
 If you want to return or target all the elments in that category then use this method
 ```js
  //searching a class
