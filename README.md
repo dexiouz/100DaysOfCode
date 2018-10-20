@@ -2959,7 +2959,11 @@ alert(item1);  // Cake
 alert(item2);  // Donu
 ```
 
-**Link to work**: [medium](https://medium.com/@dexiouz/day59-of-100dayofcode-6f2d7930581)
+**Link to work**: [medium](https://medium.com/@dexiouz/day59-of-100dayofcode-6f2d7930581) 
+
+#Day61
+DOM 
+The technical term whereby javascript interacts with the browser is called DOM manipulation.
 
 #Day60
 Why you should not use "var"?
