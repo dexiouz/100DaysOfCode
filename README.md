@@ -3113,3 +3113,48 @@ If you want to return or target all the elments in that category then use this m
  //searching a class
 let classes = document.querySelectorAll( 'myClass' );
 ```
+
+#Day62
+#DOM manipulatio ( part 2)
+
+Manipulation of the DOM elements is what makes live pages possible with javascript.
+##Create element
+To create a tag we use 
+```js
+document.createElement ( 'tag' );
+```
+ Examples, 
+lets create a p, div,h1, and a tags and save them in a variable
+```js
+let pTag= document.createElement ( 'p' );
+let div = document.createElement( 'div' )
+let h1Tag= document.createElement ( 'h1' );
+let aTag= document.createElement ( 'a' );
+```
+##Create text nodes
+This one allows to create texts
+```js
+document.createTextNode( 'text');
+```
+As usual lets create a text
+```js
+let newText = document.createTextNode( 'hello I am a text' );
+```
+
+##Appending or attaching elements
+This is used for attaching created text nodes or elements to a parent element.
+
+```js
+parentElement.appendChild( 'node' );
+```
+Lets attach out "newText" node into the p tag and then append the p tag into our div
+
+```js
+// put text node into p tag
+pTag.appendChild( 'newText' );
+
+//put pTag into div tag
+div.appendChild( pTag );
+```
+
+#Day63
