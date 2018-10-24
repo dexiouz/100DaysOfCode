@@ -3162,14 +3162,14 @@ DOM manipulation
 #Methods of appending elements to child elements
 On day62 talked about the appendchild method of inserting elements. There are other methods.
 Before wwe go further, the innerhtml of an element is the content of that element rendered with its html properties.
-
-1) #appendchild method.
+Here's our default html file.
 ```html
   <div>
     <h1>Am a h1 tag</h1>
     <h2>Am a h2 tag</h2>
   </div>
 ```
+1) #appendchild method.
 lets insert another p tag
 ```js
   parentElement.appendChild( childToAppend );
@@ -3190,7 +3190,7 @@ This method will insert *element* before *nextSibling*. That is , it will come f
    // create a p tag
   let p = document.createElement( 'p' );
   // put a content in p tag
-  p.innerhtml = 'a new p tag';
+  p.innerhtml = 'insert before next sibling';
   //lets insert the p tag on top of the h1 tag
   div.insertBefore( p, h1);
 ```
@@ -3210,6 +3210,25 @@ This method adds the strings or node as the first child of the parent element.
 ```
 
 5) element.before( node or strings )
-This method adds the node or string before elementhmnn hghh. Kind of, it adds it on top of the element.
+This method adds the node or string before *element*. Kind of, it adds it on top of the element. So the node or string should come before the element.
 ```js
   div.before( 'you will see me on top of div' );
+```
+6) element.after( node or string )
+This method adds the node or string after *element*. Kind of, it adds it at the end of the element. So the node or string should come after the element.
+```js
+  div.after( 'you will see me at the bottom of div' );
+```
+Finally we get something like this for all the insertion methods
+```html
+ you will see me on top of div          <!--div.before( 'you will see me on top of div' );-->
+ <div>
+    am at the first position            <!-- div.prepend( 'am at the first position' ) -->
+    <p>insert before next sibling</p>   <!-- for div.insertBefore( p, h1) --> 
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+    <p> a new p tag </p>               <!-- for document.appendChild() --> 
+    am at the last position            <!-- for  div.append( 'am at the last position') --> 
+  </div>
+  am at the last position              <!--div.after( 'you will see at the bottom of div' );-->
+```
