@@ -3232,6 +3232,7 @@ Finally we get something like this for all the insertion methods
   </div>
   am at the last position              <!--div.after( 'you will see at the bottom of div' );-->
 ```
+**Link t work**[medium](https://medium.com/@dexiouz/day63-of-100daysofcode-401d559fb876)
 
 #Day64
 DOM manipulation ( part 4 )
@@ -3352,3 +3353,4 @@ Lets view our html
 h2 is gone
 
 This is helpful to me!!!
+**Link to work**[medium](https://medium.com/@dexiouz/day64-of-100daysofcode-841eccbebcdc)
