@@ -3158,7 +3158,7 @@ div.appendChild( pTag );
 ```
 
 #Day63
-DOM manipulation
+DOM manipulation ( Part 3 )
 #Methods of appending elements to child elements
 On day62 talked about the appendchild method of inserting elements. There are other methods.
 Before wwe go further, the innerhtml of an element is the content of that element rendered with its html properties.
@@ -3232,3 +3232,111 @@ Finally we get something like this for all the insertion methods
   </div>
   am at the last position              <!--div.after( 'you will see at the bottom of div' );-->
 ```
+
+#Day64
+DOM manipulation ( part 4 )
+On day63 we talked about methods of inserting elements.
+Lets continue from there.
+Here's our index.html
+
+```html
+  <div class="mainDiv">
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+  </div>
+```
+
+lets create a p tag and populate it with some text
+```js
+ let p = document.createElement( 'p' );
+  p.innerhtml = ' I am beforebegin ';
+```
+1) element.insertAdjacentHTML( insertionPosition, node or text )
+This method is in four variations regarding the *insertPosition* parameter.
+They are
+ **beforebegin, afterbegin, beforeend, afterend,** 
+ Now lets see how they do their magic.
+ 1) element.insertAdjacentHTML( beforebegin, node or text )
+    This method adds the node or text before *element*.
+```js
+   div.insertAdjacentHTML( 'beforebegin', p );
+```
+2) element.insertAdjacentHTML( afterbegin, node or text )
+his method adds the node or text at the beginning of *element*.
+```js
+   div.insertAdjacentHTML( 'afterbegin', 'I am afterbegin' );
+```
+3)  element.insertAdjacentHTML( beforeend, node or text )
+his method adds the node or text at the end of *element*.
+```js
+   div.insertAdjacentHTML( 'beforeend', 'I am beforeend' );
+```
+
+4) element.insertAdjacentHTML( afterend, node or text )
+his method adds the node or text after the end of *element*.
+```js
+   div.insertAdjacentHTML( 'afterend', 'I am afterend' );
+```
+
+Hence our new html becomes
+```html
+  I am beforebegin         <!-- div.insertAdjacentHTML( 'beforebegin', p ) -->
+  <div>
+    I am afterbegin        <!-- div.insertAdjacentHTML( 'afterbegin', 'I am afterbegin' ); -->
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+     I am beforeend       <!--div.insertAdjacentHTML( 'beforeend', 'I am beforeend' ); -->
+  </div>
+  I am afterend          <!-- div.insertAdjacentHTML( 'afterend', 'I am afterend' ) -->
+```
+
+#Cloning a node/element
+Remember our index.html, suppose we want to repeat it somewhere else without worrying to start writing all the codes again. We could use the clone method. Copying and pasting the cde is not a healthy practice.
+There are two variants to cloning. Passing a parameter "true" means that the new clone should have all the attributes and subelements of the main element. However passing a parameter "false" means the new clone won't have child nodes, subelements etc.
+
+Lets create some clone of the div in our index.html. First with parameter true
+```js
+let cloneDiv = div.cloneNode( true ) 
+```
+lets change the innerHTML of h1 in this new cloned div.
+```js
+cloneDiv.querySelector( h1 ).innerHTML = 'I am now in the cloned Div';
+
+// lets insert it after the main div
+
+div.insertAdjacentHTML( 'afterend', cloneDiv )
+```
+Our new file becomes
+```html
+  <!-- cloned div -->
+  <div class="mainDiv">
+    <h1>I am now in the cloned Div</h1>
+    <h2>Am a h2 tag</h2>
+  </div>
+  <!-- main div -->
+  <div class="mainDiv">
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+  </div>
+```
+
+Lets clone with parameter false
+```js
+let cloneDiv2 = div.cloneNode( false ) 
+```
+Our new file becomes
+```html
+  <!-- cloned div -->
+  <div class="mainDiv">
+    
+  </div>
+  <!-- main div -->
+  <div class="mainDiv">
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+  </div>
+```
+Sleeek!!!
+
+#Removing elements
+W
