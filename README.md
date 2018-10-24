@@ -3339,4 +3339,16 @@ Our new file becomes
 Sleeek!!!
 
 #Removing elements
-W
+We can remove elements with the remove method. Lets remove the h1 tag from our html file
+```js
+h1.remove()
+```
+Lets view our html
+```html
+  <div class="mainDiv">
+    <h2>Am a h2 tag</h2>
+  </div>
+```
+h2 is gone
+
+This is helpful to me!!!
