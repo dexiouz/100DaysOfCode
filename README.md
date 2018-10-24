@@ -3158,3 +3158,58 @@ div.appendChild( pTag );
 ```
 
 #Day63
+DOM manipulation
+#Methods of appending elements to child elements
+On day62 talked about the appendchild method of inserting elements. There are other methods.
+Before wwe go further, the innerhtml of an element is the content of that element rendered with its html properties.
+
+1) #appendchild method.
+```html
+  <div>
+    <h1>Am a h1 tag</h1>
+    <h2>Am a h2 tag</h2>
+  </div>
+```
+lets insert another p tag
+```js
+  parentElement.appendChild( childToAppend );
+
+  // create a p tag
+  let p = document.createElement( 'p' );
+  // put a content in p tag
+  p.innerhtml = 'a new p tag';
+  // insert our new p tag into the div
+  div.appendChild( p );
+
+```
+
+2) #parentElement.insertBefore( element, nextSibling ):
+This method will insert *element* before *nextSibling*. That is , it will come first before *nextSibbling*
+```js
+  parentElement.insertBefore( element, nextSibling );
+   // create a p tag
+  let p = document.createElement( 'p' );
+  // put a content in p tag
+  p.innerhtml = 'a new p tag';
+  //lets insert the p tag on top of the h1 tag
+  div.insertBefore( p, h1);
+```
+
+For more flexibility, there are other methods, lets check them out. These other methods do not just insert tags, elements or nodes but they can also insert **text**.
+
+3) element.append( strings or nodes )
+This method will add the new item as a last child of the parent element.
+```js
+  div.append( 'am at the last position' );
+```
+
+4) element.prepend( strings or nodes )
+This method adds the strings or node as the first child of the parent element.
+```js
+  div.prepend( 'am at the first position' );
+```
+
+5) element.before( node or strings )
+This method adds the node or string before elementhmnn hghh. Kind of, it adds it on top of the element.
+```js
+  div.before( 'you will see me on top of div' );
