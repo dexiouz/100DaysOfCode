@@ -3113,6 +3113,7 @@ If you want to return or target all the elments in that category then use this m
  //searching a class
 let classes = document.querySelectorAll( 'myClass' );
 ```
+**Link to work**[medium](https://medium.com/@dexiouz/day61-of-100daysofcode-4a5690eaca63)
 
 #Day62
 #DOM manipulatio ( part 2)
@@ -3156,6 +3157,7 @@ pTag.appendChild( 'newText' );
 //put pTag into div tag
 div.appendChild( pTag );
 ```
+**Link to work**[medium](https://medium.com/@dexiouz/dy62-of-100daysofcode-c236ec083671)
 
 #Day63
 DOM manipulation ( Part 3 )
