@@ -3451,5 +3451,53 @@ Hence with the className, we target the whole class while we target only an indi
 
 #Day66
 Manipulating styles using DOM
-The "style" attribute is represented as "element.style" which is an object.
+
 Consider our html file
+```html
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+</head>
+<body>
+  <div class="firstDiv">
+    hello
+  </div>
+  <script>
+  
+  </script>
+</body>
+</html>
+```
+The "style" attribute is represented as "element.style" which is an object.
+Indeed, writing 
+```js
+element.style.left = "30px"
+```
+is same as writing in the attribute
+
+```html
+style = "left: 30px"
+```
+Changing the style property
+Lets change the background color of the index file
+```html
+ <script>
+      let div = document.querySelector( 'div' );
+        div.style.background = "red";
+  </script>
+```
+Using cssText to Add multiple styles
+Clearly, the "element.style" is an object and hence to add multiple styles we use CSSText and add the sstyles using the backtick.
+```html
+ <script>
+       let div = document.querySelector( 'div' );
+    div.style.cssText= `width: 30%;
+    height: 40%;
+    color: blue;
+    background-color: yellow;
+    `;
+  </script>
+```
+

@@ -13,12 +13,26 @@
   <section class="firstDiv">
     
   </section>
-  <script>
+  <!-- mANIPULATING CLASSES -->
+  <!-- <script>
     let div = document.querySelector( 'div' );
-    let section = document.querySelector( 'section' )
      console.log(div.classList.contains( 'firstDiv' ));
     console.log( div.className )  //firstDiv
-    console.log( section.className )
-  </script>
+  </script> -->
+  <!-- MANIPULATING STYLES -->
+  <!-- add a single style -->
+  <!-- <script>
+      let div = document.querySelector( 'div' );
+        div.style.background = "red";
+    </script> -->
+    <!-- add multiple styles -->
+    <script>
+       let div = document.querySelector( 'div' );
+    div.style.cssText= `width: 30%;
+    height: 40%;
+    color: blue;
+    background-color: yellow;
+    `;
+    </script>
 </body>
 </html>
