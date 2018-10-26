@@ -3357,8 +3357,10 @@ h2 is gone
 This is helpful to me!!!
 **Link to work**[medium](https://medium.com/@dexiouz/day64-of-100daysofcode-841eccbebcdc)
 
-#Day65 
+##Day65
+
 #DOM manipulation ( part 5 )
+
 #Manipulating classes using DOM
 
 The best way to add styles to  a html file is through a CSS file, unless in rare occasions where in-line styling should be recommended if the value of the style sometimes changes dynamically.
@@ -3448,8 +3450,10 @@ Hence with the className, we target the whole class while we target only an indi
   But what I understand is that we use the classList to add/remove or toggle names of class but we use className to check each individual element.
 
   And thats it for classes in DOM
+**Link to work**[medium]( https://medium.com/@dexiouz/day65-of-100daysofcode-c7b7ce2b02bf )
 
-#Day66
+##Day66
+
 Manipulating styles using DOM
 
 Consider our html file
@@ -3528,3 +3532,4 @@ Say 30px, 40px etc.
 
 
 And thats all for today.
+**Link to work**[medium]( https://medium.com/@dexiouz/day66-of-100daysofcode-fa19f969b3f4 )
