@@ -3446,3 +3446,5 @@ To check if the class is contained in the element
 Hence with the className, we target the whole class while we target only an individual class using classList. (  THis part is not very clear to me ).
 
   But what I understand is that we use the classList to add/remove or toggle names of class but we use className to check each individual element.
+
+  And thats it for classes in DOM
