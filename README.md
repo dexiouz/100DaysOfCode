@@ -3458,6 +3458,7 @@ Consider our html file
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <style> .firstDiv { color: red}</style>
   <title>DOM</title>
 </head>
 <body>
@@ -3498,6 +3499,15 @@ Clearly, the "element.style" is an object and hence to add multiple styles we us
     color: blue;
     background-color: yellow;
     `;
+  </script>
+```
+
+Using Computed values
+Computed values are used to reading the values of css. In case you want to increase or decrease margin but don't know the previous margin of the element. You can use computed values for that.
+Here's the syntax
+```html
+<script>
+    getComputedStyle( element)
   </script>
 ```
 
