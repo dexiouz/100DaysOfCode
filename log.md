@@ -1,8 +1,18 @@
-##100daysofcode
+Addding upstream in open-source projects
+First cd into the folder file.
+$git upstream
+git remote add upstream ((url of the cloned repo))
 
-###Day7 August 22 Wedneday
-The **for-of-loop** is used to loop through any type of data that is iterable. Iterable is anything that can be looped over such as an array, map , set , generators etc. Disadvantage of the **forEach loop** is that you cant abort or continue the loop; you cant skip. The **for-in loop** mostly returns the index, to get the items, you use the index e.g **console.log(cuts[index])**
-**The for-of-loop** is the best, can be used for any type of data except objects. You can abort or continue the loop with if statements and you can also skip. To derive the index, call the .entries() method to derive an iterator.
-Another useful example is iterating over arguments. For instance when you don't know how many arguments are being passed. The argument proto is object so you may have to convert it to an arrya forst but woth the for-of-loop you dont have to convert it to an array.
+The importance of upstream is to updated with the current repo incase you left off pushing your projects some weeks ago.
 
-You cannot iterate over an object but you can use for-in loop to do some things. The object.keys(object) will take ina na object and return the keys
+
+After two weeks
+$git checkout master      //
+$ git fetch upstream      //to pull information in upstream... pull their own master
+$ git merge upstream/master  // update my own master with their master
+$ git merge master myBranchName   //update my local branch
+$git checkout myBranchName    // switched to my master
+$git add .
+$git commit
+
+
