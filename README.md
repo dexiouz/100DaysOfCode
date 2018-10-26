@@ -3358,3 +3358,60 @@ This is helpful to me!!!
 **Link to work**[medium](https://medium.com/@dexiouz/day64-of-100daysofcode-841eccbebcdc)
 
 #Day65 
+#DOM manipulation ( part 5 )
+#Manipulating styles and classes using DOM
+
+The best way to add styles to  a html file is through a CSS file, unless in rare occasions where in-line styling should be recommended if the value of the style sometimes changes dynamically.
+
+Lets use this as index.html
+```html
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM</title>
+</head>
+<body>
+  <div class="firstDiv">
+    hello
+  </div>
+  <div class="firstDiv">
+    
+  </div>
+  <script>
+    let div = document.querySelector( 'div' )
+     div.classList.add( 'firstDiv1' );
+    console.log( div.className )  //firstDiv firstDiv1
+  </script>
+</body>
+</html>
+```
+For instance 
+```js
+let padding = /*some math caliculations*/
+let margin = /*some math caliculations*/
+//  hence
+
+element.style.padding = padding;
+element.style.margin = margin
+```
+#The concept of classLists and classNames
+To determine the class of an element
+```js
+console.log(document.element.className)
+```
+
+The classList property gives us the liberty to add, remove or toggle classes.
+
+Adding a class
+```html
+<div class = "firstDiv">
+  <script>
+    document.div.add( 'firstDiv1' );
+    console.log( document.div.className )  //firstDiv firstDiv1
+  <script/>
+</div>  
+```
+Hence with the className, we target the whole class while we target only an individual class using classList. (  THis part is not very clear to me )
