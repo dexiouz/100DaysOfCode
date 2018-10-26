@@ -3359,7 +3359,7 @@ This is helpful to me!!!
 
 #Day65 
 #DOM manipulation ( part 5 )
-#Manipulating styles and classes using DOM
+#Manipulating classes using DOM
 
 The best way to add styles to  a html file is through a CSS file, unless in rare occasions where in-line styling should be recommended if the value of the style sometimes changes dynamically.
 
@@ -3377,13 +3377,11 @@ Lets use this as index.html
   <div class="firstDiv">
     hello
   </div>
-  <div class="firstDiv">
+  <section class="firstSection">
     
-  </div>
+  </section>
   <script>
-    let div = document.querySelector( 'div' )
-     div.classList.add( 'firstDiv1' );
-    console.log( div.className )  //firstDiv firstDiv1
+  
   </script>
 </body>
 </html>
@@ -3414,4 +3412,37 @@ Adding a class
   <script/>
 </div>  
 ```
-Hence with the className, we target the whole class while we target only an individual class using classList. (  THis part is not very clear to me )
+
+Removing a class
+```html
+<script>
+   let div = document.querySelector( 'div' );
+     div.classList.remove( 'firstDiv1' );
+    console.log( div.className )  //firstDiv   
+    //the previously added firstDiv1 has beem removed
+  </script>
+</div>  
+```html
+Toggling a class
+What it does is that if the class exists, it will remove it; if it doesn't exist it will add it.
+<script>
+   let div = document.querySelector( 'div' );
+     div.classList.toggle( 'firstDiv1' );
+    console.log( div.className )  //firstDiv firstDiv1
+    //the previously removed firstDiv1 has beem added again
+  </script>
+</div>  
+
+To check if the class is contained in the element
+```html
+<script>
+   let div = document.querySelector( 'div' );
+     div.classList.contains( 'firstDiv1' );
+    console.log( div.className )  //true
+  </script>
+</div> 
+
+
+Hence with the className, we target the whole class while we target only an individual class using classList. (  THis part is not very clear to me ).
+
+  But what I understand is that we use the classList to add/remove or toggle names of class but we use className to check each individual element.
