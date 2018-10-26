@@ -33,6 +33,11 @@
     height: 40%;
     background-color: yellow;
     `;
-    </script>
+
+    // COMPUTED VALUES
+       const computedStyle = getComputedStyle( div );
+      console.log( computedStyle.width ); // 30% of the current screen
+      console.log( computedStyle.color ); // rgb(255, 0, 0)
+    </script> 
 </body>
 </html>

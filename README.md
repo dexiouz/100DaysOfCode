@@ -3507,7 +3507,24 @@ Computed values are used to reading the values of css. In case you want to incre
 Here's the syntax
 ```html
 <script>
-    getComputedStyle( element)
+    getComputedStyle( element[, pseudo ])
   </script>
 ```
+With that now lets read the value of our previous css styles
 
+```html
+ <script>
+       let div = document.querySelector( 'div' );
+       const computedStyle = getComputedStyle( div );
+       console.log( computedStyle.width ); // 147.33 px 
+      console.log( computedStyle.color ); // rgb(255, 0, 0)
+  </script>
+```
+Note this:
+A computed dtyle value is the value after all css inheritance and rules have been applied. It usually in em or percentages e.g 4em, 4%;
+
+The resolved style value is what is now applied finally to the element usually in pixels.
+Say 30px, 40px etc.
+
+
+And thats all for today.
