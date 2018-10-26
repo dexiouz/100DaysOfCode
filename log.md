@@ -7,7 +7,7 @@ The importance of upstream is to updated with the current repo incase you left o
 
 
 After two weeks
-$git checkout master      //
+$git checkout master     ` //
 $ git fetch upstream      //to pull information in upstream... pull their own master
 $ git merge upstream/master  // update my own master with their master
 $ git merge master myBranchName   //update my local branch
