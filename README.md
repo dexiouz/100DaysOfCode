@@ -1395,6 +1395,15 @@ The parenthesis has a high priority.
 When two operators are used, their usage depends on whether they are executed from right to left or left to right.
 
 
+#47
+Reviewed everything I have done so far
+
+#Day48
+**Link to work**[medium](https://medium.com/learnfactory-nigeria/day48-and-day49-f9a19d1c63b5)
+
+#Day49
+**link to work**[medium](https://medium.com/learnfactory-nigeria/day48-and-day49-f9a19d1c63b5)
+
 ###Day50
 Finally got the algorithm for sentence palindrome. The previous error was that  I was using array.push instead of array.unshift.
 ```js
@@ -1417,6 +1426,8 @@ reverse('Eve damned Eden, mad Eve')
 // reverse('Lon nol') //false 'Eve damned Eden, mad Eve is not a palindrome'
 // reverse('Sore was I ere I saw Eros')
 ```
+
+***Link to work**[medium](https://medium.com/learnfactory-nigeria/day50-of-100daysofcode-23aa51bd5d02)
 
 ###Day51 
 Conditional Operators
