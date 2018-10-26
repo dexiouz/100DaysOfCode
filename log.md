@@ -13,6 +13,8 @@ $ git merge upstream/master  // update my own master with their master
 $ git merge master myBranchName   //update my local branch
 $git checkout myBranchName    // switched to my master
 $git add .
-$git commit
+$git commit -m "my commit message"
+$git push origin myBranchName
+
 
 
