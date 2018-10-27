@@ -47,8 +47,9 @@
       alert( 'hello worlds' )
     });
     // second handler
-    button.addEventListener( 'click', function(){
-      alert( 'ANother hello world' )
+    button.addEventListener( 'click', function(e){
+      alert( 'ANother hello world' );
+      console.log(e)
     })
     </script> 
 </body>

@@ -3644,5 +3644,34 @@ element.removeEventListener( event, function() or handler )
 ```
 With the addEventListener method, we can set many handlers for one event. For instance, we can alert two things when the button is clicked.
 
+```html
+<script>
+    let button = document.querySelector( '.button' );
+    button.addEventListener( 'click', function(){
+      alert( 'hello worlds' )
+    });
+    // second handler
+    button.addEventListener( 'click', function(){
+      alert( 'ANother hello world' )
+    })
+</script>
+```
+The addEvent method is the most widely used method.
+
+**Event (e)**
+
+The event object e or event or any variable you wish to call it is the pointer to the event that was emitted plus other object properties that's packed inside it as object.
+```html
+<script>
+    let button = document.querySelector( '.button' );
+    button.addEventListener( 'click', function( event ){
+      alert( 'ANother hello world' );
+      console.log( event )
+    })
+</script>
+```
+
+
+
 
 
