@@ -3626,5 +3626,11 @@ Supposing we want to alert "hello world" when the button is clicked. Here's how 
 </script>
 ```
 **HTML attribute**
+Inside a HTML tag, we can assign an event directly, here's it
+```html
+
+  <input type="button" class="button" onclick="alert( 'hello world' ) "/>
+
+```
 
 
