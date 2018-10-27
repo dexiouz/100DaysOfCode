@@ -3566,3 +3566,4 @@ And thats all for today.
 
 ***Day67**
 
+**Browser Events**
