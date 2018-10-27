@@ -3576,3 +3576,34 @@ Events happen in many elements. Lets take a look at the ones that are constantly
 --keyup and keydown : when a keyboard key is pressed(down) and released(up)
 
 **Mouse Events**
+
+---mousemove: event for moving the mouse.
+---mouseover/mouseout: event of the mouse cursor leaving or coming over an element.
+---click: When the mouse is clicked
+---mousedown/mouseup: event when the mouse is pressed and then released.
+
+**Form events**
+
+--submit: for submitting a form
+---focus: when an element is focused on such as an inout tag.
+
+**CSS events**
+
+--transitioned: the finishing of a css animation.
+
+So , the next question is: what happens when I clicked the button or submit a form or mouseover an element. Kind of, what do I expect when an event happens.
+This is where event handlers comes in.
+
+**EVent handlers**
+
+This is usually a function that is called when an event happens. For instance we can write a function that alerts "hello" when a button is clicked. The function is an event handler.
+
+Consider this html
+```html
+
+**Three ways to add event listeners**
+
+**DOM property method**
+
+The DOM property *onEventName* is used to assign a handler to listen for an event and do something.
+
