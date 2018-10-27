@@ -3563,3 +3563,6 @@ Say 30px, 40px etc.
 
 And thats all for today.
 **Link to work**[medium]( https://medium.com/@dexiouz/day66-of-100daysofcode-fa19f969b3f4 )
+
+***Day67**
+
