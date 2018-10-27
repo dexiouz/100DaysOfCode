@@ -3564,6 +3564,15 @@ Say 30px, 40px etc.
 And thats all for today.
 **Link to work**[medium]( https://medium.com/@dexiouz/day66-of-100daysofcode-fa19f969b3f4 )
 
-***Day67**
+***Day67***
 
 **Browser Events**
+
+An event here is a signal that something has happened. For instance, an alarm going off is a signal, kind of, a call to an activity.
+Events happen in many elements. Lets take a look at the ones that are constantly being used.
+
+**Keyboard Events**
+
+--keyup and keydown : when a keyboard key is pressed(down) and released(up)
+
+**Mouse Events**
