@@ -83,6 +83,7 @@ ES6 array methods. The array.from() and aray.of(). Found out, array.from() takes
 
 
 ###Day12 
+
 **Today's work**: New ES6 Array method .find() is a callback function that returns true or false until you actually find it, works better with loops. To find multiple try the array.filter which returns an array of objects.
 The .findIndex() gets the index of the element, for instance if you want ot delete it.
 
@@ -91,17 +92,20 @@ They check through an array to see i sme of the data or all of the data meet wha
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day13 
+
 **Focus:** spread-operator
 **Today's work**:The spread operator takes every single item from an iterable eg arrays, dom, objects, string and apply it to the containing element.
 You can also copy an array without overriding the contents of the main array when you edit the copied array.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day14
+
 **Focus:** spread-operator
 **Today's work**:Used spread operators to spread into a function. And as an alternative to array.from(). To remove an object from an array of objects.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day15
+
 **Focus:** The rest-param and object literals
 **Today's work**:The rest-param is the opposite of the spreaad operator; where the spread operator takes an array andunpacks it into multiple array, the rest param takes multiple items and packs them into a single array. Two cases where rest params are used are in arrays and in destructuring situations.
 
@@ -109,17 +113,20 @@ Another focus was on object literals and used in several cases
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day16
+
 **Focus:** revision of previous days works. Took a peep on promises.
 
 Another focus was on object literals and used in several cases
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day17
+
 **Focus:** Flexbox.
 Set up flexbox environment , created html with few divs, linked css stylesheet, used flex display property on  the divs. 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day18
+
 **Focus:** Flexbox.
 Flex-Direction: The 'flex-direction: row' the default of any flex container spans the content vertically to hit the height of the container. It stacks them side by side.
 The 'flex-direction:column' instead stacks the contents vertically on top of each other. 
@@ -131,7 +138,8 @@ The main access when it is row, is from left to right. If it is column, it goes 
 There is also flex-direction: row-reverse or column reverse which are the cross accesses, the access starts in reverse. They are the cross accesses
  
 
-Flex-wrap:
+#Flex-wrap:
+
 Suppose the flex elements have total widths bigger than your screen size, the 'flex-wrap: wrap'property comes in to evenly stretch  the elements in the screen. 
 Suppose I give each box a width of 300px which is a total of 300px*10, that is 300px. The problem is, my screen is not 300px wide.
 Here flex tries to share the flex elements evenly on the screen.
@@ -149,7 +157,9 @@ Using padding or border properties gives you something interesting too.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day19
+
 **Focus:** Flexbox.
+
 Flex box ordering is a way to move the order of DOM elements without moving them in the DOM.
 The flex:1 property distributes the elements equally on the screen. 
 Order takes a number and pushes the target element further down the screen to the right . The default order value is 0. Order is good especially for responsiveness.
@@ -157,8 +167,10 @@ Order also takes negative values but instead pushes the target element to the le
 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
-###Day20
+###**Day20**
+
 **Focus:** Flexbox.
+
 Taking an overview of flexbox from Netninja.
 Building a good website requires painstaking care in positioning elements. Such properties like position: relative or absolute which takes values are used for positioning to get elemnts where we want them to be. 
 To create grids, one needed the float property, even for layouts or navigation systems, the float property was the ideal thing.
