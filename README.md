@@ -3613,7 +3613,7 @@ Consider this html
 ```
 **Three ways to add event listeners**
 
-**DOM property method**
+**1 DOM property method**
 
 The DOM property *onEventName* is used to assign a handler to listen for an event and do something.
 Supposing we want to alert "hello world" when the button is clicked. Here's how to do it with this method.
@@ -3625,12 +3625,24 @@ Supposing we want to alert "hello world" when the button is clicked. Here's how 
   }
 </script>
 ```
-**HTML attribute**
+**2 HTML attribute**
 Inside a HTML tag, we can assign an event directly, here's it
 ```html
 
   <input type="button" class="button" onclick="alert( 'hello world' ) "/>
 
 ```
+**3 addEventListeners**
+
+Here's the syntax
+```js
+element.addEventListener( event, function() or handler )
+```
+To remove an event
+```js
+element.removeEventListener( event, function() or handler )
+```
+With the addEventListener method, we can set many handlers for one event. For instance, we can alert two things when the button is clicked.
+
 
 
