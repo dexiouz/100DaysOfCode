@@ -24,6 +24,7 @@ Discovered the object.freeze() that allows you to make an object const immutable
 Dived into arrow functions. Arrow functions are anonymous functions.But you can put them in a variable.
  
 ###Day2 August 15, Wednesday
+
 **Today's work**: Continued with es6 functionalities:
 
 **Thoughts**: There is such a thing as 'console.table()?' OMG!!
@@ -37,27 +38,32 @@ When you shouldn't use arrow functions:
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day3 August 16, Thursday
+
 **Today's work**: Still on es6. Solved arrow function exercises to wrap it up.
  Dived into **template literals**. OMG!!! template literals are cute.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day4 August 17, Friday
+
 **Today's work**: Still on es6. Spent the early hours manipulating template literals, nesting and a=mbedding template literals.s
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 
 
 ###Day5 August 19, Sunday
+
 **Today's work**: Still on es6. Did alot of cool stuff with template-literals such as tagging template literals; There were  two basic manipulations. 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day6 August 21 Tuesday
+
 **Today's work**:Worked with the  New string methods of ES6. They are **.startsWith(), .endsWith(), .includes(), .repeat()**
 Dived into **Destructuring objects and arrays and functions**;
 In destructuring, curly brackets are used when you destructure from an object but normal braces are used when you destructure from an array.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day7 August 22 Wedneday
+
 **Today's work**:The **for-of-loop** is used to loop through any type of data that is iterable. Used the for-in-loop to loop through an object.
 
 The **for-of-loop** is used to loop through any type of data that is iterable. Iterable is anything that can be looped over such as an array, map , set , generators etc. Disadvantage of the **forEach loop** is that you cant abort or continue the loop; you cant skip. The **for-in loop** mostly returns the index, to get the items, you use the index e.g **console.log(cuts[index])**
@@ -70,6 +76,7 @@ You cannot iterate over an object but you can use for-in loop to do some things.
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
 
 ###Day8 and Day 9 August 23 and 24 Thursday and Friday
+
 **Today's work**Read array methods on the **javascript Ninja TextBook.** 
 ES6 array methods. The array.from() and aray.of(). Found out, array.from() takes a second argument which is a map function which allows us to modify the data as we are creating the array. 
 **Link to work**: [github]('github.com/dexiouz/100DaysOfCode')
