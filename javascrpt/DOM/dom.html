@@ -19,7 +19,8 @@
   <div class = 'myClass'>
     <h3> this is my second class </h3>
   </div>
-  <input type="button" class="button" onclick="alert( 'hello world' ) "/>
+  <!-- <input type="button" class="button" onclick="alert( 'hello world' ) "/> -->
+  <input type="button" class="button" />
   <script>
     
     let div1 = document.getElementById( 'firstDiv' );
@@ -39,6 +40,15 @@
     // querySelectorAll
     //searching a class
     let classes = document.querySelectorAll( 'myClass' );
+
+    let button = document.querySelector( '.button' );
+    button.addEventListener( 'click', function(){
+      alert( 'hello worlds' )
+    });
+    //second handler
+    // button.addEventListener( 'click', function(){
+    //   alert( 'ANother hello world' )
+    // })
   </script>
 </body>
 </html>

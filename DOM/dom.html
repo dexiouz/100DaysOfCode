@@ -12,6 +12,9 @@
     hello
   </div>
   <section class="firstDiv">
+
+     <!-- <input type="button" class="button" onclick="alert( 'hello world' ) "/> -->
+  <input type="button" class="button" />
     
   </section>
   <!-- mANIPULATING CLASSES -->
@@ -37,7 +40,16 @@
     // COMPUTED VALUES
        const computedStyle = getComputedStyle( div );
       console.log( computedStyle.width ); // 30% of the current screen
-      console.log( computedStyle.color ); // rgb(255, 0, 0)
+      console.log( computedStyle.color ); // rgb(255, 0, 0);
+
+      let button = document.querySelector( '.button' );
+    button.addEventListener( 'click', function(){
+      alert( 'hello worlds' )
+    });
+    // second handler
+    button.addEventListener( 'click', function(){
+      alert( 'ANother hello world' )
+    })
     </script> 
 </body>
 </html>
