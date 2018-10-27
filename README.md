@@ -3600,10 +3600,31 @@ This is usually a function that is called when an event happens. For instance we
 
 Consider this html
 ```html
-
+<body>
+  <div class="firstDiv">
+    hello
+  </div>
+  <input type="button" class="button" />
+  <script>
+  
+  </script>
+</body>
+</html>
+```
 **Three ways to add event listeners**
 
 **DOM property method**
 
 The DOM property *onEventName* is used to assign a handler to listen for an event and do something.
+Supposing we want to alert "hello world" when the button is clicked. Here's how to do it with this method.
+```html
+<script>
+  let button = document.querySelector( '.button' );
+  button.onclick = function(){
+    alert( 'Hello world' );
+  }
+</script>
+```
+**HTML attribute**
+
 
