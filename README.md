@@ -3682,13 +3682,42 @@ Give us some claps.
 
 Javascript forms are can be found in document.forms collection.
 
-How to get to a form.
-There are different ways to get too a form. One is through the name and the other is through its position in the html
+**How to get to a form.**
 
-Consider this html
+  Consider this html
 ```html
+<section class="firstDiv">
+     <form name="firstForm">
+       <input name="firstInput" value="2" type="button" class="button" />
+       <input name="secondInput" value="3" type="tex" class="button" />
+    </form>
 
+    <form name="secondForm">
+        <input name="newInput" value="4" type="button" class="button" />
+        <input name="anotherInput" value="5" type="tex" class="button" />
+    </form>
+</section>
+```
+There are different ways to get to a form. One is through the name and the other is through its position in the html file.
+In our html we have two forms and we'll be accessing them.
 
+1) Through the name: Lets access the first form
+```html
+<script>
+ let form1 = document.forms.firstForm;
+    console.log( form1 ); //<form name="firstForm"> 
+</script>
+```
+2) Through the form's position: Lets access the second form.
+```html
+<script>
+  let form2 = document.forms[1];
+  console.log( form2 ); //<form name="secondForm">
+</script>
+```
+    In any form, the things inside it such as input tags, radio buttons, buttons etc are available as *form.elements.*
+
+Lets access the value of the first input form of the first form.
 
 
 
