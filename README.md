@@ -3715,9 +3715,14 @@ In our html we have two forms and we'll be accessing them.
   console.log( form2 ); //<form name="secondForm">
 </script>
 ```
-    In any form, the things inside it such as input tags, radio buttons, buttons etc are available as *form.elements.*
+    In any form, the things inside it such as input tags, radio buttons, buttons etc are available as *form.elements.*, followes 
 
 Lets access the value of the first input form of the first form.
 
-
-
+<script>
+  // accessing the input
+    let firstInput = form1.elements.firstInput;
+    console.log( firstInput.value ) //2
+</script>
+```
+Like in
