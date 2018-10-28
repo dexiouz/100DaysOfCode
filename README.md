@@ -3816,20 +3816,21 @@ It has a
 The "select multiple" which allows for multiple choices we have it this way:
 
   ```html
-  <select name="" id="select" multiple>
-    <option value="javascript"  selected>javascript</option>
-    <option value="html" selected>html</option>
-    <option value="CSS">CSS</option>
-    <option value="python">python</option>
-  </select>
- 
-
+ !-- multiple select -->
+  <fieldset name="secondFieldset">
+  <select name= "selectTwo" id="selectTwo" multiple>
+      <option value="fanta"  selected>fanta</option>
+      <option value="coke" selected>coke</option>
+      <option value="sprite">sprite</option>
+      <option value="water"  selected>water</option>
+    </select>
+  </fieldset>
   <script>
   // the select tag
     // lets get all selected values
-   let selectedOptions = Array.from( select.options )
-                        .filter( option => option.selected)
+    let selectedOptions = Array.from( selectTwo.options )
+                        .filter( option => option.selectedOptions)
                         .map( option => option.value);
-  console.log( selected );  
+  console.log( selectedOptions ); 
     </script> 
  ```
