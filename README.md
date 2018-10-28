@@ -3695,11 +3695,18 @@ Javascript forms are can be found in document.forms collection.
     <form name="secondForm">
         <input name="newInput" value="4" type="button" class="button" />
         <input name="anotherInput" value="5" type="tex" class="button" />
+    </form>
 
      <form name="thirdForm">
         <input name="thirdInput1" value="6" type="button" class="button" />
         <input name="thirdInput1" value="7" type="tex" class="button" />
-    </form>
+
+          <!-- adding fieldsets -->
+
+        <fieldset name="firstFieldset">
+          <input type="text" name="register">
+
+        </fieldset>
     </form>
 </section>
 ```
@@ -3747,6 +3754,10 @@ Sometimes, form elements like radio buttons can have the same name. In this case
    // accessing form collection
     let form3 = document.forms.thirdForm;
     let collections = form3.elements.thirdInput1;
-    console.log( collections ); //RadioNodeList [ input.button, input.button 
+    console.log( collections.value ); //RadioNodeList [ input.button, input.button 
 </script>
 ```
+
+##**Fieldsets**
+
+Fieldsets are used especially in nesting forms. These nested forms or forms in a form can also be called subforms.
