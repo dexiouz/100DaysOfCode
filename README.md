@@ -3796,5 +3796,19 @@ It has a
  Number 1 and 2 are mostly convenient. 1 is also cool.
  Consider
  ```html
+  <select name="" id="select">
+    <option value="javascript">javascript</option>
+    <option value="html">html</option>
+    <option value="CSS">CSS</option>
+    <option value="python">python</option>
+  </select>
  
+
+  <script>
+  // the select tag
+    // they do the same thing
+    select.value = 'CSS';
+    select.selectedIndex = 2;
+    select.options[2].selected = true;
+    </script> 
  ```
