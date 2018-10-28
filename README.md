@@ -3695,6 +3695,11 @@ Javascript forms are can be found in document.forms collection.
     <form name="secondForm">
         <input name="newInput" value="4" type="button" class="button" />
         <input name="anotherInput" value="5" type="tex" class="button" />
+
+     <form name="thirdForm">
+        <input name="thirdInput1" value="6" type="button" class="button" />
+        <input name="thirdInput1" value="7" type="tex" class="button" />
+    </form>
     </form>
 </section>
 ```
@@ -3715,14 +3720,33 @@ In our html we have two forms and we'll be accessing them.
   console.log( form2 ); //<form name="secondForm">
 </script>
 ```
-    In any form, the things inside it such as input tags, radio buttons, buttons etc are available as *form.elements.*, followes 
+In any form, the things inside it such as input tags,  buttons, radio buttons,etc are available as **form.elements.**, followed by the name of the element or  its position in the form.
 
-Lets access the value of the first input form of the first form.
+Lets access the value of the first (element) input form of the first form though the name.
 
+```html
 <script>
-  // accessing the input
+  // accessing the input through name
     let firstInput = form1.elements.firstInput;
     console.log( firstInput.value ) //2
 </script>
 ```
-Like in
+Lets access the value its position.
+
+```html
+<script>
+   // accessing the input throuh its position
+     let secondInput = form1.elements[1];
+    console.log( secondInput.value ) //3
+</script>
+```
+
+Sometimes, form elements like radio buttons can have the same name. In this case, the form.elements becomes a collection.
+```html
+<script>
+   // accessing form collection
+    let form3 = document.forms.thirdForm;
+    let collections = form3.elements.thirdInput1;
+    console.log( collections ); //RadioNodeList [ input.button, input.button 
+</script>
+```
