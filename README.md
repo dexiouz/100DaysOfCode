@@ -3760,4 +3760,41 @@ Sometimes, form elements like radio buttons can have the same name. In this case
 
 ##**Fieldsets**
 
-Fieldsets are used especially in nesting forms. These nested forms or forms in a form can also be called subforms.
+Fieldsets are used especially in nesting forms. These nested forms or forms in a form can also be called subforms. Fortunately they can be manipulated using the elements property.
+
+You can access an element of a form if you know the name directly.
+```html
+<script>
+   // accessing form collection
+    let form3 = document.forms.thirdForm;
+    let collections = form3.elements.thirdInput1;
+    // better rendered as
+    colletions = form3.thirdInput;
+
+    console.log( collections.value ); //RadioNodeList [ input.button, input.button 
+</script>
+```
+
+##**Accessing the value of form element**
+Input --- Its value is accessed as input.value;
+textarea --- Its value is accesses as textarea.value;
+checkbox ---Its value is accessed as input.checked ;
+
+
+##The select 
+The <select> element is composed of important properties
+It has a 
+1) select.options --- which is the collection of <option> elements to select from.
+2) select.value ---which is the value of the option you chose.
+3) select.selectIndex --- which is the number of the selected option.
+
+ Three ways of setting the value of a <select>
+ 1) Set select.value to the value;
+ 2) Set select.selectedIndex to the number of the option;
+ 3) Set option.selected = true for the needed <option>;
+
+ Number 1 and 2 are mostly convenient. 1 is also cool.
+ Consider
+ ```html
+ 
+ ```
