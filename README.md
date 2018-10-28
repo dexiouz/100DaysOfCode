@@ -3680,7 +3680,12 @@ Give us some claps.
 
 **FORM PROPERTIES AND METHODS**
 
-JAvascript forms are can be found in document.forms collection.
+Javascript forms are can be found in document.forms collection.
+
+How to get to a form.
+There are different ways to get too a form. One is through the name and the other is through its position in the html
+
+Consider this html
 
 
 
