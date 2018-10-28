@@ -3670,7 +3670,17 @@ The event object e or event or any variable you wish to call it is the pointer t
     })
 </script>
 ```
+Thats all for today.
+Give us some claps.
 
+***Link to work** [medium](https://medium.com/@dexiouz/day67-of-100dayofcode-c587f08ec02);
+
+
+**Day68**
+
+**FORM PROPERTIES AND METHODS**
+
+JAvascript forms are can be found in document.forms collection.
 
 
 
