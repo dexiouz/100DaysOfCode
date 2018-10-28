@@ -3812,3 +3812,24 @@ It has a
     select.options[2].selected = true;
     </script> 
  ```
+
+The "select multiple" which allows for multiple choices we have it this way:
+
+  ```html
+  <select name="" id="select" multiple>
+    <option value="javascript"  selected>javascript</option>
+    <option value="html" selected>html</option>
+    <option value="CSS">CSS</option>
+    <option value="python">python</option>
+  </select>
+ 
+
+  <script>
+  // the select tag
+    // lets get all selected values
+   let selectedOptions = Array.from( select.options )
+                        .filter( option => option.selected)
+                        .map( option => option.value);
+  console.log( selected );  
+    </script> 
+ ```

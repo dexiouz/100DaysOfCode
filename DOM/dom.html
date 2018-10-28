@@ -40,6 +40,16 @@
           </select>
         </fieldset>
 
+        <!-- multiple select -->
+        <fieldset name="secondFieldset">
+            <select name= "select2" id="select2" multiple>
+                <option value="fanta"  selected>fanta</option>
+                <option value="coke" selected>coke</option>
+                <option value="sprite">sprite</option>
+                <option value="water"  selected>water</option>
+              </select>
+        </fieldset>
+
     </form>
   </section>
   <!-- mANIPULATING CLASSES -->
@@ -97,9 +107,15 @@
 
     // the select tag
     // they do the same thing
-    select.value = 'CSS';
-    select.selectedIndex = 2;
-    select.options[2].selected = true;
+    // select.value = 'CSS';
+    // select.selectedIndex = 2;
+    // select.options[2].selected = true;
+
+    // multiple select
+    let selectedOptions = Array.from( select2.options )
+                        .filter( option => option.selectedOptions)
+                        .map( option => option.value);
+  console.log( selectedOptions ); 
     </script> 
 </body>
 </html>
