@@ -3816,7 +3816,7 @@ It has a
 The "select multiple" which allows for multiple choices we have it this way:
 
   ```html
- !-- multiple select -->
+  <!-- multiple select  -->
   <fieldset name="secondFieldset">
   <select name= "selectTwo" id="selectTwo" multiple>
       <option value="fanta"  selected>fanta</option>
@@ -3834,3 +3834,15 @@ The "select multiple" which allows for multiple choices we have it this way:
   console.log( selectedOptions ); 
     </script> 
  ```
+A shorter way of adding options 
+```js
+
+let option = new option( text, value, defaultSelected, selected );
+//<option value="value"> Text </option>
+
+option = new option( 'Text', 'value', true, true);
+```
+descriptions:
+text:  The text of the option selected;
+selected: this is the selected option;
+index: The option number in the select.
