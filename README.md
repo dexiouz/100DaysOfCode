@@ -3846,3 +3846,4 @@ descriptions:
 text:  The text of the option selected;
 selected: this is the selected option;
 index: The option number in the select.
+**Link to work** [medium](https://medium.com/@dexiouz/day68-of-100daysofcode-45e80a910cb4);
