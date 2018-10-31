@@ -4122,3 +4122,6 @@ Array.from (deleteBtns)
 ```
 
 **Link to work**[Medium]( https://medium.com/@dexiouz/day70-of-100daysofcode-556097c69c3b)
+
+#**
+**Day71**
