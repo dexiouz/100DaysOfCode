@@ -4054,7 +4054,7 @@ h1, h2{
   clear: both;
 }
 ```
-***Link to work**[Medium]( );
+***Link to work**[Medium]( https://medium.com/@dexiouz/day69-of-100daysofcode-b6ad8ee6d48e);
 
 ##**Day70**
 
@@ -4121,4 +4121,4 @@ Array.from (deleteBtns)
 })
 ```
 
-**Link to work**[Medium]( )
+**Link to work**[Medium]( https://medium.com/@dexiouz/day70-of-100daysofcode-556097c69c3b)
