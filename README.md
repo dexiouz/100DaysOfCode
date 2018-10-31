@@ -3857,8 +3857,25 @@ The project which I call "Readal" will be a little book app where we can add a n
 The project will bw coming from NetNinja DOM manipulation. 
 
 Today was the mockup for the UI, with html and CSS.
+Lets do some commandLine things.
+To start, open up your terminal by holding ctrl + T for mac and linux users.
+Next change to a diretory of your choice, say on the desktop like so
+```
+$ cd Desktop
+Here's the html file;
 
-Here's the html file
+create a folder and call it DOM_project. You can use any name of your choice. DO this to create new folder.
+$ mkdir DOM_project
+
+Now cd into the folder and create three files, index.html, styles.css and dom.js like so
+$ cd DOM_project
+$ touch index.html 
+$ touch styles.css
+$ touch dom.js
+
+Then open your folder using any editor of your choice, I usually do mine like tis from the root folder, that is the DOM_project folder
+DOM_project $ code .
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -4033,3 +4050,9 @@ h1, h2{
   clear: both;
 }
 ```
+***Link to work**[Medium]( );
+
+##**Day70**
+
+##Delete a book
+On Day69 we were able to organise the html and CSS for the project. Today we will focus on how to delete an element but first we create our javascript file.
