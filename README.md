@@ -4160,3 +4160,48 @@ Recall whow we deleted some things on our app on day70 We achieved that by attac
 
 Now lets delete using bubbling
 Our index.html file is here
+
+
+# delete using bubbling
+
+ first lets grab the parentElement which is a "ul"
+```js
+let ul = document.querySelector("#book-list ul");
+```
+Next, add an eventListener to it.It will listen for a click event.
+
+```js
+ul.addEventListener('click', function(e){
+```
+
+     check if the element that was clicked is a delete button. We should know this by checking that the "class" of the clicked element is "delete".
+```js
+    if( e.target.className == 'delete'){
+```
+
+ lets grab the parent Element of the button, recall by observing the html that the parent element is an "li" tag.
+
+ ```js
+        const clickedButtonParentElement = e.target.parentElement;
+```
+we now use the parentElement of the " clickedButtonParentElement " to delete the " clickedButtonParentElement ".Notice that its parent element is the "ul" tag.
+```js
+        ul.removeChild( clickedButtonParentElement )
+    }
+})
+```
+
+Thats an effective way of deleting an element using bubbling.
+
+
+Here's the compiled js
+```js
+let ul = document.querySelector("#book-list ul");
+
+ul.addEventListener('click', function(e){
+    if( e.target.className == 'delete'){
+        const clickedButtonParentElement = e.target.parentElement;
+        ul.removeChild( clickedButtonParentElement )
+    }
+})
+```
