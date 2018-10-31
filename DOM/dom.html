@@ -51,6 +51,12 @@
         </fieldset>
 
     </form>
+
+    <!-- checking event bubbling -->
+    <div class= "parentElement">parentElement
+      <div class = "childElement">childElement
+      </div>
+    </div>
   </section>
   <!-- mANIPULATING CLASSES -->
   <!-- <script>
@@ -116,6 +122,16 @@
                         .filter( option => option.selectedOptions)
                         .map( option => option.value);
   console.log( selectedOptions ); 
+
+   let parentElement = document.querySelector('.parentElement');
+    parentElement.addEventListener( 'click', function(){
+      console.log('am a parent element')
+    });
+
+    let childElement = document.querySelector( '.childElement');
+    childElement.addEventListener( 'click', function(){
+      console.log(' am a child element')
+    })
     </script> 
 </body>
 </html>

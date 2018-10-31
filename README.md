@@ -4125,3 +4125,38 @@ Array.from (deleteBtns)
 
 #**
 **Day71**
+
+##Event bubbling
+
+We can now attach events to elements. 
+  The concept of event bubbling is that when an event occurs in a child element it triggers a callback function on that element. 
+  However, the effect also bubbles up to the parent element of that element and if that parent element has an event listener attached to it with a callback function, it will also trigger the callback function. 
+  Lets take as an insatance
+  ```html
+  <div class= "parentElement">parentElement
+      <div class = "childElement">childElement
+      </div>
+    </div>
+  <script>
+     let parentElement = document.querySelector('.parentElement');
+    parentElement.addEventListener( 'click', function(){
+      console.log('am a parent element')
+    });
+
+    let childElement = document.querySelector( '.childElement');
+    childElement.addEventListener( 'click', function(){
+      console.log(' am a child element')
+    })
+    </script> 
+  </script>
+```
+Here wwe have a childElement inside a parentElement and we have attached event and eventListeners on both.
+If you run the command, and click on the child element, first on your console you'll see " am a child element" followed by "am a parent element" which is the event of the parentElement. So what happened. Clicking on the child element bubbled up or made the parent element event to also fire.
+
+Note that the event bubbling goes all the way to the last parent of the parent element.
+
+**How does this help us**
+Recall whow we deleted some things on our app on day70 We achieved that by attaching an eventListener on all the "li" tags. This method becomes hectic when we have alot of delete buttons on the page. But, with bubbling, wwe will attach an eventListener to the parentElement which is a "ul"; then when wwe click on a button, the event will bubble up to the "ul". From there wwe can find out the target which was originally clicked then we can delete the "li" associated with that button. This method is much more efficient.
+
+Now lets delete using bubbling
+Our index.html file is here
