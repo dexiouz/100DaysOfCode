@@ -4108,3 +4108,17 @@ Array.from (deleteBtns);
 This is the compiled code
 
 ```js
+// delete a book
+let deleteBtns = document.querySelectorAll('#book-list .delete');
+Array.from (deleteBtns)
+    .forEach( deleteBtn => {
+    deleteBtn.addEventListener('click', function(e){
+        const clickedButtonParent = e.target.parentElement;
+        clickedButtonParent.parentNode.removeChild(clickedButtonParent);
+        // And thats it. Go ahead and try it out
+    })
+
+})
+```
+
+**Link to work**[Medium]( )
