@@ -3868,14 +3868,18 @@ create a folder and call it DOM_project. You can use any name of your choice. DO
 $ mkdir DOM_project
 
 Now cd into the folder and create three files, index.html, styles.css and dom.js like so
+```
 $ cd DOM_project
 $ touch index.html 
 $ touch styles.css
 $ touch dom.js
+```
 
 Then open your folder using any editor of your choice, I usually do mine like tis from the root folder, that is the DOM_project folder
+```
 DOM_project $ code .
-
+And thats all, lets start coding.
+Here's the html file
 ```html
 <!DOCTYPE html>
 <html>
@@ -4055,4 +4059,11 @@ h1, h2{
 ##**Day70**
 
 ##Delete a book
-On Day69 we were able to organise the html and CSS for the project. Today we will focus on how to delete an element but first we create our javascript file.
+On Day69 we were able to organise the html and CSS for the project. Today we will focus on how to delete an element.
+You can find the html and css here.
+ Now import the javascript file into the html body like so
+ ```html
+   <script src="Dom.js"></script>
+  </body>
+```
+Lets start to delete stuff
