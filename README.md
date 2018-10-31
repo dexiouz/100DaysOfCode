@@ -4090,12 +4090,21 @@ Array.from (deleteBtns);
 
          Here, e is the event, target is the element that emitted the event, parentElement is the parent of the element that emitted the event.
         const clickedButtonParent = e.target.parentElement;
-            // Now to delete the Element. 
-        // One of the ways of deleting an element is through its parent like so: If p tag is what I want to remove, I will simply do:
-        // p.parentNode.removeChild(p);
+            // Now to delete the Element main main. 
+
+5)  One of the ways of deleting an element is through its parent like so: If p tag is what I want to remove, I will simply do:
+```js
+       p.parentNode.removeChild(p);
+```
         // But clickedButtonParent is what we want to remove so we do
+```js
         clickedButtonParent.parentNode.removeChild(clickedButtonParent);
         // And thats it. Go ahead and try it out
     })
 
 })
+```
+
+This is the compiled code
+
+```js
