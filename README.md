@@ -4129,7 +4129,7 @@ Array.from (deleteBtns)
 ##Event bubbling
 
 We can now attach events to elements. 
-  The concept of event bubbling is that when an event occurs in a child element it triggers a callback function on that element. 
+  The concept of event bubbling is that when an event occurs in a child element it triggers a callbackfunction on that element and on the parent element.
   However, the effect also bubbles up to the parent element of that element and if that parent element has an event listener attached to it with a callback function, it will also trigger the callback function. 
   Lets take as an insatance
   ```html
@@ -4148,7 +4148,6 @@ We can now attach events to elements.
       console.log(' am a child element')
     })
     </script> 
-  </script>
 ```
 Here wwe have a childElement inside a parentElement and we have attached event and eventListeners on both.
 If you run the command, and click on the child element, first on your console you'll see " am a child element" followed by "am a parent element" which is the event of the parentElement. So what happened. Clicking on the child element bubbled up or made the parent element event to also fire.
@@ -4205,3 +4204,7 @@ ul.addEventListener('click', function(e){
     }
 })
 ```
+**Link to work**[Medium](https://medium.com/@dexiouz/day71-of-100daysofcode-afa39383a98e);
+
+#**Day72**
+
