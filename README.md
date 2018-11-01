@@ -4216,6 +4216,24 @@ Now lets attach a submit event to our add book form; prevent the default behavio
 
 ```html
 <script>
+      // first lets grab the form
+const addForm = document.forms['add-book'];
+    // lets attach a submit event and a listener to the form
+addForm.addEventListener('submit', function(e){
+    // lets prevent default so the page doesn't refrresh
+    e.preventDefault();
+    // lets grab what is typed into the form and save it as value
+    const value = addForm.querySelector('input[type = "text"]').value;
+    // lets console the value and type something
+    console.log(value)
+
+});
 </script>
-Dealing with form elements
+```
+Now when we type in anything into the add-book fiels wwe should be able to see that thing in our console.
+
+ADDING NEW BOOK TO THE FORM
+To add a new book into the app we have to do a few things.
+A typical book in the app has the following tags associated with it.
+
 

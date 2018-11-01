@@ -25,9 +25,9 @@ ul.addEventListener('click', function(e){
 // PREVENT DEFAULT BEHAVIOUR AND EXTRACT THE VALUE OF WHAT HAS BEEN TYPED
 
     // first lets grab the form
-const addForm = document.forms['addForm'];
+const addForm = document.forms['add-book'];
     // lets attach a submit event and a listener to the form
-addForm.addEventListener('submit', function(){
+addForm.addEventListener('submit', function(e){
     // lets prevent default so the page doesn't refrresh
     e.preventDefault();
     // lets grab what is typed into the form and save it as value
@@ -35,4 +35,4 @@ addForm.addEventListener('submit', function(){
     // lets console the value and type something
     console.log(value)
 
-})
+});
