@@ -32,7 +32,25 @@ addForm.addEventListener('submit', function(e){
     e.preventDefault();
     // lets grab what is typed into the form and save it as value
     const value = addForm.querySelector('input[type = "text"]').value;
-    // lets console the value and type something
-    console.log(value)
+    
+    //create elements
+        // first is the li tag
+    const li = document.createElement('li');
+        // next is the two span tags
+    const bookName = document.createElement('span');
+    const deleteButton = document.createElement('span');
+
+
+// APPEND CHILD
+// lets add the bookName span tag into the li tag
+    li.appendChild(bookName);
+ // lets add the deleteButton span tag into the li tag 
+    li.appendChild(deleteButton);
+// lets grab the ul tag and append the li tag into it
+    // we have grabbed the ul before
+    ul.appendChild(li);
+
+
+
 
 });

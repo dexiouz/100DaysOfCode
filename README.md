@@ -4214,8 +4214,7 @@ To add a new book in our book we must first understand how forms work. A basic f
 
 Now lets attach a submit event to our add book form; prevent the default behaviour and extract the value of what has been typed into our input field.
 
-```html
-<script>
+```js
       // first lets grab the form
 const addForm = document.forms['add-book'];
     // lets attach a submit event and a listener to the form
@@ -4228,12 +4227,39 @@ addForm.addEventListener('submit', function(e){
     console.log(value)
 
 });
-</script>
 ```
 Now when we type in anything into the add-book fiels wwe should be able to see that thing in our console.
 
 ADDING NEW BOOK TO THE FORM
 To add a new book into the app we have to do a few things.
 A typical book in the app has the following tags associated with it.
+```html
+	<li>
+	  <span class="name">Speaking javascript</span>
+	  <span class="delete">delete</span>
+  </li>
+```
+So we need three tags to add a new book, plus a text node too maaking it four tags. One "li" tag and tw span tags.
+We have to create those tags using "document.createElement("tag")"
+```js
+   //create elements
+        // first is the li tag
+    const li = document.createElement('li');
+        // next is the two span tags
+    const bookName = document.createElement('span');
+    const deleteButton = document.createElement('span');
+```
+Notice that the two "span" tags are nested inside the "li" tag and the "li" tag is a direct child or is nested inside a "ul" tag.  
+What we have to do is to append the span tags into the li tag and append the li tag into the ul tag using the appendChild() method.
 
+```js
+// lets add the bookName span tag into the li tag
+    li.appendChild(bokName);
+ // lets add the deleteButton span tag into the li tag 
+    li.appendChild(deleteButton);
+// lets grab the ul tag and append the li tag into it
+    // we have grabbed the ul before
+    ul.appendChild(li);
+```
+Ne
 
