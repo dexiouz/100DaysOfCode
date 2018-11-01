@@ -4158,7 +4158,8 @@ Note that the event bubbling goes all the way to the last parent of the parent e
 Recall whow we deleted some things on our app on day70 We achieved that by attaching an eventListener on all the "li" tags. This method becomes hectic when we have alot of delete buttons on the page. But, with bubbling, wwe will attach an eventListener to the parentElement which is a "ul"; then when wwe click on a button, the event will bubble up to the "ul". From there wwe can find out the target which was originally clicked then we can delete the "li" associated with that button. This method is much more efficient.
 
 Now lets delete using bubbling
-Our index.html file is here
+Our index.html file is here [html](https://gist.github.com/dexiouz/e36e6a403c07ccbcc97d9bbbdadf0c0f)
+and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3) 
 
 
 # delete using bubbling
@@ -4208,7 +4209,7 @@ ul.addEventListener('click', function(e){
 
 #**Day72**
 
-Adding a new book.
+#**Adding a new book.
 
 To add a new book in our book we must first understand how forms work. A basic form consists of an input foeld and a button. Clicking the button makes the form to emit a submit event and usually wwe attach an action to that event. Thats the default behaviour of a form and when there's no action, the form will usually refresh the page. And so wwe try to prevent that default behaviour using "e.preventDefault".
 
@@ -4258,8 +4259,22 @@ What we have to do is to append the span tags into the li tag and append the li 
  // lets add the deleteButton span tag into the li tag 
     li.appendChild(deleteButton);
 // lets grab the ul tag and append the li tag into it
-    // we have grabbed the ul before
+    // we have grabbed the ul before like so
+    let ul = document.querySelector("#book-list ul");
     ul.appendChild(li);
 ```
-Ne
+If we click the submit button, a new element is created but with an empty text content like so
+**ADD book-no-textcontent**
+Lets add text content to the elements. The text content of the "bookName" span tag will be coming from the "value" grabbed fro  the form.
+```js
+ // to the delete button
+    deleteButton.textContent = "delete";
+    //to the bookName 
+    bookName.textContent = value
+```
+Now if we type something and click on the "add button" we should be able to see it added to the booklist. 
+Lets type in "hello".
+***book_TEXTCONTENT**
+Observe that the button was not added instead we got the "delete" text attached to the hello instead.
+That will be something we will do next time.
 

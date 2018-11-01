@@ -50,7 +50,11 @@ addForm.addEventListener('submit', function(e){
     // we have grabbed the ul before
     ul.appendChild(li);
 
-
+// ADD TEXT CONTENT
+    // to the delete button
+    deleteButton.textContent = "delete";
+    //to the bookName 
+    bookName.textContent = value
 
 
 });
