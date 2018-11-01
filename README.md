@@ -4208,3 +4208,14 @@ ul.addEventListener('click', function(e){
 
 #**Day72**
 
+Adding a new book.
+
+To add a new book in our book we must first understand how forms work. A basic form consists of an input foeld and a button. Clicking the button makes the form to emit a submit event and usually wwe attach an action to that event. Thats the default behaviour of a form and when there's no action, the form will usually refresh the page. And so wwe try to prevent that default behaviour using "e.preventDefault".
+
+Now lets attach a submit event to our add book form; prevent the default behaviour and extract the value of what has been typed into our input field.
+
+```html
+<script>
+</script>
+Dealing with form elements
+

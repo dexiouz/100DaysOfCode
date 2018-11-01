@@ -10,7 +10,7 @@
 //     })
 // })
 
-// delete using bubbling
+// delete using events bubbling
 
 // first lets grab the parentElement which is a "ul"
 
@@ -20,4 +20,19 @@ ul.addEventListener('click', function(e){
         const clickedButtonParentElement = e.target.parentElement;
         ul.removeChild( clickedButtonParentElement )
     }
+})
+
+// PREVENT DEFAULT BEHAVIOUR AND EXTRACT THE VALUE OF WHAT HAS BEEN TYPED
+
+    // first lets grab the form
+const addForm = document.forms['addForm'];
+    // lets attach a submit event and a listener to the form
+addForm.addEventListener('submit', function(){
+    // lets prevent default so the page doesn't refrresh
+    e.preventDefault();
+    // lets grab what is typed into the form and save it as value
+    const value = addForm.querySelector('input[type = "text"]').value;
+    // lets console the value and type something
+    console.log(value)
+
 })
