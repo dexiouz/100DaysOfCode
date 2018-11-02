@@ -4338,5 +4338,8 @@ FOr our book app, the bookName span should get a class of name while the deleteb
 bookName.classList.add('name');
 deleteButton.classList.add('delete');
 ```
+The classList has other things it can do. It can be used to remove or toggle a class.
 And that's it, our new added books can now have a good interface like the default books.
+
+#***Change Events**
 
