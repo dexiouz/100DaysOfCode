@@ -4342,4 +4342,13 @@ The classList has other things it can do. It can be used to remove or toggle a c
 And that's it, our new added books can now have a good interface like the default books.
 
 #***Change Events**
-
+The change event occurs when a form element changes such as selecting a radio button or checking a checkbox.
+We will apply the change event in our book App by using a checkbox to show or hide the books.
+To start with, lets a checkbox on top of the form for adding a new book
+```html
+<form id="add-book">
+  <input type="checkbox" id="hide">
+  <label for="hide">Hide all books</label>
+  <input type="text" placeholder="Add new book..." />
+  <button>Add</button>
+</form>
