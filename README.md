@@ -4257,7 +4257,7 @@ What we have to do is to append the span tags into the li tag and append the li 
 
 ```js
 // lets add the bookName span tag into the li tag
-    li.appendChild(bokName);
+    li.appendChild(bookName);
  // lets add the deleteButton span tag into the li tag 
     li.appendChild(deleteButton);
 // lets grab the ul tag and append the li tag into it
@@ -4267,7 +4267,7 @@ What we have to do is to append the span tags into the li tag and append the li 
 ```
 If we click the submit button, a new element is created but with an empty text content like so
 **ADD book-no-textcontent**
-Lets add text content to the elements. The text content of the "bookName" span tag will be coming from the "value" grabbed fro  the form.
+Lets add text content to the elements. The text content of the "bookName" span tag will be coming from the "value" grabbed from  the form.
 ```js
  // to the delete button
     deleteButton.textContent = "delete";
@@ -4280,4 +4280,10 @@ Lets type in "hello".
 Observe that the button was not added instead we got the "delete" text attached to the hello instead.
 That will be something we will do next time.
 **Link to work**[Medium]()
+
+**Day73**
+
+#**Changing styles and classes to the book App**
+
+On day72 we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name 
 
