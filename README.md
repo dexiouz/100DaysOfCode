@@ -4286,11 +4286,57 @@ That will be something we will do next time.
 #**Changing styles and classes to the book App**
 
 On day72 we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name to bookName span tag and a class of delete to the delete span tag.  We will also use this opportunity to learn how to add a new class to elements using javascript on the fly.
+Here's our  [html](https://gist.github.com/dexiouz/e36e6a403c07ccbcc97d9bbbdadf0c0f)
+and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3).
+Here's the current js file
+```js
+
+let ul = document.querySelector("#book-list ul");
+ul.addEventListener('click', function(e){
+    if( e.target.className == 'delete'){
+        const clickedButtonParentElement = e.target.parentElement;
+        ul.removeChild( clickedButtonParentElement )
+    }
+})
+
+const addForm = document.forms['add-book'];
+addForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const value = addForm.querySelector('input[type = "text"]').value;
+    const li = document.createElement('li');
+    // create elements
+    const bookName = document.createElement('span');
+    const deleteButton = document.createElement('span');
+    // add text cntent
+    deleteButton.textContent = "delete";
+    bookName.textContent = value;
+    // append elements
+    li.appendChild(bookName);
+    li.appendChild(deleteButton);
+    ul.appendChild(li);
+})
+```
 To start, we use the style property to add a new style to elements. 
 Suppose we want to add a color to an li tag, we first grab the element
 ```js
 const li = document.createElement('li');
+// adds a yellow background the li tag
+li.style.background = "yellow";
+//add a padding
+ li.style.padding = "50px";
+```
 
-adds a yellow background the li tag
-li.style.backround = "yellow";
+**To retrieve or add classes**
+
+To add a class to an element we use the className property like so;
+```js
+li.className = "newClass";
+```
+or better with a classList property we can a new class. 
+FOr our book app, the bookName span should get a class of name while the deletebutton soukd get a class of delete. This is how to go about it using classList.
+```js
+bookName.classList.add('name');
+deleteButton.classList.add('delete');
+```
+And that's it, our new added books can now have a good interface like the default books.
 

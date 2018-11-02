@@ -40,6 +40,11 @@ addForm.addEventListener('submit', function(e){
     const bookName = document.createElement('span');
     const deleteButton = document.createElement('span');
 
+    // ADD TEXT CONTENT
+    // to the delete button
+    deleteButton.textContent = "delete";
+    //to the bookName 
+    bookName.textContent = value;
 
 // APPEND CHILD
 // lets add the bookName span tag into the li tag
@@ -50,13 +55,10 @@ addForm.addEventListener('submit', function(e){
     // we have grabbed the ul before
     ul.appendChild(li);
 
-// ADD TEXT CONTENT
-    // to the delete button
-    deleteButton.textContent = "delete";
-    //to the bookName 
-    bookName.textContent = value;
 
-    li.style.background = "yellow"
+// Day73
+    bookName.classList.add('name');
+    deleteButton.classList.add('delete');
 
 
 });
