@@ -4241,7 +4241,9 @@ A typical book in the app has the following tags associated with it.
   </li>
 ```
 So we need three tags to add a new book, plus a text node too maaking it four tags. One "li" tag and tw span tags.
-We have to create those tags using "document.createElement("tag")"
+We have to create those tags using "document.createElement("tag")".
+Here's our  [html](https://gist.github.com/dexiouz/e36e6a403c07ccbcc97d9bbbdadf0c0f)
+and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3).
 ```js
    //create elements
         // first is the li tag
@@ -4277,4 +4279,5 @@ Lets type in "hello".
 ***book_TEXTCONTENT**
 Observe that the button was not added instead we got the "delete" text attached to the hello instead.
 That will be something we will do next time.
+**Link to work**[Medium]()
 
