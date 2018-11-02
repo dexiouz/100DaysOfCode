@@ -54,7 +54,9 @@ addForm.addEventListener('submit', function(e){
     // to the delete button
     deleteButton.textContent = "delete";
     //to the bookName 
-    bookName.textContent = value
+    bookName.textContent = value;
+
+    li.style.background = "yellow"
 
 
 });

@@ -4285,5 +4285,12 @@ That will be something we will do next time.
 
 #**Changing styles and classes to the book App**
 
-On day72 we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name 
+On day72 we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name to bookName span tag and a class of delete to the delete span tag.  We will also use this opportunity to learn how to add a new class to elements using javascript on the fly.
+To start, we use the style property to add a new style to elements. 
+Suppose we want to add a color to an li tag, we first grab the element
+```js
+const li = document.createElement('li');
+
+adds a yellow background the li tag
+li.style.backround = "yellow";
 
