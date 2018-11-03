@@ -40,6 +40,9 @@ addForm.addEventListener('submit', function(e){
     const bookName = document.createElement('span');
     const deleteButton = document.createElement('span');
 
+    bookName.classList.add('name');
+    deleteButton.classList.add('delete');
+
     // ADD TEXT CONTENT
     // to the delete button
     deleteButton.textContent = "delete";
@@ -54,11 +57,28 @@ addForm.addEventListener('submit', function(e){
 // lets grab the ul tag and append the li tag into it
     // we have grabbed the ul before
     ul.appendChild(li);
-
+});
 
 // Day73
-    bookName.classList.add('name');
-    deleteButton.classList.add('delete');
+const bookName = document.createElement('span');
+const deleteButton = document.createElement('span');
+const hideLabel = document.querySelector('#hideLabel');
+bookName.classList.add('name');
+deleteButton.classList.add('delete');
 
-
-});
+// HIDING BOOKS
+// first grab the checkbox
+const hideBooks = document.querySelector('#hide');
+// next add a change event plus listener
+hideBooks.addEventListener('change', function(e){
+    // check if the checkbox is checked
+    if(hideBooks.checked){
+        // if checked, hide the ul holding all the books
+        ul.style.display = "none";
+        hideLabel.textContent = "Show all books"
+    }else {
+        // show the ul tag
+        ul.style.display = "initial";
+        hideLabel.textContent = "Hide all books";
+    }
+})

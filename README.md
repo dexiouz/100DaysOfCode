@@ -4344,11 +4344,43 @@ And that's it, our new added books can now have a good interface like the defaul
 #***Change Events**
 The change event occurs when a form element changes such as selecting a radio button or checking a checkbox.
 We will apply the change event in our book App by using a checkbox to show or hide the books.
-To start with, lets a checkbox on top of the form for adding a new book
+To start with, lets create a checkbox on top of the input for adding a new book
 ```html
 <form id="add-book">
   <input type="checkbox" id="hide">
-  <label for="hide">Hide all books</label>
+  <label for="hide" id="hideLabel" >Hide all books</label>
   <input type="text" placeholder="Add new book..." />
   <button>Add</button>
 </form>
+```
+Nw lets write some javascript to implement functionalities
+```js
+const bookName = document.createElement('span');
+const deleteButton = document.createElement('span');
+// grab the label for hidign books
+const hideLabel = document.querySelector('#hideLabel');
+bookName.classList.add('name');
+deleteButton.classList.add('delete');
+
+// HIDING BOOKS
+// first grab the checkbox
+const hideBooks = document.querySelector('#hide');
+// next add a change event plus listener
+hideBooks.addEventListener('change', function(e){
+    // check if the checkbox is checked
+    if(hideBooks.checked){
+        // if checked, hide the ul holding all the books
+        ul.style.display = "none";
+        // change the content of the label
+        hideLabel.textContent = "Show all books"
+    }else {
+        // show the ul tag
+        ul.style.display = "initial";
+        // change the content of the label
+        hideLabel.textContent = "Hide all books";
+    }
+})
+```
+And that's how we implement manipulating styles and classes to 
+1)  Give classNames to every new book added;
+2)  Hide or show all books by checking or unchecking a checkbox
