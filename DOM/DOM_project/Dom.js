@@ -82,3 +82,6 @@ hideBooks.addEventListener('change', function(e){
         hideLabel.textContent = "Hide all books";
     }
 })
+
+
+

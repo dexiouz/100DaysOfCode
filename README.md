@@ -4229,7 +4229,7 @@ addForm.addEventListener('submit', function(e){
 
 });
 ```
-Now when we type in anything into the add-book fiels wwe should be able to see that thing in our console.
+Now when we type in anything into the add-book fiedls we should be able to see that thing in our console.
 
 ADDING NEW BOOK TO THE FORM
 To add a new book into the app we have to do a few things.
@@ -4240,7 +4240,7 @@ A typical book in the app has the following tags associated with it.
 	  <span class="delete">delete</span>
   </li>
 ```
-So we need three tags to add a new book, plus a text node too maaking it four tags. One "li" tag and tw span tags.
+So we need three tags to add a new book, plus a text node too maaking it four tags. One "li" tag and two span tags.
 We have to create those tags using "document.createElement("tag")".
 Here's our  [html](https://gist.github.com/dexiouz/e36e6a403c07ccbcc97d9bbbdadf0c0f)
 and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3).
@@ -4279,13 +4279,13 @@ Lets type in "hello".
 ***book_TEXTCONTENT**
 Observe that the button was not added instead we got the "delete" text attached to the hello instead.
 That will be something we will do next time.
-**Link to work**[Medium]()
+**Link to work**[Medium](https://medium.com/@dexiouz/day72-of-100daysofcode-5d9369a02b5e)
 
 **Day73**
 
 #**Changing styles and classes to the book App**
 
-On day72 we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name to bookName span tag and a class of delete to the delete span tag.  We will also use this opportunity to learn how to add a new class to elements using javascript on the fly.
+On [day72](https://medium.com/@dexiouz/day72-of-100daysofcode-5d9369a02b5e) we were able to add a new book to our book App. The problem though is that the elements we created have no classes attached to them that is the span tags.This makes the newly created book elements not to look like the default book elements. This is what we will treat today. To add a class of name to bookName span tag and a class of delete to the delete span tag.  We will also use this opportunity to learn how to add a new class to elements using javascript on the fly.
 Here's our  [html](https://gist.github.com/dexiouz/e36e6a403c07ccbcc97d9bbbdadf0c0f)
 and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3).
 Here's the current js file
@@ -4330,21 +4330,28 @@ li.style.background = "yellow";
 
 To add a class to an element we use the className property like so;
 ```js
+// add a class
 li.className = "newClass";
+// console a class
+li.className
 ```
 or better with a classList property we can a new class. 
-FOr our book app, the bookName span should get a class of name while the deletebutton soukd get a class of delete. This is how to go about it using classList.
+For our book app, the bookName span should get a class of name while the deletebutton soukd get a class of delete. This is how to go about it using classList.
 ```js
+// add a class="name" t bookName span tag
 bookName.classList.add('name');
+// add a class="delete" to delete span tag
 deleteButton.classList.add('delete');
 ```
 The classList has other things it can do. It can be used to remove or toggle a class.
 And that's it, our new added books can now have a good interface like the default books.
 
+*****DAY73 ADD CLASSES TO NEW BOOK image****
+
 #***Change Events**
 The change event occurs when a form element changes such as selecting a radio button or checking a checkbox.
 We will apply the change event in our book App by using a checkbox to show or hide the books.
-To start with, lets create a checkbox on top of the input for adding a new book
+To start with, lets add a checkbox to our form.
 ```html
 <form id="add-book">
   <input type="checkbox" id="hide">
@@ -4353,11 +4360,25 @@ To start with, lets create a checkbox on top of the input for adding a new book
   <button>Add</button>
 </form>
 ```
-Nw lets write some javascript to implement functionalities
+Go to the CSS and style them like so
+```css
+#add-book #hide {
+  width: 30px
+}
+
+#add-book label {
+  line-height: 52px 
+}
+```
+
+***DAY73-ADDED-CHECKBOXmimage**
+
+Nw lets write some javascript to implement functionalities. We will also change the text content of the label for to hide or show books.
 ```js
+// as usual grab some things
 const bookName = document.createElement('span');
 const deleteButton = document.createElement('span');
-// grab the label for hidign books
+// grab the label for hiding books
 const hideLabel = document.querySelector('#hideLabel');
 bookName.classList.add('name');
 deleteButton.classList.add('delete');
@@ -4381,6 +4402,11 @@ hideBooks.addEventListener('change', function(e){
     }
 })
 ```
+****Day73 checkcheckbox image***
 And that's how we implement manipulating styles and classes to 
 1)  Give classNames to every new book added;
 2)  Hide or show all books by checking or unchecking a checkbox
+
+Here's our updated [html](https://gist.github.com/dexiouz/5737f754e78ed8cb9f68535c5518e822) and [CSS](https://gist.github.com/dexiouz/5cd0d2cb9756fbf522ee37bae5a3e4b1) and [javascript](https://gist.github.com/dexiouz/6b7f95d5b1afd64e57887d7c71c4b421).
+
+***LInk to work**[]()
