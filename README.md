@@ -4410,3 +4410,5 @@ And that's how we implement manipulating styles and classes to
 Here's our updated [html](https://gist.github.com/dexiouz/5737f754e78ed8cb9f68535c5518e822) and [CSS](https://gist.github.com/dexiouz/5cd0d2cb9756fbf522ee37bae5a3e4b1) and [javascript](https://gist.github.com/dexiouz/6b7f95d5b1afd64e57887d7c71c4b421).
 
 ***LInk to work**[]()
+
+day74
