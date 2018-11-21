@@ -4411,20 +4411,10 @@ Here's our updated [html](https://gist.github.com/dexiouz/5737f754e78ed8cb9f6853
 
 ***LInk to work**[]()
 
-day74
+**Day74**
 
-day75
+#Filtering the book App**
 
-day76
+So far, we have not been able to filter or search the individual books in our book App. That's what we are going to do today.
 
-day77
-
-day78 -
-
-day79
-
-day80
-
-day81
-
-day82
+We'll be using the key up event. So in essence we will do a few things
