@@ -4417,4 +4417,51 @@ Here's our updated [html](https://gist.github.com/dexiouz/5737f754e78ed8cb9f6853
 
 So far, we have not been able to filter or search the individual books in our book App. That's what we are going to do today.
 
-We'll be using the key up event. So in essence we will do a few things
+We'll be using the key up event. So in essence we will do a few things.
+
+First lets grab the input field in the search bar form.
+```js
+let searchBar = document.forms["search-books"].querySelector("input");
+```
+Next, attach an event listener to the search bar. The event we attach is a key up event which will trigger a cal;back function.
+```js
+searchBar.addEventListener('keyup', function(e){
+    
+})
+```
+Now the callback function will do a few things, first of which is to grab the value of the target element. The value here is what is being typed into the input field. We will call it "term" and we will convert it to a lowercase.
+
+```js
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+})
+```
+
+After grabbing the value, that is, what has been typed, we will have to loop through the "li" tags and compare their title to what is the value we just grabbed. To do that, first grab the "ul" tag holding all the "li" tags, use getElementByTagName on it to grab the "li" tags.
+
+```js
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = ul.getElementsByTagName("li");
+})
+```
+Next loop through all the "li" tags which is stored in "books". However, we can't loop through it because its not an array. Indeed, first convert it to an array then apply looping.
+
+```js
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = ul.getElementsByTagName("li");
+    Array.from(books).forEach((book)=>{
+        
+    })
+})
+```
+Okay what should we do at each loop iteration. Clearly, at each iteration we have to compare the title of the "li" tag with the value gotten from the search form.
+To this end we create a variable and extrct the "li" tag title and save it there. Lets grab the title of the "li" tag. The title is can be found as the firstElementChild of the "li" tag which is the span tag with the "class of name".
+
+```html
+<li>
+    <span class="name">Eloquent javascript</span>
+     <span class="delete">delete</span>
+</li>
+```

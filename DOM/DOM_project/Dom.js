@@ -83,5 +83,13 @@ hideBooks.addEventListener('change', function(e){
     }
 })
 
-
+// search books
+let searchBar = document.forms["search-books"].querySelector("input");
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = ul.getElementsByTagName("li");
+    Array.from(books).forEach((book)=>{
+        const title = book.firstElementChild.textContent;
+    })
+})
 
