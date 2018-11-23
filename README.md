@@ -4413,7 +4413,7 @@ Here's our updated [html](https://gist.github.com/dexiouz/5737f754e78ed8cb9f6853
 
 **Day74**
 
-#Filtering the book App**
+#Searching or Filtering the book App**
 
 So far, we have not been able to filter or search the individual books in our book App. That's what we are going to do today.
 
@@ -4423,7 +4423,7 @@ First lets grab the input field in the search bar form.
 ```js
 let searchBar = document.forms["search-books"].querySelector("input");
 ```
-Next, attach an event listener to the search bar. The event we attach is a key up event which will trigger a cal;back function.
+Next, attach an event listener to the search bar. The event we attach is a key up event which will trigger a callback function.
 ```js
 searchBar.addEventListener('keyup', function(e){
     
@@ -4457,7 +4457,7 @@ searchBar.addEventListener('keyup', function(e){
 })
 ```
 Okay what should we do at each loop iteration. Clearly, at each iteration we have to compare the title of the "li" tag with the value gotten from the search form.
-To this end we create a variable and extrct the "li" tag title and save it there. Lets grab the title of the "li" tag. The title is can be found as the firstElementChild of the "li" tag which is the span tag with the "class of name".
+To this end we create a variable and extrct the "li" tag title and save it there. Lets grab the title of the "li" tag. The title is can be found as the **textContent of the firstElementChild of the "li" tag** which is the span tag with the "class of name".
 
 ```html
 <li>
@@ -4465,3 +4465,36 @@ To this end we create a variable and extrct the "li" tag title and save it there
      <span class="delete">delete</span>
 </li>
 ```
+```js
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = ul.getElementsByTagName("li");
+    Array.from(books).forEach((book)=>{
+        const title = book.firstElementChild.textContent;
+    })
+})
+```
+At this point, we have the term we are searching for and the title of the book. Next we check if the search term is in the book title. And to do that, simply check if the indexof of the search term is not equal to -1. If it is equal to -1 then the search term is not in the book title. The idea is, if the index is equal to -1, we should hide that book but if it is not equal to -1 we should display the book. Lets give it a shot.
+```js
+searchBar.addEventListener('keyup', function(e){
+    const term = e.target.value.toLowerCase();
+    const books = ul.getElementsByTagName("li");
+    Array.from(books).forEach((book)=>{
+        const title = book.firstElementChild.textContent;
+        if( title.toLowerCase().indexOf(term) != -1 ) {
+            book.style.display = "block"
+        } else {
+            book.style.display = "none"
+        }
+    })
+})
+```
+And that's all for today. 
+
+Enjoyed the article, give a few claps.
+
+
+
+**link to the** [Book App](https://dexiouz.github.io/day74_version_of_bookApp/)
+
+***LInk to work**[hashnode](https://hashnode.com/post/day74-of-100daysofcode-cjos6sqqn00j0wqs2qux59sm7)
