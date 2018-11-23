@@ -4498,3 +4498,222 @@ Enjoyed the article, give a few claps.
 **link to the** [Book App](https://dexiouz.github.io/day74_version_of_bookApp/)
 
 ***LInk to work**[hashnode](https://hashnode.com/post/day74-of-100daysofcode-cjos6sqqn00j0wqs2qux59sm7)
+
+**Day 75 of #100DaysOfCode**
+
+**Adding Tab content to the Book App**
+
+At this point we have a functional working [Book App](https://dexiouz.github.io/day74_version_of_bookApp/). Out of curiousity we will be adding a tabbed content to the book App. 
+What's a tabbed content. A tab? "It is just a kind of button that when clicked, will show related content to that tab"...*NetNinja* 
+We can have two or three or n number of tabs in a page. 
+
+    What we'll do today however is to add the html and css for the 
+tab. Lets dive right in.
+
+Here's the html 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="styles.css " rel="stylesheet" />
+    <title>JavaScript DOM Tutorials</title>
+  </head>
+  <body>
+  	<div id="wrapper">
+	    <header>
+	    	<div id="page-banner">
+	    		<h1 class="title">Chidera Readal</h1>
+          <p>Books for developers</p>
+          <form id="search-books">
+            <input type="text" placeholder="Search books..." />
+          </form>
+	    	</div>
+	    </header>
+	    <div id="book-list">
+	    	<h2 class="title">Books to Read</h2>
+	    	<ul>
+	    		<li>
+	    			<span class="name">Eloquent javascript</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Beginning javascript</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">Speaking javascript</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">You don't know javascript</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    	</ul>
+	    </div>
+	    <form id="add-book">
+				<input type="checkbox" id="hide">
+				<label for="hide" id="hideLabel">Hide all books</label>
+	    	<input type="text" placeholder="Add new book..." />
+	    	<button>Add</button>
+	    </form>
+
+    </div>
+    <script src="Dom.js"></script>
+  </body>
+</html>
+```
+and the CSS 
+
+```css
+
+body{
+  font-family: Tahoma;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+h1, h2{
+  font-weight: normal;
+}
+
+#wrapper{
+  width: 90%;
+  max-width: 960px;
+  margin: 20px auto;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  padding: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid lightgray;
+}
+
+#page-banner{
+  background: #eee ;
+  padding: 10px 0;
+
+}
+
+#page-banner h1, #page-banner p{
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#page-banner input{
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: rgb(68, 68, 68);
+}
+
+#book-list, #add-book, #tabbed-content{
+  margin: 30px;
+}
+
+#book-list ul, #tabbed-content ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+#book-list li{
+  padding: 20px;
+  border-left: 5px solid #ddd;
+  margin: 20px 10px;
+}
+
+#book-list li:hover{
+  border-color: #9361bf;
+}
+
+.delete{
+  float: right;
+  background: #c71b2c;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.delete:hover{
+  background: rgb(199, 192, 192);
+  color: #c71b2c;
+  border: 1px solid #c71b2c;
+}
+
+#add-book{
+  width: 400px;
+  margin: 0 auto;
+}
+
+#add-book input{
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+  width: 300px;
+  float: left;
+}
+
+#add-book button{
+  border: 1px solid #9361bf;
+  background: rgb(199, 192, 192);
+  padding: 10px 20px;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  width: 100px;
+  float: left;
+  margin: 20px 0;
+  border-left: 0;
+  color: white;
+}
+
+
+#add-book:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#add-book #hide {
+  width: 30px
+}
+
+#add-book label {
+  line-height: 52px 
+}
+/*
+#tabbed-content li{
+  display: inline-block;
+  padding: 10px 14px;
+  background: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#tabbed-content .tab{
+  display: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+#tabbed-content .tab.active{
+  display: block;
+}
+*/
+```
+
+Okay, with this we should have this current book App
+![image](/AlgorithmScreen2.png)
