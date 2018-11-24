@@ -44,15 +44,17 @@
 	    	<button>Add</button>
 			</form>
 			<div class="tabbed-content">
-				<ul class="tabs" data-target="#about" class="active">
-					<li> About </li>
-					<li> Contact </li>
+				<ul class="tabs">
+					<li data-target="#about"> About </li>
+					<li data-target="#contact"> Contact </li>
 				</ul>
-				<div id="about">
+				<!-- //first div with some content in it to display when  "about" tab is clicked -->
+				<div id="about" class="panel active">
 					<h5>Book App</h5>
 					<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
 				</div>
-				<div id="contact">
+				  <!--second div with some content in it to display when  "cntact" tab is clicked -->
+				<div id="contact" class="panel">
 					<h5> Contact handles</h5>
 					<p><strong>twitter:</strong><a href="twitter.com/talk2dera">tweet@talk2dera</a> </p>
 					<p><strong>github:</strong><a href="https://github.com/dexiouz">git@dexiouz</a> </p>

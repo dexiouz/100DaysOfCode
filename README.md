@@ -4738,7 +4738,7 @@ Every other thing will be inside this div.
 As a start we will be adding two tabs. The tabs will be "li" tags wrapped in a "ul" tag with a class of "tabs". 
 ```html
 <div class="tabbed-content">
-  <ul class="tabs" data-target="#about" class="active">
+  <ul class="tabs">
 		<li> About </li>
 		<li> Contact </li>
 	</ul>
@@ -4752,17 +4752,104 @@ We would that when a tab is clicked, an information should be shown. To achieve 
 		<li> About </li>
 		<li> Contact </li>
   </ul>
+  <!-- //first div with some content in it to display when  "about" tab is clicked -->
   	<div id="about">
 			<h5>Book App</h5>
-			<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
+			<!-- <p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p> -->
     </div>
+    <!--second div with some content in it to display when  "cntact" tab is clicked -->
     <div id="contact">
+			<h5> Contact handles</h5>
+			<!-- <p><strong>twitter:</strong><a href="twitter.com/talk2dera">tweet@talk2dera</a> </p>
+			<p><strong>github:</strong><a href="https://github.com/dexiouz">git@dexiouz</a> </p>
+			<p><strong>medium:</strong><a href="https://medium.com/@dexiouz">read@dexiouz</a> </p>
+			<p><strong>hashnode:</strong><a href="https://hashnde.com/@dexiouz">hashnode@dexiouz</a> </p>
+			<p><strong>mail:</strong><a href="dexiouz@gmail.com">mail@dexiouz</a> </p> -->
+    </div>
+</div>
+```
+**The logic of displaying a content on a click**
+The idea is to display some content when a tab is clicked. Here's how it goes. First recall that the newly added two divs each has an id -- "about" and "contact". Cool. Now we'll add a "data-target" to the "li" tags which are the tabs. The "data-target" of each "li" tag  will point to  a unique "id" of the two divs with an id of either "about or contact".
+
+Lets add the data target to the li tags.
+```html
+...
+ <ul class="tabs">
+		<li data-target="#about"> About </li>
+		<li data-target ="contact"> Contact </li>
+  </ul>
+...
+```
+Here's the catch, when I click on 
+```html
+...
+  <li data-target="#about"> About </li>
+...
+```
+it should look for the "div" with an "id" of "about" and display that "div" with a style property of "display: block". This is the div that will display
+```html
+...
+	<div id="about">
+		<h5>Book App</h5>
+  </div>
+...
+```
+Also, when I click on
+```html
+...
+  <li data-target="#contact"> Contact </li>
+...
+```
+
+it should look for the "div" with an "id" of "contact" and display that "div" with a style property of "display: block".. This is the div that will display
+```html
+...
+	<div id="contact">
+		<h5>Contact handles  </h5>
+  </div>
+...
+
+By default the divs will have a "display property of hidden", but when we click on a tab that points to that div, we will use javascript to change its display to block. At this point lets add a new class of "active" to one the "li" tags and two classes of "panel and active" to one of the "divs".
+```html
+...
+ <ul class="tabs">
+		<li data-target="#about" class="active"> About </li>
+		<li data-target ="contact"> Contact </li>
+  </ul>
+  <div id="about" class="panel active">
+		<h5>Book App</h5>
+  </div>
+  	<div id="contact" class="panel">
+		<h5>Contact handles  </h5>
+  </div>
+
+...
+```
+The essence of these new classes is this: when we click on the "about" tab or "contact" tab, we will use javascript to dynamically give it a class of "active". At the same time we will also use javascript to add a "class" of "active" to the "div" associated with that tab. This is how we can also give that particular div a class of block.
+
+To sum up, here's the new added html portion
+```html
+...
+	<div class="tabbed-content">
+		<ul class="tabs">
+			<li data-target="#about"> About </li>
+			<li data-target="#contact"> Contact </li>
+		</ul>
+				<!-- //first div with some content in it to display when  "about" tab is clicked -->
+		<div id="about" class="panel active">
+			<h5>Book App</h5>
+			<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
+		</div>
+				  <!--second div with some content in it to display when  "cntact" tab is clicked -->
+		<div id="contact" class="panel">
 			<h5> Contact handles</h5>
 			<p><strong>twitter:</strong><a href="twitter.com/talk2dera">tweet@talk2dera</a> </p>
 			<p><strong>github:</strong><a href="https://github.com/dexiouz">git@dexiouz</a> </p>
 			<p><strong>medium:</strong><a href="https://medium.com/@dexiouz">read@dexiouz</a> </p>
 			<p><strong>hashnode:</strong><a href="https://hashnde.com/@dexiouz">hashnode@dexiouz</a> </p>
 			<p><strong>mail:</strong><a href="dexiouz@gmail.com">mail@dexiouz</a> </p>
-    </div>
-</div>
-```
+		</div>
+	</div>
+``` 
+
+
