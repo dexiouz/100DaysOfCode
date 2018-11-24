@@ -4715,5 +4715,54 @@ h1, h2{
 */
 ```
 
-Okay, with this we should have this current book App
-![image](/AlgorithmScreen2.png)
+Okay, with this we should have this current  [Book App](https://dexiouz.github.io/day74_version_of_bookApp/).
+![image](/AlgorithmScreen2.png).
+
+**Adding html of tab content**
+
+In the html just after the form with the id of "add-book".
+Include a div with an id of "tabbed-content." This div will act as the mother div which will be used to wrap everything about the tab.
+```html
+ <form id="add-book">
+	<input type="checkbox" id="hide">
+	<label for="hide" id="hideLabel">Hide all books</label>
+	<input type="text" placeholder="Add new book..." />
+	<button>Add</button>
+</form>
+
+<div class="tabbed-content">
+
+</div> 
+```
+Every other thing will be inside this div.
+As a start we will be adding two tabs. The tabs will be "li" tags wrapped in a "ul" tag with a class of "tabs". 
+```html
+<div class="tabbed-content">
+  <ul class="tabs" data-target="#about" class="active">
+		<li> About </li>
+		<li> Contact </li>
+	</ul>
+</div>
+```
+Thats not all.
+We would that when a tab is clicked, an information should be shown. To achieve this feat, We will need two "divs", each representing the information that is associated when a tab is clicked. Each "div" will have unique a "id" with some content in the "div".
+```html
+<div class="tabbed-content">
+  <ul class="tabs" data-target="#about" class="active">
+		<li> About </li>
+		<li> Contact </li>
+  </ul>
+  	<div id="about">
+			<h5>Book App</h5>
+			<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
+    </div>
+    <div id="contact">
+			<h5> Contact handles</h5>
+			<p><strong>twitter:</strong><a href="twitter.com/talk2dera">tweet@talk2dera</a> </p>
+			<p><strong>github:</strong><a href="https://github.com/dexiouz">git@dexiouz</a> </p>
+			<p><strong>medium:</strong><a href="https://medium.com/@dexiouz">read@dexiouz</a> </p>
+			<p><strong>hashnode:</strong><a href="https://hashnde.com/@dexiouz">hashnode@dexiouz</a> </p>
+			<p><strong>mail:</strong><a href="dexiouz@gmail.com">mail@dexiouz</a> </p>
+    </div>
+</div>
+```
