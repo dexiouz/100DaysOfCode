@@ -143,6 +143,6 @@ h1, h2{
   border-radius: 4px;
 }
 
-.tabbed-content .panel-active {
+.tabbed-content .panel.active {
   display: block
 }

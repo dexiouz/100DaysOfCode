@@ -4664,15 +4664,42 @@ And the CSS is this
   display: block
 }
 ```
-
+[link to work](https://hashnode.com/post/day75-0f-100daysofcode-cjovn8u9m002vbus1jsb86o0b)
 
 **Day76 of #100DaysOfCode**
 
 **Adding Tabbed Content( Javascript part )**
 
-[Day75]() saw that we added the html and css of adding a tab in the book app. We'll start to add javascript for the tab functionality.
+[Day75](https://hashnode.com/post/day75-0f-100daysofcode-cjovn8u9m002vbus1jsb86o0b) saw that we added the html and css of adding a tab in the book app. We'll start to add javascript for the tab functionality.
 
 After linking the javascript file, the next thing to do is to grab a reference to the tabs and the panels.
+Here are the tabs and panels
+```html
+...
+<!-- TABS -->
+	<div class="tabbed-content">
+		<ul class="tabs">
+			<li data-target="#about"> About </li>
+			<li data-target="#contact"> Contact </li>
+    </ul>
+
+<!-- PANELS -->
+				<!-- //first div with some content in it to display when  "about" tab is clicked -->
+		<div id="about" class="panel  active">
+			<h5>Book App</h5>
+			<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
+		</div>
+				  <!--second div with some content in it to display when  "cntact" tab is clicked -->
+		<div id="contact" class="panel">
+			<h5> Contact handles</h5>
+			<p><strong>twitter:</strong><a href="twitter.com/talk2dera">tweet@talk2dera</a> </p>
+			<p><strong>github:</strong><a href="https://github.com/dexiouz">git@dexiouz</a> </p>
+			<p><strong>medium:</strong><a href="https://medium.com/@dexiouz">read@dexiouz</a> </p>
+			<p><strong>hashnode:</strong><a href="https://hashnde.com/@dexiouz">hashnode@dexiouz</a> </p>
+			<p><strong>mail:</strong><a href="dexiouz@gmail.com">mail@dexiouz</a> </p>
+		</div>
+	</div>
+``` 
 ```js
 // ADDING TAB CONTENT
 let tabs = document.querySelector(".tabs");
@@ -4698,13 +4725,61 @@ Check if what was clicked is an "li" tag and save the dataset into the targetpan
 The "dataset" looks for data attributes. For instance it looks for 
 ```html
   <li data-target="#about"> About </li>
+  <li data-target="#contact"> Contact </li>
 ```
-because it has "data-target". The data attribute is "data" only, but we gave it a name which is "target". We get this "data-target". The dataset allows us to find the attribute depending on the name we gave the data attribute, like so.
+because it has "data-target". The data attribute is "data" only, but we gave it a name which is "target". Hence We get this --  "data-target". The dataset allows us to find the attribute depending on the name we gave the data attribute, like so.
+```js
+    const targetPanel = document.querySelector(e.target.dataset.target)
+```
+The data target represents either the "#about" or "#contact" id and anyone that matches the data-target is what we want to show.
+At this point, here's our js file so far
 ```js
 tabs.addEventListener("click", function(e){
-    if( e.target.tagName == "li"){
+    if( e.target.tagName == "LI"){
         const targetPanel = document.querySelector(e.target.dataset.target)
     }
 })
 ```
+next, we go through each of the panels and check if any is equal to the "target panel". If it is equal to the target panel, we then give it a class of "active". This will give that panel a display of block. But if it is not equal to the target panel, we will have to remove the " class = active " from that panel.
 
+Recall the css for "class = active".
+```css
+.tabbed-content .panel.active {
+  display: block
+}
+```
+Moving forward, lets loop through the panels --- which is the two divs bearing some content.
+```js
+ panels.forEach((panel)=> {
+```
+Check if panel is equal to the target panel and give it a class of active
+```js
+  if( panel == targetPanel){
+    panel.classList.add("active")
+```
+if not, remove the class of active
+```js
+     } else {
+       panel.classList.remove("active")
+        }
+      })
+    )
+```
+
+Here's the new js file
+```js
+tabs.addEventListener("click", function(e){
+    if( e.target.tagName == "LI"){
+        const targetPanel = document.querySelector(e.target.dataset.target)
+        panels.forEach((panel)=> {
+            if( panel == targetPanel){
+                panel.classList.add("active")
+            } else {
+                panel.classList.remove("active")
+            }
+        })
+    }
+})
+```
+
+With this we have a working tabbed content.

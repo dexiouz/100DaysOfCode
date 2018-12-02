@@ -98,3 +98,21 @@ searchBar.addEventListener('keyup', function(e){
     })
 })
 
+// ADDING TAB CONTENT
+let tabs = document.querySelector(".tabs");
+let panels = document.querySelectorAll(".panel")
+
+tabs.addEventListener("click", function (e) {
+    if (e.target.tagName == "LI") {
+        // alert("hi")
+        const targetPanel = document.querySelector(e.target.dataset.target)
+        panels.forEach((panel) => {
+            if (panel == targetPanel) {
+                panel.classList.add("active")
+            } else {
+                panel.classList.remove("active")
+            }
+        })
+    }
+})
+
