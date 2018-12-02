@@ -4792,28 +4792,28 @@ With this we have a working tabbed content.
 
 Classes are declared with the "class" keyword but before using the class keyword, lets explore other prograamming patterns of making  classes without actually using that "class" keyword.
 
-1 The functional class pattern
+**1 The functional class pattern.**
 
 Consider the following snippet of code which can be considered as a class. Notice the absence of the "class" keyword and the usage of the "new" keyword as in creating a new class.
 ```js
 function Dogs(name) {
-  this.age = function(){
+  this.greeting = function(){
     console.log(`${name} is x years old`)
   }
 }
 
-let myDog = new Dogs( "Musky" );
-myDog.age()
+let myDog = new Dogs( "Musky" ); // Musky is x years old
+myDog.greeting()
 ```
 According to the definition above, this snippet of code otherwise describing the functional class pattern can be described as a class. How?
 
 From the definition fron wikipedia, it follows that 
-1 There is a method it provides --- ( age() );
+1 There is a method it provides --- ( greeting() );
 2 It is a template for creating other objects. (these are called with the "new");
 3 Initial values for the state are provided( name from the parameters).
 
-One other thing to note from the functional class pattern is that the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method age(), are accessible from the inside but not from the outside code.
-What that means is something like this. We were able to access myDog.age() from outside of the function because inside of the function it(.age()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used inside of the main class like function but can't be called outside of it.
+One other thing to note from the functional class pattern is that the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method greeting(), are accessible from the inside but not from the outside code.
+What that means is something like this. We were able to access myDog.greeting() from outside of the function because inside of the function it(.greeting()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used inside of the main class like function but can't be called outside of it.
 
   The advantage this gives us is that we can easily add internal functions and variables like so
 
@@ -4830,7 +4830,7 @@ function Dogs(name, age) {
   }
 }
 
-let myDog = new Dogs( "Musky", 3 );
+let myDog = new Dogs( "Musky", 3 ); //Musky is my name and My age is 3 years old
 myDog.greeting()
 ```
 Indeed we notice that from the code snippet above, name, age and sayAge() function are private or internal to the object, that is they are only visible inside of it, whereas greeting() is the public or external method.
@@ -4841,3 +4841,61 @@ Indeed we notice that from the code snippet above, name, age and sayAge() functi
 **Javascript ES6 classes -----The Factory class pattern**
 
 On [day77]() we talk about the The functional class pattern. Today however we will look at another method of creating a class without using the "class" keyword.
+
+**2 The Factory class pattern**
+
+The factory class pattern gives us the privilege of creating a class without using the "new" keyword unlike in the functional class pattern where we had to do something like this.
+```js
+let newClass = new Class( parameter )
+```
+With the factory pattern we sure can do same thing like so
+```js
+let newClass = Class( parameter )
+```
+Consider this snippet of code used in the functional pattern
+```js
+function Dogs(name) {
+  this.age = function(){
+    console.log(`${name} is x years old`)
+  }
+}
+
+let myDog = Dogs( "Musky" ); // Musky is x years old
+myDog.age()
+```
+The only difference is here
+```js
+let myDog = Dogs( "Musky" ); // Musky is x years old
+myDog.age()
+```
+There was no such thing as "new Dogs". Just "Dogs".
+
+Going further, it is sure to state that in the factory pattern, the behaviours of functions and variables inside of the main function is the same as the functional pattern. That is the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method greeting(), are accessible from the inside but not from the outside code.
+    What that means is something like this. We were able to access myDog.greeting() from outside of the function because inside of the function it(.greeting()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used inside of the main class like function but can't be called outside of it.
+Here's what we are saying
+
+```js
+function Dogs(name, age) {
+  //the sayAge() can only be used inside here by other internal functions and methods but not outside of this scope
+  function sayAge(){
+    return (`My age is ${age} years old`)
+  }
+
+return {
+  greeting(){
+    console.log(`${name} is my name and ${sayAge()}`)
+    }
+  }
+};
+
+let myDog =  Dogs( "Musky", 3 ); //Musky is my name and My age is 3 years old
+myDog.greeting()
+```
+The difference between the functional and factory pattern is the presence and absence of the "new" keyword and.. the return keyword in greeting()
+```js
+return {
+  greeting(){
+    console.log(`${name} is my name and ${sayAge()}`)
+    }
+  }
+```
