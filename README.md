@@ -4783,3 +4783,34 @@ tabs.addEventListener("click", function(e){
 ```
 
 With this we have a working tabbed content.
+
+**Day77 of #100DaysOfCode**
+
+**Javascript ES6 classes**
+
+"In object-oriented programming, a class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods)". ...Wikipedia
+
+Classes are declared with the "class" keyword but before using the class keyword, lets explore other prograamming patterns of making  classes without actually using that "class" keyword.
+
+1 The functional class pattern
+
+Consider the following snippet of code which can be considered as a class. Notice the absence of the "class" keyword and the usage of the "new" keyword as in creating a new class.
+```js
+function Dogs(name) {
+  this.age = function(){
+    console.log(`${name} is x years old`)
+  }
+}
+
+let myDog = new Dogs( "Musky" );
+myDog.age()
+```
+According to the definition above, this snippet of code otherwise describing the functional class pattern can be described as a class. How?
+
+From the definition fron wikipedia, it follows that 
+1 There is a method it provides --- ( age() );
+2 It is a template for creating other objects. (these are called with the "new");
+3 Initial values for the state are provided( name from the parameters).
+
+One other thing to note from the functional class pattern is that the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method age(), are accessible from the inside but not from the outside code.
+What that means is something like this. We were able to access myDog.Age() from ouside because inside of the function it was attached to the "this" keyword
