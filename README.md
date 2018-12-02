@@ -4168,7 +4168,7 @@ and [CSS](https://gist.github.com/dexiouz/11f9b4821f466bd38d82deb92a51c8b3)
 ```js
 let ul = document.querySelector("#book-list ul");
 ```
-Next, add an eventListener to it.It will listen for a click event.
+Next, add an eventListener to it. It will listen for a click event.
 
 ```js
 ul.addEventListener('click', function(e){
@@ -4599,8 +4599,8 @@ it should look for the "div" with an "id" of "contact" and display that "div" wi
 		<h5>Contact handles  </h5>
   </div>
 ...
-
-By default the divs will have a "display property of hidden", but when we click on a tab that points to that div, we will use javascript to change its display to block. At this point lets add a new class of "active" to one the "li" tags and two classes of "panel and active" to one of the "divs".
+```
+By default the divs will have a "display property of hidden" this is coming from , but when we click on a tab that points to that div, we will use javascript to change its display to block. At this point lets add a new class of "active" to one the "li" tags and two classes of "panel and active" to one of the "divs".
 ```html
 ...
  <ul class="tabs">
@@ -4616,7 +4616,7 @@ By default the divs will have a "display property of hidden", but when we click 
 
 ...
 ```
-The essence of these new classes is this: when we click on the "about" tab or "contact" tab, we will use javascript to dynamically give it a class of "active". At the same time we will also use javascript to add a "class" of "panel-active" to the "div" associated with that tab. This is how we can also give that particular div a class of block.
+The essence of these new classes is this: when we click on the "about" tab or "contact" tab, we will use javascript to dynamically give it a class of "active". At the same time we will also use javascript to add a "class" of "panel active" to the "div" associated with that tab. This is how we can also give that particular div a class of block.
 
 To sum up, here's the new added html portion
 ```html
@@ -4627,7 +4627,7 @@ To sum up, here's the new added html portion
 			<li data-target="#contact"> Contact </li>
 		</ul>
 				<!-- //first div with some content in it to display when  "about" tab is clicked -->
-		<div id="about" class="panel-active">
+		<div id="about" class="panel  active">
 			<h5>Book App</h5>
 			<p> This is a mini vanilla javascript app for adding, deleting and searching through a book. This app is solely for educational purposes. Notice that it is a static site devoid of backend stuffs with no database. Although in the future we will integrate node.js for server side, express.js and mongodb for database.</p>
 		</div>
@@ -4670,5 +4670,41 @@ And the CSS is this
 
 **Adding Tabbed Content( Javascript part )**
 
+[Day75]() saw that we added the html and css of adding a tab in the book app. We'll start to add javascript for the tab functionality.
 
+After linking the javascript file, the next thing to do is to grab a reference to the tabs and the panels.
+```js
+// ADDING TAB CONTENT
+let tabs = document.querySelector(".tabs");
+let panels = document.querySelectorAll(".panel")
+```
+The "tabs" represents the "ul" and that is where we will attach event listeners. Here, when we click on any of it, the clicked item will be the 
+```js
+e.target element
+```
+As practice, we could attach the event listeners on each of the "li" tags. But for best practice, we will attach the listener on the parent element which is the "ul" tag, there we will check if it was a "li" tag that was clicked and fire up some actions. This is made possible by "event bubbling". Read about event bubbling on [Day71](https://medium.com/@dexiouz/day71-of-100daysofcode-afa39383a98e).
+
+Now lets add the listener on the "tabs" which is the "ul" with the class of "tabs".
+```js
+tabs.addEventListener("click", function(e){
+```
+Check if what was clicked is an "li" tag and save the dataset into the targetpanel variable.
+```js
+    if( e.target.tagName == "li"){
+      const targetPanel = document.querySelector(e.target.dataset)
+  }
+})
+```
+The "dataset" looks for data attributes. For instance it looks for 
+```html
+  <li data-target="#about"> About </li>
+```
+because it has "data-target". The data attribute is "data" only, but we gave it a name which is "target". We get this "data-target". The dataset allows us to find the attribute depending on the name we gave the data attribute, like so.
+```js
+tabs.addEventListener("click", function(e){
+    if( e.target.tagName == "li"){
+        const targetPanel = document.querySelector(e.target.dataset.target)
+    }
+})
+```
 
