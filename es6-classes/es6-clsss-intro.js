@@ -26,18 +26,35 @@
 
 
 //FACTORY CLASS PATTERN 
-function Dogs(name, age) {
-  function sayAge(){
-    return (`My age is ${age} years old`)
-  }
+// function Dogs(name, age) {
+//   function sayAge(){
+//     return (`My age is ${age} years old`)
+//   }
 
-  return {
-    greeting() {
-      console.log(`${name} is my name and ${sayAge()}`)
-    }
-  }
+//   return {
+//     greeting() {
+//       console.log(`${name} is my name and ${sayAge()}`)
+//     }
+//   }
+// }
+
+// let myDog = Dogs( "Musky", 3 );
+// myDog.greeting()
+
+// THE PROTOTYPE-BASED CLASSES
+function Dogs( name, age ) {
+  this._name = name;
+  this._age  = age;
 }
+  Dogs.prototype._sayAge  = function() {
+     return (`My age is ${this._age} years old`)
+  }
 
-let myDog = Dogs( "Musky", 3 );
+  Dogs.prototype.greeting = function(){
+    console.log(`${this._name} is my name and ${this._sayAge()}`)
+  }
+
+
+let myDog = new Dogs( "Husky", 5);
 myDog.greeting()
 

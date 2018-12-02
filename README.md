@@ -4786,7 +4786,7 @@ With this we have a working tabbed content.
 
 **Day77 of #100DaysOfCode**
 
-**Javascript ES6 classes**
+**Javascript ES6 classes --- The functional class pattern**
 
 "In object-oriented programming, a class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods)". ...Wikipedia
 
@@ -4899,3 +4899,67 @@ return {
     }
   }
 ```
+
+**Day79 of #100DaysOfCode**
+
+**Javascript ES6 classes ----- The Prototype-based classes**
+
+These pattern are widely accepted, they are more important and the best so far.
+
+Recall the code snippet we wrote with the factory class pattern?
+```js
+function Dogs(name, age) {
+  //the sayAge() can only be used inside here by other internal functions and methods but not outside of this scope
+  function sayAge(){
+    return (`My age is ${age} years old`)
+  }
+
+return {
+  greeting(){
+    console.log(`${name} is my name and ${sayAge()}`)
+    }
+  }
+};
+
+let myDog =  Dogs( "Musky", 3 ); //Musky is my name and My age is 3 years old
+myDog.greeting()
+```
+The factory class pattern.
+
+Well, here's the same code but written with the prototype class pattern.
+```js
+function Dogs( name, age) {
+  this._name = name;
+  this._age = age;
+}
+  Dogs.prototype._sayAge = function(){
+     return (`My age is ${this._age} years old`)
+  }
+
+  Dogs.prototype._greeting = function(){
+     console.log(`${this._name} is my name and ${this._sayAge()}`)
+  }
+
+
+let myDog = new Dogs( "Husky", 5 );
+myDog._greeting()
+```
+
+**A dive into the code structure**
+
+1 Every method id added to the obj.prototype, in our case, Dogs.prototype.
+2 The current state of the object is initialized only by the Dogs constructor.
+
+**Things worth the knowing**
+
+Take a look at that code structure again.
+Notice to a shock that, methods such as "_sayAge() and   _greeting()" are not lexically inside "function Dogs". Variables declared inside of function Dogs won't be visible to the methods.
+
+on this, there appears a general agreement that internal properties and methods like  "_sayAge() and   _greeting()"  are prepended with an underscore. It's just an agreement technically, the outer code can still access them.
+
+**Advantage over the functional pattern**
+
+1 In the prototype method, all methods are stored in Dogs.prototype which is shared between all user objects. An object just stores data.
+2 In the functional pattern each method has its own copy of every method. We have o assign a different copy of a method e.g sayAge(){...} and other methods in the constructor.
+
+To crown it all, the prototypal method is more memory efficient and also allows us to setup the inheritance in a very eficient way. Plus there's a special syntax construct "class" that promises great syntaxes.
