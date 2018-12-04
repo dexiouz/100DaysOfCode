@@ -42,19 +42,29 @@
 // myDog.greeting()
 
 // THE PROTOTYPE-BASED CLASSES
-function Dogs( name, age ) {
-  this._name = name;
-  this._age  = age;
+// function Dogs( name, age ) {
+//   this._name = name;
+//   this._age  = age;
+// }
+//   Dogs.prototype._sayAge  = function() {
+//      return (`My age is ${this._age} years old`)
+//   }
+
+//   Dogs.prototype.greeting = function(){
+//     console.log(`${this._name} is my name and ${this._sayAge()}`)
+//   }
+
+
+// let myDog = new Dogs( "Husky", 5);
+// myDog.greeting()
+
+
+function Dogs(name) {
+  return {
+    age(){
+    console.log(`${name} is x years old`)
+  }
+  }
 }
-  Dogs.prototype._sayAge  = function() {
-     return (`My age is ${this._age} years old`)
-  }
-
-  Dogs.prototype.greeting = function(){
-    console.log(`${this._name} is my name and ${this._sayAge()}`)
-  }
-
-
-let myDog = new Dogs( "Husky", 5);
-myDog.greeting()
-
+let myDog = Dogs( "Husky", 5);
+ myDog.age()

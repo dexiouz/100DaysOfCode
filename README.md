@@ -4794,7 +4794,7 @@ Classes are declared with the "class" keyword but before using the class keyword
 
 **1 The functional class pattern.**
 
-Consider the following snippet of code which can be considered as a class. Notice the absence of the "class" keyword and the usage of the "new" keyword as in creating a new class.
+Consider the following snippet of code which can be considered as a class. Notice the absence of the "class" keyword and the usage of the "new" keyword  in creating a new class.
 ```js
 function Dogs(name) {
   this.greeting = function(){
@@ -4805,15 +4805,15 @@ function Dogs(name) {
 let myDog = new Dogs( "Musky" ); // Musky is x years old
 myDog.greeting()
 ```
-According to the definition above, this snippet of code otherwise describing the functional class pattern can be described as a class. How?
+According to the definition above, this snippet of code otherwise describing the functional class pattern can be called as a class. How?
 
-From the definition fron wikipedia, it follows that 
-1 There is a method it provides --- ( greeting() );
+From the wikipedia definition , it follows that 
+1 There is a method snippet of code provides --- ( greeting() );
 2 It is a template for creating other objects. (these are called with the "new");
 3 Initial values for the state are provided( name from the parameters).
 
 One other thing to note from the functional class pattern is that the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method greeting(), are accessible from the inside but not from the outside code.
-What that means is something like this. We were able to access myDog.greeting() from outside of the function because inside of the function it(.greeting()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used inside of the main class like function but can't be called outside of it.
+What that means is something like this. We were able to access myDog.greeting() from outside of the function because inside of the function it(.greeting()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used or visible inside of the main class like function but can't be called outside of it.
 
   The advantage this gives us is that we can easily add internal functions and variables like so
 
@@ -4840,7 +4840,7 @@ Indeed we notice that from the code snippet above, name, age and sayAge() functi
 
 **Javascript ES6 classes -----The Factory class pattern**
 
-On [day77]() we talk about the The functional class pattern. Today however we will look at another method of creating a class without using the "class" keyword.
+On [day77]() we looked at the The functional class pattern. Today however we will look at another method of creating a class without using the "class" keyword.
 
 **2 The Factory class pattern**
 
@@ -4860,8 +4860,20 @@ function Dogs(name) {
   }
 }
 
-let myDog = Dogs( "Musky" ); // Musky is x years old
+let myDog = new Dogs( "Musky" ); // Musky is x years old
 myDog.age()
+```
+Rewriting it with the factory pattern does something like this
+```js
+function Dogs(name) {
+  return {
+    age(){
+    console.log(`${name} is x years old`)
+    } 
+  }
+}
+let myDog = Dogs( "Husky", 5);
+ myDog.age())
 ```
 The only difference is here
 ```js
@@ -4871,6 +4883,7 @@ myDog.age()
 There was no such thing as "new Dogs". Just "Dogs".
 
 Going further, it is sure to state that in the factory pattern, the behaviours of functions and variables inside of the main function is the same as the functional pattern. That is the nested functions and local variables inside "Dogs", for instance, which are not assigned to the "this" unlike the method greeting(), are accessible from the inside but not from the outside code.
+
     What that means is something like this. We were able to access myDog.greeting() from outside of the function because inside of the function it(.greeting()) was attached to the "this" keyword. If we had another function but did not attach it to "this", that function or method will only be used inside of the main class like function but can't be called outside of it.
 Here's what we are saying
 
@@ -4891,7 +4904,7 @@ return {
 let myDog =  Dogs( "Musky", 3 ); //Musky is my name and My age is 3 years old
 myDog.greeting()
 ```
-The difference between the functional and factory pattern is the presence and absence of the "new" keyword and.. the return keyword in greeting()
+The difference between the functional and factory pattern is the presence and absence of the "new" keyword and.. the return keyword used in greeting()
 ```js
 return {
   greeting(){
@@ -4903,6 +4916,7 @@ return {
 **Day79 of #100DaysOfCode**
 
 **Javascript ES6 classes ----- The Prototype-based classes**
+
 
 These pattern are widely accepted, they are more important and the best so far.
 
@@ -4924,7 +4938,6 @@ return {
 let myDog =  Dogs( "Musky", 3 ); //Musky is my name and My age is 3 years old
 myDog.greeting()
 ```
-The factory class pattern.
 
 Well, here's the same code but written with the prototype class pattern.
 ```js
@@ -4947,7 +4960,7 @@ myDog._greeting()
 
 **A dive into the code structure**
 
-1 Every method id added to the obj.prototype, in our case, Dogs.prototype.
+1 Every method is added to the "Obj.prototype", in our case, Dogs.prototype.
 2 The current state of the object is initialized only by the Dogs constructor.
 
 **Things worth the knowing**
@@ -4955,11 +4968,13 @@ myDog._greeting()
 Take a look at that code structure again.
 Notice to a shock that, methods such as "_sayAge() and   _greeting()" are not lexically inside "function Dogs". Variables declared inside of function Dogs won't be visible to the methods.
 
-on this, there appears a general agreement that internal properties and methods like  "_sayAge() and   _greeting()"  are prepended with an underscore. It's just an agreement technically, the outer code can still access them.
+On this, there appears a general agreement that internal properties and methods like  "_sayAge() and   _greeting()"  are prepended with an underscore "_". It's just an agreement technically, the outer code can still access them.
 
-**Advantage over the functional pattern**
+**Advantages over the functional pattern**
 
 1 In the prototype method, all methods are stored in Dogs.prototype which is shared between all user objects. An object just stores data.
-2 In the functional pattern each method has its own copy of every method. We have o assign a different copy of a method e.g sayAge(){...} and other methods in the constructor.
+2 In the functional pattern each method has its own copy of every method. We have to assign a different copy of a method e.g sayAge(){...} and other methods in the constructor.
 
 To crown it all, the prototypal method is more memory efficient and also allows us to setup the inheritance in a very eficient way. Plus there's a special syntax construct "class" that promises great syntaxes.
+
+**Day80 of #100Daysof Code**
