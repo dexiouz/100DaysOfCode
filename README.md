@@ -4963,7 +4963,7 @@ myDog._greeting()
 1 Every method is added to the "Obj.prototype", in our case, Dogs.prototype.
 2 The current state of the object is initialized only by the Dogs constructor.
 
-**Things worth the knowing**
+**Things worth the knowing:**
 
 Take a look at that code structure again.
 Notice to a shock that, methods such as "_sayAge() and   _greeting()" are not lexically inside "function Dogs". Variables declared inside of function Dogs won't be visible to the methods.
@@ -4981,8 +4981,8 @@ To crown it all, the prototypal method is more memory efficient and also allows 
 
 **Inheritance in prototype-based Classes**
 
-Sometimes we would want a class to have its own methods but at the same time, the class itself should be based off of another class altogether. This kind of relationship where one class is extended by another class is known as class inheritance.
-Lets consider two classes. One class Developer with a method say codeWriter and another class Human with the method say canRead.
+Sometimes we would want a class to have its own methods but at the same time, the class itself should be based off of another class altogether. This kind of relationship where one class is extended by another class is known as "**class inheritance**".
+Lets consider two classes. One class "Developer" with a method say canCode and another class "Human" with the method say canRead.
 
 #Developer Class
 ```js 
@@ -4994,7 +4994,7 @@ Developer.prototype.canCode = function(){
     console.log(`${this.name} can code`)
   }
 
-let developer = new Developer("Chidera")
+let developer = new Developer("Chidera") //Chidera can read
 ```
 
 #Human class
@@ -5007,7 +5007,7 @@ Human.prototype.canRead = function(){
   console.log(`${this.name} can also read`);
 }
 
-let human = new Human("Paul")
+let human = new Human("Paul") // Paul can also read
 ```
 
 The idea of inheritance is something like this: Imagine that we first created the Human class. The human class has a method that shows that every human can read.
@@ -5042,7 +5042,7 @@ let developer = new Developer("Chidera");
     developer.canRead(); // Chidera can also read
 ```
 Okay here's a takeaway, the methods for the Developer is stored in **"Developer.prototype"** while that of Human is in  **"Human.prototype"**.
-developer.canRead() when called, the Developer class will first look for it in **"Developer.prototype"** and if it couldn't find it, it will check on **"Human.prototype"** and, it finds it there.
+The developer.canRead() when called, the Developer class will first look for it in **"Developer.prototype"** and if it couldn't find it, it will check on **"Human.prototype"** and, it finds it there.
 
 **Day81 of #100Daysof Code**
 
@@ -5051,6 +5051,7 @@ developer.canRead() when called, the Developer class will first look for it in *
 From [Day77](),[Day78](),[Day79]() and [Day80]() we talked about different ways of declaring a new class. We, however, concluded that the [prototype-based pattern]() is the best so far. So far though. But today we dive into a better interesting method of declaring a class. This method uses the "class" construct.
 This class construct gives us the advantage of declaring a class in an elegant style and beautiful syntax. Lets take a look at how it goes. To better appreciate the efficiency and simplicity of this new construct, we will place its syntax side by side with the so far good [prototype-based pattern]().
 Recall  this class snippet written with the [prototype-based pattern]().
+
 **The prototype based class of Developer**
 
 ```js
@@ -5177,6 +5178,69 @@ In essence, a class defines a constructor with its prototype methods.
 **A few things to note about classes**
 
 We made some class proofs on [Day82]() you can check them out.
+
+A "class" syntax construct defines a constructor with its prototype methods, it looks like this
+```js
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+  canCode() {
+    console.log(`${this.name} can code`)
+  }
+  canRead() {
+    console.log(`${this.name} can read`)
+  }
+}
+
+let developer = new Developer("Paul")
+developer.canCode() //Paul can code
+developer.canRead()  //Pauk can Read
+```
+
+Here are a few things to note about the class construct.
+
+**1 The "new" keyword is required in the constructor:**
+This means that a class constructor must be called with a "new" if not it will not work.
+Considernthis output
+```js
+class Developer {
+  constructor() {}
+}
+
+console.log(typeof Developer); // function
+Developer(); // Error: Class constructor User cannot be invoked without 'new' //
+```
+Here's the error it outputs " *Error: Class constructor User cannot be invoked without 'new'*  ".
+Lets add new to it
+```js
+class Developer {
+  constructor() {}
+}
+
+console.log(typeof Developer); // function
+// Add "new" here
+new Developer();
+```
+Now it works.
+
+**2 Different outputs for string name**
+
+The output of "Developer" in the console yields different results in different browsers. For instance
+```js
+console.log(Developer)  //"class User", while others show "function User"
+```
+Some browsers' results is "class User", some display "function User".
+
+**3 The methods of class non-enumerable**
+For all the methods in the class, the class enumerable is set to false. You can't loop through.
+
+**4 Class methods have constructor by default**
+An empty constructor(){ } is created if there is no constructor defined.
+
+**5 Classes are in strict mode**
+The strict mode is applied to all codes inside the class.
+
 
 
 

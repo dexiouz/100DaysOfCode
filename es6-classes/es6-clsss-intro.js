@@ -153,19 +153,19 @@
 
 // Show that all of its (class) methods are put into "Developer.prototype".Do this by this by Showing that from the example above, canCode(), canRead() and constructor() are put into "Developer.prototype".
 // ======================================================================================================================
-class Developer {
-  constructor(name) {
-    this.name = name;
-  }
-  canCode() {
-    console.log(`${this.name} can code`)
-  }
-  canRead() {
-    console.log(`${this.name} can read`)
-  }
-}
-//  To prove the existence of three methods 
-console.log(Object.getOwnPropertyNames(Developer.prototype))
+// class Developer {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   canCode() {
+//     console.log(`${this.name} can code`)
+//   }
+//   canRead() {
+//     console.log(`${this.name} can read`)
+//   }
+// }
+// //  To prove the existence of three methods 
+// console.log(Object.getOwnPropertyNames(Developer.prototype))
 
 // class User {
 //   constructor(name) { this.name = name; }
@@ -177,3 +177,11 @@ console.log(Object.getOwnPropertyNames(Developer.prototype))
 
 // // proof: there are two methods in its "prototype"
 // console.log(Object.getOwnPropertyNames(User.prototype));
+
+// A FEW THINGS TO NOTE
+class Developer {
+  constructor() {}
+}
+
+console.log(typeof Developer); // function
+new Developer(); // Error: Class constructor User cannot be invoked without 'new'
