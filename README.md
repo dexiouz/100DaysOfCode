@@ -4978,3 +4978,206 @@ On this, there appears a general agreement that internal properties and methods 
 To crown it all, the prototypal method is more memory efficient and also allows us to setup the inheritance in a very eficient way. Plus there's a special syntax construct "class" that promises great syntaxes.
 
 **Day80 of #100Daysof Code**
+
+**Inheritance in prototype-based Classes**
+
+Sometimes we would want a class to have its own methods but at the same time, the class itself should be based off of another class altogether. This kind of relationship where one class is extended by another class is known as class inheritance.
+Lets consider two classes. One class Developer with a method say codeWriter and another class Human with the method say canRead.
+
+#Developer Class
+```js 
+function Developer(name) {
+  this.name = name;
+}
+
+Developer.prototype.canCode = function(){
+    console.log(`${this.name} can code`)
+  }
+
+let developer = new Developer("Chidera")
+```
+
+#Human class
+```js
+function Human(name) {
+  this.name = name;
+}
+
+Human.prototype.canRead = function(){
+  console.log(`${this.name} can also read`);
+}
+
+let human = new Human("Paul")
+```
+
+The idea of inheritance is something like this: Imagine that we first created the Human class. The human class has a method that shows that every human can read.
+Later on we create a Developer class with a method that the Developer can code. Since every developer is also human, and every human can read, that meams every developer can read. So what do we do, instead of creating a canRead method for the Developer class, we simply let the Developer class draw this canRead method from the Human class. Here, we are making the Developer class extend the Human class.
+This is the code for this logic
+
+```js
+// Human class
+function Human(name) {
+  this.name = name;
+}
+
+// Every human can code
+Human.prototype.canRead = function(){
+  console.log(`${this.name} can also read`);
+}
+
+// Developer class
+function Developer(name) {
+  this.name = name;
+}
+
+Developer.prototype.canCode = function(){
+    console.log(`${this.name} can code`)
+  }
+
+// This does the inheritance magic
+Developer.prototype.__proto__ = Human.prototype; 
+
+let developer = new Developer("Chidera");
+    developer.canCode(); //Chidera can code
+    developer.canRead(); // Chidera can also read
+```
+Okay here's a takeaway, the methods for the Developer is stored in **"Developer.prototype"** while that of Human is in  **"Human.prototype"**.
+developer.canRead() when called, the Developer class will first look for it in **"Developer.prototype"** and if it couldn't find it, it will check on **"Human.prototype"** and, it finds it there.
+
+**Day81 of #100Daysof Code**
+
+**The class construct for declaring classes**
+
+From [Day77](),[Day78](),[Day79]() and [Day80]() we talked about different ways of declaring a new class. We, however, concluded that the [prototype-based pattern]() is the best so far. So far though. But today we dive into a better interesting method of declaring a class. This method uses the "class" construct.
+This class construct gives us the advantage of declaring a class in an elegant style and beautiful syntax. Lets take a look at how it goes. To better appreciate the efficiency and simplicity of this new construct, we will place its syntax side by side with the so far good [prototype-based pattern]().
+Recall  this class snippet written with the [prototype-based pattern]().
+**The prototype based class of Developer**
+
+```js
+function Developer(name){
+  this.name = name
+}
+
+Developer.prototype.canCode = function(){
+  console.log(`${this.name} can code`)
+}
+Developer.prototype.canRead = function(){
+  console.log(`${this.name} can read`)
+}
+let developer = new Developer("Paul")
+developer.canCode()  // Paul can code
+developer.canRead()
+```
+
+Lets write it using the class construct.
+
+```js
+class Developer{
+  constructor(name){
+    this.name = name ;
+  }
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+  canRead(){
+    console.log(`${this.name} can read`)
+  }
+}
+
+let developer = new Developer("Paul")
+developer.canCode()
+developer.canRead() // Paul can code
+```
+**There are a few things to note from this "class" syntax.***
+--Unlike the [prototype-based pattern](), there is one curly brace "{}" declared after **class Developer** that holds the entire content. 
+--Notice clearly that there is no comma between the methods declared inside this syntax. Don't mistake it! with an bject syntax!.
+
+**How the "class Developer{ ... } operates."**
+
+1 The syntax declares a variable called "Developer". This developer in turn references a method called "constructor".
+2 All of its methods are put into "Developer.prototype". From our example above, canCode(), canRead() and constructor() are put into "Developer.prototype".
+
+And thats all for today.In the next article we wil prove points 1 and 2 above. 
+
+**Day82 of #100Daysof Code**
+
+**Some proofs of the class "construct"**
+
+Here's a typical class construct
+```js
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+  canCode() {
+    console.log(`${this.name} can code`)
+  }
+  canRead() {
+    console.log(`${this.name} can read`)
+  }
+}
+
+let developer = new Developer("Paul")
+developer.canCode() //Paul can code
+developer.canRead()  //Pauk can Read
+```
+
+[Day81]() we tried to see how the class construct works and it is like so
+
+1 The syntax declares a variable called "Developer". This Developer in turn references a method called "constructor".
+2 All of its (class) methods are put into "Developer.prototype". From our example above, canCode(),canRead() and constructor() are put into "Developer.prototype".
+
+Our aim today? To prove this two points.
+
+Question 1: Prove that the syntax declares a variable called "Developer". This Developer in turn references a method called "constructor"?
+
+Proof: Without much ado lets dig into some code bursting snippets.
+
+```js
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+  canCode() {
+    console.log(`${this.name} can code`)
+  }
+}
+
+console.log(Developer === Developer.prototype.constructor)    // true          (*****)
+```
+Q.E.D
+From the above code we have shown that the "Developer variable" references the constructor method.
+
+Question 2: Show that all of its (class) methods are put into "Developer.prototype".Do this by this by Showing that from the example above, canCode(), canRead() and constructor() are put into "Developer.prototype".
+
+Proof:
+```js
+class Developer {
+  constructor(name) {
+    this.name = name;
+  }
+  canCode() {
+    console.log(`${this.name} can code`)
+  }
+  canRead() {
+    console.log(`${this.name} can read`)
+  }
+}
+//  To prove the existence of three methods 
+console.log(Object.getOwnPropertyNames(Developer.prototype)) // [ 'constructor', 'canCode', 'canRead' ]
+```
+Q.E.D
+Indeed, 'constructor', 'canCode', 'canRead' are put into "Developer.prototype". And this concludes our proof.
+
+In essence, a class defines a constructor with its prototype methods.
+
+
+**Day83 of #100Daysof Code**
+
+**A few things to note about classes**
+
+We made some class proofs on [Day82]() you can check them out.
+
+
+
+
