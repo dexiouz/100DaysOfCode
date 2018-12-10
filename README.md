@@ -5498,3 +5498,4 @@ Suppose we have the id of the item we want to remove, here's a good staticMethod
 // static method to remoove the article.
 Event.remove({ id: 456799 })
 ```
+See you in the next article
