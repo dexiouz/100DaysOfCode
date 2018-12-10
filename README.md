@@ -4949,7 +4949,8 @@ function Dogs( name, age) {
      return (`My age is ${this._age} years old`)
   }
 
-  Dogs.prototype._greeting = function(){
+  Dogs.prototype._greetin
+return {g = function(){
      console.log(`${this._name} is my name and ${this._sayAge()}`)
   }
 
@@ -5049,6 +5050,7 @@ The developer.canRead() when called, the Developer class will first look for it 
 **The class construct for declaring classes**
 
 From [Day77](),[Day78](),[Day79]() and [Day80]() we talked about different ways of declaring a new class. We, however, concluded that the [prototype-based pattern]() is the best so far. So far though. But today we dive into a better interesting method of declaring a class. This method uses the "class" construct.
+
 This class construct gives us the advantage of declaring a class in an elegant style and beautiful syntax. Lets take a look at how it goes. To better appreciate the efficiency and simplicity of this new construct, we will place its syntax side by side with the so far good [prototype-based pattern]().
 Recall  this class snippet written with the [prototype-based pattern]().
 
@@ -5242,6 +5244,257 @@ An empty constructor(){ } is created if there is no constructor defined.
 The strict mode is applied to all codes inside the class.
 
 
+**Day84 of #100Daysof Code**
+
+**Getters and setters in Classes**
+
+Lets see a way to include getters nd setters in javascript classes. Later we will create getters and setters on the class prototype. Yeah, its possible.
 
 
+```js
+class Developer {
+  constructor( language ){
+    this.language = language;
+  }
 
+  get language() {
+    return this._language;
+  }
+
+  set language( languageName ) {
+    if(languageName.length < 5){
+      console.log( "Abbreviate the language" )
+      return ;
+    }
+    
+    this._language = languageName
+  }
+}
+
+let developer = new Developer("javascript");
+console.log( developer.language );
+
+developer = new Developer("php")
+```
+
+**Setting getters and setters internally**
+
+We can create getters and setters on the Developer prototype like so 
+```js
+Object.defineProperties( Developer.prototype, {
+  language: {
+    get() {
+      return this._language
+    },
+  set(language){
+    // ...
+    }
+  }
+});
+```
+
+**Day85 of #100Daysof Code**
+
+**Adding non-functions into class prototype**
+
+Methods and getters/setters are mostly the things allowed in a class. But there is a way to manually add a non-function into the prototype. Here's how
+```js
+class Developer { }
+
+Developer.prototype.name = "Chidera";
+
+alert( new Developer().name ); // Chidera
+```
+
+At this point it is safe to say that such properties added manually added in the prototype will be shared among all objects of the class.
+
+**An "in-class" alternative** 
+
+We can use a getter to achieve the same feat
+```js
+class Developer {
+  get name() {
+    return Chidera;
+  }
+}
+
+alert( new Developer().name ); // Chidera
+```
+
+**Day86 of #100Daysof Code**
+
+**Class Expression**
+
+Classes can be found in a function. A lot can be dne with them there. For instance, a class in a function can be passed around, returned and can be found inside another expression.
+
+Lets take a look at a functionn that returns a class
+```js
+function createClass( word ){
+
+  //return a class after a creating it
+  return class{
+    greeting(){
+      console.log( word )
+    };
+  };
+}
+
+let Developer = createClass("New class");
+new Developer().greeting() //"New Class"
+```
+
+The above function created and returned a class. We can create a return multiple functions in a class.
+```js
+function createClass( word,word1 ){
+
+  //return a class after a creating it
+  return class{
+    greeting(){
+      console.log( word )
+    };
+    greeting1(){
+      console.log( word1 )
+    };
+  };
+}
+
+let Developer = createClass("New class", "second class");
+new Developer().greeting() //"New Class"
+new Developer().greeting1() //"second Class"
+```
+In this one we created and returned two methods in the class created with a function.
+
+**Day87 of #100Daysof Code**
+
+**Static Methods**
+
+*Static* methodsgives us the flexibility to assign methods to class functions instead of to its prototype. We call these methods "static".
+Lets see an instance of this
+```js
+class Developer {
+  static staticMethod() {
+    console.log( this === Developer )
+  }
+}
+Developer.staticMethod() // true
+```
+
+Assigning it as function property actually does the same thing. Look at this
+```js
+function Developer() { }
+
+Developer.staticMethod = function(){
+   console.log( this === Developer )
+};
+```
+
+Notice the presence of the "this" keyword in the expression.
+The "this", its value represents or is the class constructor Developer itself.  That is, the "object before dot" rule.
+The advantage of static functions is that it is used to implement functions that belong to the class, but not to any particular object.
+
+**Day88 of #100Daysof Code**
+
+**Static Methods**
+
+Recall that static functions are used to implement functions that belong to the class, but not to any particular object.
+
+Lets take an example say we want to compare certain events. Here, the events are objects. Here's what we could do using "*Events.compare*"
+```js
+class Event{
+  constructor(name,date){
+    this.name = name;
+    this.date = date
+  }
+  static compare( Event1, Event2){
+    return Event1.date - Event2.date;
+  }
+}
+
+// APPLICATION
+let events = [
+  new Event("conference", new Date(2018, 1, 1)),
+  new Event("seminar", new Date(2018, 0, 1)),
+  new Event("webinar", new Date(2018, 11, 1))
+];
+events.sort(Event.compare);
+console.log(events[0].name) // seminar
+```
+
+In this one, *Events.compare* stands over the "events", as an avenue for comparing them. It's a method of the whole class and not a method of an event.
+
+Next, we will look at another impressive method.
+See you in the next day89 article.
+
+**Day89 of #100Daysof Code**
+
+**Static methods, creating things**
+
+Suppose we needed few ways to create events that is, occassions. We could implore the so called "factory method".
+Lets say the way to create events are:]
+1 create by given parameters( name, date, etc)
+2 create empty event with today's date.
+3 ...
+
+If we try to create through the first way, we will do such with a constructor.
+We will make a static method for the second one like so:
+```js
+Event.createToday()
+```
+
+```js
+class Event{
+  constructor( name, date ) {
+    this.name = name;
+    this.date = date
+  }
+  static createToday() {
+    // P.S, this = Event
+    return new this("Javascript Seminar", new Date());
+  }
+}
+
+let event = Event.createToday();
+console.log( event.name ) // javascript seminar
+```
+
+Indeed, anytime we need to create a "javascript seminar", we call "*Event.createToday()*". Clearly, "*Event.createToday()*" is not a method of an event but a method of the whole class.
+
+**Day90 of #100Daysof Code**
+
+**A quickie glance at Classes done so far**
+
+From [Day77]() we started talking about javascript classes. We take a little look back to what we have discussed so far.
+A basic class syntax is something like this:
+```js
+class testClass {
+  // declare constructor
+  constructor( ... ){
+    // ....
+  } 
+  // set methods
+  methodA() { ... }
+  methodB() { ... }
+  // set getters
+  get something( ... ){}
+  // set setters
+  set something( ... ){}
+  // declare static methods
+  static staticMethod( .. ){}
+  // ...
+}
+```
+The value of testClass is a function which references the constructor method. Usually, an empty constructor method is created if there's no constructor.
+Methods declared in the declaration of the class are subsequently members of the prototype. An exception is the static methods which is written into the function itself and callable as "testClass.staticMethod()".
+
+
+If we need a function bound to class but not to any object of that class, then, static methods are our best shot. 
+
+**Static Methods in Database stuffs**
+
+Static methods can also be used in classes related to the data-base to search, save or remove entities from the database like so: 
+Suppose we have the id of the item we want to remove, here's a good staticMethod shot.
+```js
+// Suppose Event is a special class for managing events
+// static method to remoove the article.
+Event.remove({ id: 456799 })
+```

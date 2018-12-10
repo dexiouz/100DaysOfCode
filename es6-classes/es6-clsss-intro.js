@@ -179,9 +179,102 @@
 // console.log(Object.getOwnPropertyNames(User.prototype));
 
 // A FEW THINGS TO NOTE
-class Developer {
-  constructor() {}
+// class Developer {
+//   constructor() {}
+// }
+
+// console.log(typeof Developer); // function
+// new Developer(); // Error: Class constructor User cannot be invoked without 'new'
+
+
+// GETTERS/SETTERS
+// class Developer {
+//   constructor( language ){
+//     this.language = language;
+//   }
+
+//   get language() {
+//     return this._language;
+//   }
+
+//   set language( languageName ) {
+//     if(languageName.length < 5){
+//       console.log( "Abbreviate the language" )
+//       return ;
+//     }
+
+//     this._language = languageName
+//   }
+// }
+
+// let developer = new Developer("javascript");
+// console.log( developer.language );
+
+// developer = new Developer("php")
+
+// Adding non-functions into class prototype
+
+
+
+
+//CLASS EXPRESSION, RETURNING A CLASS IN A FUNCTION
+// function createClass( word,word1 ){
+
+//   //return a class after a creating it
+//   return class{
+//     greeting(){
+//       console.log( word )
+//     };
+//     greeting1(){
+//       console.log( word1 )
+//     };
+//   };
+// }
+
+// let Developer = createClass("New class", "second class");
+// new Developer().greeting() //"New Class"
+// new Developer().greeting1() //" Class"
+
+// STATIC METHODS
+// class Developer {
+//   static staticMethod() {
+//     console.log( this === Developer )
+//   }
+// }
+// Developer.staticMethod() // true
+
+// compare using static
+
+// class Event{
+//   constructor(name,date){
+//     this.name = name;
+//     this.date = date
+//   }
+//   static compare( Event1, Event2){
+//     return Event1.date - Event2.date;
+//   }
+// }
+
+// // APPLICATION
+// let events = [
+//   new Event("conference", new Date(2018, 1, 1)),
+//   new Event("seminar", new Date(2018, 0, 1)),
+//   new Event("webinar", new Date(2018, 11, 1))
+// ];
+// events.sort(Event.compare);
+// console.log(events[0].name)
+
+// factory method of cresting with stastic
+class Event{
+  constructor( name, date ) {
+    this.name = name;
+    this.date = date
+  }
+  static createToday() {
+    // P.S, this = Event
+    return new this("Javascript Seminar", new Date());
+  }
 }
 
-console.log(typeof Developer); // function
-new Developer(); // Error: Class constructor User cannot be invoked without 'new'
+let event = Event.createToday();
+console.log( event.name ) // javascript seminar
