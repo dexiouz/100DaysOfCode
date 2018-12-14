@@ -5499,3 +5499,5 @@ Suppose we have the id of the item we want to remove, here's a good staticMethod
 Event.remove({ id: 456799 })
 ```
 See you in the next article
+
+**Day91 of #100DaysOfCode**
