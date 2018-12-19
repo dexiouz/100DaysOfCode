@@ -5651,7 +5651,109 @@ Although this pattern is usually recommended for advanced programming purposes.
 ## Day94 of #100DaysOfCode
 ### Overriding methods -- the concept of super()
 
+Recall this inheritance where Developer inherits from Human class.
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+
+  stat(height){
+    this.height += height;
+    console.log(`${this.name} has a progressive height of ${this.height}`)
+  }
+
+  currentStat(){
+    this.height = 4;
+     console.log(`${this.name} has a current height of ${this.height}`)
+  }
+
+}
+
+// Here, Developer is about to inherit frm class Human
+class Developer extends Human {
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+}
+
+let developer = new Developer( "James" );
+// execute a method from the Human class
+developer.stat(5)                     //James has a progressive height of 9
+
+// its own method
+developer.canCode()                   //James can code
+```
+A closer look at this code snippet shows that the Human class has a default height of 4 which the Developer class inherited from the Human class method of "currentStat". 
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+```
+What if we want to change the value of height to say 6 or another number.
+
+First, we can specify our own "currentStat" method in the Developer class. This will certainly override it. 
+```js
+class Developer extends Human{
+  currentStat(){
+    // whatever we have in mind
+  }
+}
+```
+But sometimes, we want to build or manipulate the functionality of a parent method and not to do away with it. To achieve this, we have to pass certain instructions in our method while calling the parent method in the process or after/before the process.
+
+There is a provision for that by classes called "Super".
+if we do
+* super.method(...), we call a parent method but
+* super( ... ) calls a parent constructor, usually inside the constructor.
+
+In the next article, we will look at how to apply the super method.
 
 
+## Day95 of #100DaysOfCode
+### Overriding methods -- the concept of super() continuation
+
+Lets use the super method to run the canCode function in Developer class immediately after calling the currentStat method. Notice how we will embed the currentStat in Developer usin super().
+
+```js
+  class Human {
+    constructor(name){
+      this.name = name;
+      this.height = 4;
+    }
+  
+    stat(height){
+      this.height += height;
+      console.log(`${this.name} has a progressive height of ${this.height}`)
+    }
+  
+    currentStat(){
+      this.height = 4;
+       console.log(`${this.name} has a current height of ${this.height}`)
+    }
+  
+  }
+  
+  
+  class Developer extends Human {
+    canCode(){
+      console.log(`${this.name} can code`)
+    }
+  
+    currentStat(){
+      super.currentStat();
+      this.canCode()
+    }
+  }
+  
+  let developer = new Developer( "James" );
+  developer.stat(5)                     //James has a progressive height of 9
+  
+  developer.currentStat()  //James has a current height of 4,  James can code                
+```
+Clearly, Developer now has the currentStat() method that calls the super.stop() in the process.
 
 

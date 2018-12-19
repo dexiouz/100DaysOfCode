@@ -313,18 +313,54 @@
 
   // extending FROM EXPRESSIONS
 
-  function greeting(statement){
-    return class {
-      greet(){
-        console.log( statement )
-      }
+  // function greeting(statement){
+  //   return class {
+  //     greet(){
+  //       console.log( statement )
+  //     }
+  //   }
+  // }
+  
+  // // Lets create a class to extend from the funcion
+ 
+  // class Student extends greeting("Good morning") {}
+  
+  // new Student().greet()
+
+
+  // OVERRIDING A METHOD
+
+  class Human {
+    constructor(name){
+      this.name = name;
+      this.height = 4;
+    }
+  
+    stat(height){
+      this.height += height;
+      console.log(`${this.name} has a progressive height of ${this.height}`)
+    }
+  
+    currentStat(){
+      this.height = 4;
+       console.log(`${this.name} has a current height of ${this.height}`)
+    }
+  
+  }
+  
+  
+  class Developer extends Human {
+    canCode(){
+      console.log(`${this.name} can code`)
+    }
+  
+    currentStat(){
+      super.currentStat();
+      this.canCode()
     }
   }
   
-  // Lets create a class to extend from the funcion
- 
-  class Student extends greeting("Good morning") {}
+  let developer = new Developer( "James" );
+  developer.stat(5)                     //James has a progressive height of 9
   
-  new Student().greet()
-
-  
+  developer.currentStat()  //James has a current height of 4,  James can code
