@@ -280,33 +280,51 @@
 // console.log( event.name ) // javascript seminar
 
   // CLASS INHERITANCE
-  class Human {
-    constructor(name){
-      this.name = name;
-      this.height = 4;
-    }
+  // class Human {
+  //   constructor(name){
+  //     this.name = name;
+  //     this.height = 4;
+  //   }
   
-    stat(height){
-      this.height += height;
-      console.log(`${this.name} has a progressive height of ${this.height}`)
-    }
+  //   stat(height){
+  //     this.height += height;
+  //     console.log(`${this.name} has a progressive height of ${this.height}`)
+  //   }
   
-    currentStat(){
-      this.height = 4;
-       console.log(`${this.name} has a current height of ${this.height}`)
-    }
+  //   currentStat(){
+  //     this.height = 4;
+  //      console.log(`${this.name} has a current height of ${this.height}`)
+  //   }
   
+  // }
+  
+  // // Here, Developer is about to inherit frm class Human
+  // class Developer extends Human {
+  //   canCode(){
+  //     console.log(`${this.name} can code`)
+  //   }
+  // }
+  
+  // let developer = new Developer( "James" );
+  // // a method from the Human class
+  // developer.stat(5)
+  // // its own method
+  // developer.canCode()
+
+  // extending FROM EXPRESSIONS
+
+  function greeting(statement){
+    return class {
+      greet(){
+        console.log( statement )
+      }
+    }
   }
   
-  // Here, Developer is about to inherit frm class Human
-  class Developer extends Human {
-    canCode(){
-      console.log(`${this.name} can code`)
-    }
-  }
+  // Lets create a class to extend from the funcion
+ 
+  class Student extends greeting("Good morning") {}
   
-  let developer = new Developer( "James" );
-  // a method from the Human class
-  developer.stat(5)
-  // its own method
-  developer.canCode()
+  new Student().greet()
+
+  

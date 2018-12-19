@@ -5546,12 +5546,112 @@ developer.stat(5)                     //James has a progressive height of 9
 // its own method
 developer.canCode()                   //James can code
 ```
+With this, "Developer" has access to both its methods and the methods of the "Human" class.
 I hope this gave you an overview of basic class inheritance.
 
-**Day92 of #100DaysOfCode**
 
-## Using extends in an advanced way
+## Day92 of #100DaysOfCode
+### An overview of inheritance methods 
+
+In the prototypal based class without the class keyword, the way to do inheritance is something like this.
+
+```js
+// Human class
+function Human(name) {
+  this.name = name;
+}
+
+// Every human can code
+Human.prototype.canRead = function(){
+  console.log(`${this.name} can also read`);
+}
+
+// Developer class
+function Developer(name) {
+  this.name = name;
+}
+
+Developer.prototype.canCode = function(){
+    console.log(`${this.name} can code`)
+  }
+
+// This does the inheritance magic
+Developer.prototype.__proto__ = Human.prototype; 
+
+let developer = new Developer("Chidera");
+    developer.canCode(); //Chidera can code
+    developer.canRead(); // Chidera can also read
+```
+
+However, with the class keyword, we do inheritance like this:
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+
+  stat(height){
+    this.height += height;
+    console.log(`${this.name} has a progressive height of ${this.height}`)
+  }
+
+  currentStat(){
+    this.height = 4;
+     console.log(`${this.name} has a current height of ${this.height}`)
+  }
+
+}
+
+// Here, Developer is about to inherit frm class Human
+class Developer extends Human {
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+}
+
+let developer = new Developer( "James" );
+// execute a method from the Human class
+developer.stat(5)                     //James has a progressive height of 9
+
+// its own method
+developer.canCode()                   //James can code
+```
+
+Now you see their different patterns. The default usage is the class keyword pattern.
+
+
+## Day93 of #100DaysOfCode
+
+### Using extends in an advanced way
 
 Anything can come after the extends keyword. It must not be a class. We can extend from an expression. The expression may be a function class which we use to generate the parent class. 
 Lets see an example.
-COnsider this fun
+Consider this function that returns a class.
+
+```js
+function greeting(statement){
+  return class {
+    greet(){
+      console.log( statement )
+    }
+  }
+}
+```
+Lets create a class to extend from the funcion
+```js
+class Student extends greeting("Good morning") {}
+
+new Student().greet() // Good morning
+```
+So what's happening here? Simple. The class Student inherits from the function greeting("Good morning").
+
+Although this pattern is usually recommended for advanced programming purposes.
+
+## Day94 of #100DaysOfCode
+### Overriding methods -- the concept of super()
+
+
+
+
+
