@@ -5501,3 +5501,57 @@ Event.remove({ id: 456799 })
 See you in the next article.
 
 **Day91 of #100DaysOfCode**
+
+**Inheritance in class syntax**
+On [day80]() we discussed about inheritance in prototype based classes.
+Sometimes we would want a class to have its own methods but at the same time, the class itself should be based off of another class altogether, that is it should take up some methods defined in another class. This kind of relationship where one class is extended by another class is known as "**class inheritance**".
+
+In class syntax, we use the term "extends" for this purpose, it is based on the prototypal inheritance. For "A" to extend from "B", we do something like this.
+```js
+class A extends B { ... }
+```
+
+Lets consider two classes. One class "Developer" with a method say **canCode** and another class "Human" with the method say **stat** and **currentStat**.
+
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+
+  stat(height){
+    this.height += height;
+    console.log(`${this.name} has a progressive height of ${this.height}`)
+  }
+
+  currentStat(){
+    this.height = 4;
+     console.log(`${this.name} has a current height of ${this.height}`)
+  }
+
+}
+
+// Here, Developer is about to inherit frm class Human
+class Developer extends Human {
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+}
+
+let developer = new Developer( "James" );
+// execute a method from the Human class
+developer.stat(5)                     //James has a progressive height of 9
+
+// its own method
+developer.canCode()                   //James can code
+```
+I hope this gave you an overview of basic class inheritance.
+
+**Day92 of #100DaysOfCode**
+
+## Using extends in an advanced way
+
+Anything can come after the extends keyword. It must not be a class. We can extend from an expression. The expression may be a function class which we use to generate the parent class. 
+Lets see an example.
+COnsider this fun
