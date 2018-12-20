@@ -330,6 +330,42 @@
 
   // OVERRIDING A METHOD
 
+  // class Human {
+  //   constructor(name){
+  //     this.name = name;
+  //     this.height = 4;
+  //   }
+  
+  //   stat(height){
+  //     this.height += height;
+  //     console.log(`${this.name} has a progressive height of ${this.height}`)
+  //   }
+  
+  //   currentStat(){
+  //     this.height = 4;
+  //      console.log(`${this.name} has a current height of ${this.height}`)
+  //   }
+  
+  // }
+  
+  
+  // class Developer extends Human {
+  //   canCode(){
+  //     console.log(`${this.name} can code`)
+  //   }
+  
+  //   currentStat(){
+  //     super.currentStat();
+  //     this.canCode()
+  //   }
+  // }
+  
+  // let developer = new Developer( "James" );
+  // developer.stat(5)                     //James has a progressive height of 9
+  
+  // developer.currentStat()  //James has a current height of 4,  James can code
+
+  // CONSTRUCTOR
   class Human {
     constructor(name){
       this.name = name;
@@ -348,19 +384,54 @@
   
   }
   
-  
+  // Here, Developer is about to inherit frm class Human
   class Developer extends Human {
+    constructor( name, weight ) {
+      this.height = 4;
+      this.name = name;
+      this.weight = weight;
+    }
     canCode(){
       console.log(`${this.name} can code`)
     }
+  }
+  
+  let developer = new Developer( "James" , 20);
+
+
+  class Human {
+    constructor(name){
+      this.name = name;
+      this.height = 4;
+    }
+  
+    stat(height){
+      this.height += height;
+      console.log(`${this.name} has a progressive height of ${this.height}`)
+    }
   
     currentStat(){
-      super.currentStat();
-      this.canCode()
+      this.height = 4;
+       console.log(`${this.name} has a current height of ${this.height}`)
+    }
+  
+  }
+  
+  // Here, Developer is about to inherit frm class Human
+  class Developer extends Human {
+    constructor( name, weight ) {
+      super(name)
+      this.weight = weight;
+    }
+    canCode(){
+      console.log(`${this.name} can code`)
     }
   }
   
-  let developer = new Developer( "James" );
-  developer.stat(5)                     //James has a progressive height of 9
+  let developer = new Developer( "James" , 20);
+  console.log( developer.name);
+  console.log( developer.weight)
+
+
+
   
-  developer.currentStat()  //James has a current height of 4,  James can code

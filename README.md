@@ -5756,4 +5756,137 @@ Lets use the super method to run the canCode function in Developer class immedia
 ```
 Clearly, Developer now has the currentStat() method that calls the super.stop() in the process.
 
+## Day96 of #100DaysOfCode
+### Overriding constructors
+
+Consider this snippet of code where class Developer extends the Human class.
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+
+  stat(height){
+    this.height += height;
+    console.log(`${this.name} has a progressive height of ${this.height}`)
+  }
+
+  currentStat(){
+    this.height = 4;
+     console.log(`${this.name} has a current height of ${this.height}`)
+  }
+
+}
+
+// Here, Developer is about to inherit frm class Human
+class Developer extends Human {
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+}
+
+let developer = new Developer( "James" );
+// execute a method from the Human class
+developer.stat(5)                     //James has a progressive height of 9
+
+// its own method
+developer.canCode()                   //James can code
+```
+
+Obviously, only the Human class has a constructor. The Developer class soes not have a constructor.
+But something happens, if a class A extends class B, and class has no defined constructor, then a default constructor is generated for class A. Lets take the Developer and Human class for instance.
+```js
+class Developer extends Animal {
+  // generte a constructor because Developer has no defined constructor of its own
+  constructor( ...args ){
+    super( ...args)
+  }
+}
+```
+This is essentil becuse it bsiclly calls the parent constructor pssing it ll the arguments. This happened because we didn't write  constructor of our own. 
+
+In the next rticle we will add  customized constructor to specify the weight in addition to height.
+
+## Day97 of #100DaysOfCode
+### Adding custom constructor
+
+Here's the code snippet where only the parent has a constructor, 
+```js
+class Human {
+  constructor(name){
+    this.name = name;
+    this.height = 4;
+  }
+
+  stat(height){
+    this.height += height;
+    console.log(`${this.name} has a progressive height of ${this.height}`)
+  }
+
+  currentStat(){
+    this.height = 4;
+     console.log(`${this.name} has a current height of ${this.height}`)
+  }
+
+}
+
+// Here, Developer is about to inherit frm class Human
+class Developer extends Human {
+  canCode(){
+    console.log(`${this.name} can code`)
+  }
+}
+
+let developer = new Developer( "James" );
+// execute a method from the Human class
+developer.stat(5)                     //James has a progressive height of 9
+
+// its own method
+developer.canCode()                   //James can code
+```
+Lets at this point add a constructor to the Developer class. The constructor will specify weight.
+
+```js
+ class Human {
+    constructor(name){
+      this.name = name;
+      this.height = 4;
+    }
+  
+    stat(height){
+      this.height += height;
+      console.log(`${this.name} has a progressive height of ${this.height}`)
+    }
+  
+    currentStat(){
+      this.height = 4;
+       console.log(`${this.name} has a current height of ${this.height}`)
+    }
+  
+  }
+  
+  // Here, Developer is about to inherit frm class Human
+  class Developer extends Human {
+    constructor( name, weight ) {
+      this.height = 4;
+      this.name = name;
+      this.weight = weight;
+    }
+    canCode(){
+      console.log(`${this.name} can code`)
+    }
+  }
+  
+  let developer = new Developer( "James" , 20); //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+```
+But then we get an error! why?. In the next article we will understand whats happening here.
+
+
+## Day98 of #100DaysOfCode
+### Understanding the requirements of inheriting constructor
+Here's how to do this sort of thing.
+For constructors to inherit classes it must first call super(..) , and the super must be called before using the "this" keyword.
+
+
 
