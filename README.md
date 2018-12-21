@@ -5889,4 +5889,5 @@ Here's how to do this sort of thing.
 For constructors to inherit classes it must first call super(..) , and the super must be called before using the "this" keyword.
 
 
-
+## Day99 of #100DaysOfCode
+### Understanding the requirements of inheriting constructor
