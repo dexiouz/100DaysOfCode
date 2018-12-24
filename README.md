@@ -5806,7 +5806,7 @@ class Developer extends Animal {
 ```
 This is essentil becuse it bsiclly calls the parent constructor pssing it ll the arguments. This happened because we didn't write  constructor of our own. 
 
-In the next rticle we will add  customized constructor to specify the weight in addition to height.
+In the next article we will add  customized constructor to specify the weight in addition to height.
 
 ## Day97 of #100DaysOfCode
 ### Adding custom constructor
