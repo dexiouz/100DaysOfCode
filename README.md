@@ -5895,4 +5895,4 @@ For constructors to inherit classes it must first call super(..) , and the super
 ![image](./alifn-items.png)
 
 
-<img src="./alifn-items" width="200" height="200" />
+<img src="./alifn-items.png" width=50% height=50% />
