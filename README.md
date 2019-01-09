@@ -5890,3 +5890,9 @@ For constructors to inherit classes it must first call super(..) , and the super
 
 # Day99 of #100DaysOfCode
 ## Understanding the requirements of inheriting constructor.
+
+
+![image](./alifn-items.png)
+
+
+<img src="./alifn-items" width="200" height="200" />
