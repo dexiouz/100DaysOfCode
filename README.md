@@ -5500,8 +5500,7 @@ Event.remove({ id: 456799 })
 ```
 See you in the next article.
 
-**Day91 of #100DaysOfCode**
-
+# Day91 of #100DaysOfCode
 **Inheritance in class syntax**
 On [day80]() we discussed about inheritance in prototype based classes.
 Sometimes we would want a class to have its own methods but at the same time, the class itself should be based off of another class altogether, that is it should take up some methods defined in another class. This kind of relationship where one class is extended by another class is known as "**class inheritance**".
@@ -5550,8 +5549,8 @@ With this, "Developer" has access to both its methods and the methods of the "Hu
 I hope this gave you an overview of basic class inheritance.
 
 
-## Day92 of #100DaysOfCode
-### An overview of inheritance methods 
+# Day92 of #100DaysOfCode
+## An overview of inheritance methods 
 
 In the prototypal based class without the class keyword, the way to do inheritance is something like this.
 
@@ -5621,9 +5620,9 @@ developer.canCode()                   //James can code
 Now you see their different patterns. The default usage is the class keyword pattern.
 
 
-## Day93 of #100DaysOfCode
+# Day93 of #100DaysOfCode
 
-### Using extends in an advanced way
+## Using extends in an advanced way
 
 Anything can come after the extends keyword. It must not be a class. We can extend from an expression. The expression may be a function class which we use to generate the parent class. 
 Lets see an example.
@@ -5648,8 +5647,8 @@ So what's happening here? Simple. The class Student inherits from the function g
 
 Although this pattern is usually recommended for advanced programming purposes.
 
-## Day94 of #100DaysOfCode
-### Overriding methods -- the concept of super()
+# Day94 of #100DaysOfCode
+## Overriding methods -- the concept of super()
 
 Recall this inheritance where Developer inherits from Human class.
 ```js
@@ -5713,8 +5712,8 @@ if we do
 In the next article, we will look at how to apply the super method.
 
 
-## Day95 of #100DaysOfCode
-### Overriding methods -- the concept of super() continuation
+# Day95 of #100DaysOfCode
+## Overriding methods -- the concept of super() continuation
 
 Lets use the super method to run the canCode function in Developer class immediately after calling the currentStat method. Notice how we will embed the currentStat in Developer usin super().
 
@@ -5756,8 +5755,8 @@ Lets use the super method to run the canCode function in Developer class immedia
 ```
 Clearly, Developer now has the currentStat() method that calls the super.stop() in the process.
 
-## Day96 of #100DaysOfCode
-### Overriding constructors
+# Day96 of #100DaysOfCode
+## Overriding constructors
 
 Consider this snippet of code where class Developer extends the Human class.
 ```js
@@ -5808,8 +5807,8 @@ This is essentil becuse it bsiclly calls the parent constructor pssing it ll the
 
 In the next article we will add  customized constructor to specify the weight in addition to height.
 
-## Day97 of #100DaysOfCode
-### Adding custom constructor
+# Day97 of #100DaysOfCode
+## Adding custom constructor
 
 Here's the code snippet where only the parent has a constructor, 
 ```js
@@ -5880,14 +5879,14 @@ Lets at this point add a constructor to the Developer class. The constructor wil
   
   let developer = new Developer( "James" , 20); //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 ```
-But then we get an error! why?. In the next article we will understand whats happening here.
+But then we get an error! why? In the next article we will understand what's happening here.
 
 
-## Day98 of #100DaysOfCode
-### Understanding the requirements of inheriting constructor
+# Day98 of #100DaysOfCode
+## Understanding the requirements of inheriting constructor
 Here's how to do this sort of thing.
 For constructors to inherit classes it must first call super(..) , and the super must be called before using the "this" keyword.
 
 
-## Day99 of #100DaysOfCode
-### Understanding the requirements of inheriting constructor.
+# Day99 of #100DaysOfCode
+## Understanding the requirements of inheriting constructor.

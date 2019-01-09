@@ -48,13 +48,15 @@ reversedSentence('I am beautiful') //"beautiful am I"
 // ALGORITHM TO RETURN UNIQUE NUMBERS FROM AN Array
 let arrays = [1,2,3,4,5,6,7,1,9,4,3,2,8,3,1,2,6,5,3]
 let uniqueArray = []
-function unique(arrays){
-   arrays.forEach(number => {
-    if(!uniqueArray.includes(number)){
-      uniqueArray.unshift(number)
-    }
-  })
-  console.log(uniqueArray)
-}
-unique(arrays)
+  function unique(arrays){
+      arrays.forEach(number => {
+      if(!uniqueArray.includes(number)){
+        uniqueArray.unshift(number)
+      }
+    })
+    console.log(uniqueArray)
+  }
+  unique(arrays)
+
+  
 
